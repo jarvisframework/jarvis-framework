@@ -1,0 +1,51 @@
+
+g
+java:S1192N"JDefine a constant instead of duplicating this literal " LIMIT 1 " 3 times.(¡ÿ¶8ªüåÿÑ0
+c
+java:S1192N"FDefine a constant instead of duplicating this literal "\"/>
+" 6 times.(¡ÿ¶8«üåÿÑ0
+x
+java:S1192N"[Define a constant instead of duplicating this literal "ORDER BY ${_param.orderBy}" 4 times.(¡ÿ¶8µüåÿÑ0
+›
+java:S1192N"~Define a constant instead of duplicating this literal "<if test='_param.orderBy != null and _param.orderBy != \"\"'>" 4 times.(¡ÿ¶8¶üåÿÑ0
+|
+java:S1192N"_Define a constant instead of duplicating this literal "<bind name=\"_param\" value=\"" 4 times.(¡ÿ¶8·üåÿÑ0
+j
+java:S1192:"MDefine a constant instead of duplicating this literal "DELETE FROM " 3 times.(Î»ù8·üåÿÑ0
+n
+java:S1192."LDefine a constant instead of duplicating this literal "</foreach>
+" 4 times.(µÌ‹Ëüÿÿÿÿ8¸üåÿÑ0
+
+java:S1192N"bDefine a constant instead of duplicating this literal "<where> ${_param.where} </where>
+" 4 times.(¡ÿ¶8¸üåÿÑ0
+x
+java:S1192N"[Define a constant instead of duplicating this literal "GROUP BY ${_param.groupBy}" 3 times.(¡ÿ¶8¹üåÿÑ0
+l
+java:S1192"JDefine a constant instead of duplicating this literal "<script>
+" 8 times.(ß¯ìÿÿÿÿÿ8¹üåÿÑ0
+›
+java:S1192N"~Define a constant instead of duplicating this literal "<if test='_param.groupBy != null and _param.groupBy != \"\"'>" 3 times.(¡ÿ¶8¹üåÿÑ0
+l
+java:S1192"JDefine a constant instead of duplicating this literal "</script>" 8 times.(Úİñùÿÿÿÿ8ºüåÿÑ0
+d
+java:S1192N"GDefine a constant instead of duplicating this literal "</if>
+" 6 times.(¡ÿ¶8ºüåÿÑ0
+q
+java:S11921"ODefine a constant instead of duplicating this literal " WHERE id in 
+" 3 times.(¼ˆìÔúÿÿÿÿ8ÅüåÿÑ0
+Q
+java:S1611"/Remove the parentheses around the "e" parameter(êÛ«øÿÿÿÿ8õüåÿÑ0
+U
+java:S1611"3Remove the parentheses around the "field" parameter(£Óßşıÿÿÿÿ8ùüåÿÑ0
+S
+java:S1854'"6Remove this useless assignment to local variable "id".(øá¥‘8…ıåÿÑ0
+D
+java:S1481'"'Remove this unused "id" local variable.(øá¥‘8‰ıåÿÑ0
+Q
+java:S1611)"/Remove the parentheses around the "e" parameter(êÛ«øÿÿÿÿ8ŠıåÿÑ0
+N
+java:S1602)",Remove useless curly braces around statement(êÛ«øÿÿÿÿ8•ıåÿÑ0
+U
+java:S1611-"3Remove the parentheses around the "field" parameter(£Óßşıÿÿÿÿ8—ıåÿÑ0
+N
+java:S1602-",Remove useless curly braces around statement(£Óßşıÿÿÿÿ8˜ıåÿÑ0

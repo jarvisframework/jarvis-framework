@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jarvis.framework</groupId>
+        <artifactId>jarvis-framework-parent</artifactId>
+        <version>1.2-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jarvis-baseweb</artifactId>
+
+    <dependencies>
+        <!-- mybatis -->
+        <dependency>
+            <groupId>com.jarvis.framework</groupId>
+            <artifactId>jarvis-mybatis-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- webmvc -->
+        <dependency>
+            <groupId>com.jarvis.framework</groupId>
+            <artifactId>jarvis-webmvc-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- security -->
+        <dependency>
+            <groupId>com.jarvis.framework</groupId>
+            <artifactId>jarvis-security-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- bizlog -->
+        <dependency>
+            <groupId>com.jarvis.framework</groupId>
+            <artifactId>jarvis-bizlog-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- mybatis与security整合 -->
+        <dependency>
+            <groupId>com.jarvis.framework</groupId>
+            <artifactId>jarvis-mybatis-security-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- validator -->
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+        </dependency>
+        <!-- springfox-boot-starter -->
+        <!-- <dependency>
+          <groupId>io.springfox</groupId>
+          <artifactId>springfox-boot-starter</artifactId>
+          <optional>true</optional>
+        </dependency> -->
+    </dependencies>
+
+</project>

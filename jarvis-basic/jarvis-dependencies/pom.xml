@@ -1,0 +1,117 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jarvis.platform</groupId>
+        <artifactId>jarvis-basic</artifactId>
+        <version>4.0.1-SNAPSHOT</version>
+    </parent>
+
+    <artifactId>jarvis-dependencies</artifactId>
+    <packaging>pom</packaging>
+
+    <properties>
+        <eureka-zone>http://archive-eureka:8761/eureka/</eureka-zone>
+        <jarvis.version>4.0.1-SNAPSHOT</jarvis.version>
+        <easyexcel.version>2.2.10</easyexcel.version>
+        <tika.version>2.3.0</tika.version>
+        <commons-code.version>1.15</commons-code.version>
+        <okhttp3.version>4.8.1</okhttp3.version>
+    </properties>
+
+    <dependencyManagement>
+
+        <dependencies>
+            <dependency>
+                <groupId>com.jarvis.platform</groupId>
+                <artifactId>jarvis-eureka-client</artifactId>
+                <version>${jarvis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jarvis.platform</groupId>
+                <artifactId>jarvis-logback</artifactId>
+                <version>${jarvis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.jarvis.platform</groupId>
+                <artifactId>jarvis-util</artifactId>
+                <version>${jarvis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gdda.archives.platform</groupId>
+                <artifactId>archives-backstage-log</artifactId>
+                <version>${archives.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gdda.archives.platform</groupId>
+                <artifactId>archives-qc-checker-core</artifactId>
+                <version>${archives.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gdda.archives.platform</groupId>
+                <artifactId>archives-qc-checker-client</artifactId>
+                <version>${archives.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gdda.archives.platform</groupId>
+                <artifactId>archives-qc-checker-mvc</artifactId>
+                <version>${archives.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gdda.archives.platform</groupId>
+                <artifactId>archives-file-checker-core</artifactId>
+                <version>${archives.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gdda.archives.platform</groupId>
+                <artifactId>archives-file-checker-client</artifactId>
+                <version>${archives.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.gdda.archives.platform</groupId>
+                <artifactId>archives-file-checker-mvc</artifactId>
+                <version>${archives.version}</version>
+            </dependency>
+            <!-- easyexcel -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>easyexcel</artifactId>
+                <version>${easyexcel.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-codec/commons-codec -->
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-code.version}</version>
+            </dependency>
+            <!-- tiak -->
+            <!-- <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-bom</artifactId>
+                <version>${tika.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency> -->
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-core</artifactId>
+                <version>${tika.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.tika</groupId>
+                <artifactId>tika-parsers-standard-package</artifactId>
+                <version>${tika.version}</version>
+            </dependency>
+
+            <!-- okhttp -->
+            <dependency>
+                <groupId>com.squareup.okhttp3</groupId>
+                <artifactId>okhttp</artifactId>
+                <version>${okhttp3.version}</version>
+            </dependency>
+
+        </dependencies>
+
+    </dependencyManagement>
+
+</project>

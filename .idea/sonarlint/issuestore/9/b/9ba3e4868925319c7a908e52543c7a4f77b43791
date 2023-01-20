@@ -1,0 +1,53 @@
+
+Q
+java:S3740V"/Provide the parametrized type for this generic.(îÑ«Áşÿÿÿÿ8Ÿ²¹ÚÙ0
+L
+java:S3740b"/Provide the parametrized type for this generic.(å‹µß8Ÿ²¹ÚÙ0
+m
+java:S1192q"KDefine a constant instead of duplicating this literal "B,A<C8U4X7" 3 times.(½ÀÙúÿÿÿÿ8¡²¹ÚÙ0
+K
+java:S11217".Extract the assignment out of this expression.(‘ìğÍ8¡²¹ÚÙ0
+|
+java:S41657"_Remove this useless assignment; "a" already holds the assigned value along all execution paths.(‘ìğÍ8Ñ²¹ÚÙ0
+¤
+java:S1186„"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(óğÆÏúÿÿÿÿ8Ô²¹ÚÙ0
+^
+java:S18544"<Remove this useless assignment to local variable "var10000".(É¢¶İøÿÿÿÿ8Ø²¹ÚÙ0
+F
+java:S19057")Remove this unnecessary cast to "String".(‘ìğÍ8Û²¹ÚÙ0
+J
+java:S14819"-Remove this unused "var10006" local variable.(µ÷Û8Ü²¹ÚÙ0
+N
+java:S5344X",Use secure "PasswordEncoder" implementation.(—†˜’şÿÿÿÿ8ç²¹ÚÙ0
+`
+java:S1874X">Remove this use of "LdapShaPasswordEncoder"; it is deprecated.(—†˜’şÿÿÿÿ8è²¹ÚÙ0
+N
+java:S5344Y",Use secure "PasswordEncoder" implementation.(ÍµñÛøÿÿÿÿ8é²¹ÚÙ0
+\
+java:S1874Y":Remove this use of "Md4PasswordEncoder"; it is deprecated.(ÍµñÛøÿÿÿÿ8ê²¹ÚÙ0
+N
+java:S5344Z",Use secure "PasswordEncoder" implementation.(¬¼ÔÃşÿÿÿÿ8ë²¹ÚÙ0
+f
+java:S1874Z"DRemove this use of "MessageDigestPasswordEncoder"; it is deprecated.(¬¼ÔÃşÿÿÿÿ8ë²¹ÚÙ0
+]
+java:S1874[";Remove this use of "NoOpPasswordEncoder"; it is deprecated.(à§ğÏøÿÿÿÿ8í²¹ÚÙ0
+N
+java:S5344^",Use secure "PasswordEncoder" implementation.(ñÚ‰±ÿÿÿÿÿ8ï²¹ÚÙ0
+f
+java:S1874^"DRemove this use of "MessageDigestPasswordEncoder"; it is deprecated.(ñÚ‰±ÿÿÿÿÿ8ğ²¹ÚÙ0
+N
+java:S5344_",Use secure "PasswordEncoder" implementation.(¯¾–¥ùÿÿÿÿ8ñ²¹ÚÙ0
+f
+java:S1874_"DRemove this use of "MessageDigestPasswordEncoder"; it is deprecated.(¯¾–¥ùÿÿÿÿ8ñ²¹ÚÙ0
+I
+java:S5344`",Use secure "PasswordEncoder" implementation.(ŠŒˆä8ò²¹ÚÙ0
+\
+java:S1874`"?Remove this use of "StandardPasswordEncoder"; it is deprecated.(ŠŒˆä8ò²¹ÚÙ0
+M
+java:S1611d"0Remove the parentheses around the "ax" parameter(Ò†¶Ä8õ²¹ÚÙ0
+I
+java:S1602d",Remove useless curly braces around statement(Ò†¶Ä8õ²¹ÚÙ0
+J
+java:S1481z"-Remove this unused "var10003" local variable.(óĞúÌ8û²¹ÚÙ0
+J
+java:S1481{"-Remove this unused "var10006" local variable.(å—æø8û²¹ÚÙ0

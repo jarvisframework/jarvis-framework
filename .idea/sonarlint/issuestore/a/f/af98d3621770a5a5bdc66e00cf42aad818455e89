@@ -1,0 +1,33 @@
+
+c
+java:S1192I"FDefine a constant instead of duplicating this literal "\"/>
+" 4 times.(¦ğı8ïğ“€Ò0
+x
+java:S1192C"[Define a constant instead of duplicating this literal "ORDER BY ${_param.orderBy}" 3 times.(õûßå8ğğ“€Ò0
+›
+java:S1192C"~Define a constant instead of duplicating this literal "<if test='_param.orderBy != null and _param.orderBy != \"\"'>" 3 times.(õûßå8ğğ“€Ò0
+n
+java:S1192 "LDefine a constant instead of duplicating this literal "</foreach>
+" 3 times.(ü¦æ‘ûÿÿÿÿ8ğğ“€Ò0
+x
+java:S1192C"[Define a constant instead of duplicating this literal "GROUP BY ${_param.groupBy}" 3 times.(õûßå8ñğ“€Ò0
+l
+java:S1192 "JDefine a constant instead of duplicating this literal "<script>
+" 5 times.(ü¦æ‘ûÿÿÿÿ8ñğ“€Ò0
+›
+java:S1192C"~Define a constant instead of duplicating this literal "<if test='_param.groupBy != null and _param.groupBy != \"\"'>" 3 times.(õûßå8ñğ“€Ò0
+l
+java:S1192 "JDefine a constant instead of duplicating this literal "</script>" 7 times.(ü¦æ‘ûÿÿÿÿ8òğ“€Ò0
+d
+java:S1192C"GDefine a constant instead of duplicating this literal "</if>
+" 6 times.(õûßå8óğ“€Ò0
+Q
+java:S1611"/Remove the parentheses around the "e" parameter(êÛ«øÿÿÿÿ8Çñ“€Ò0
+U
+java:S1611"3Remove the parentheses around the "field" parameter(£Óßşıÿÿÿÿ8Éñ“€Ò0
+Q
+java:S1611)"/Remove the parentheses around the "e" parameter(êÛ«øÿÿÿÿ8Îñ“€Ò0
+N
+java:S1602)",Remove useless curly braces around statement(êÛ«øÿÿÿÿ8Îñ“€Ò0
+U
+java:S1611-"3Remove the parentheses around the "field" parameter(£Óßşıÿÿÿÿ8Ïñ“€Ò0

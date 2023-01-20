@@ -1,0 +1,31 @@
+
+U
+java:S3878"8Remove this array creation and simply pass the elements.(µŞÅ¤8ÚƒêòÙ0
+W
+java:S1161'":Add the "@Override" annotation above this method signature(×Ìİæ8ñƒêòÙ0
+I
+java:S1125("'Remove the unnecessary boolean literal.(Ü¸ı•üÿÿÿÿ8òƒêòÙ0
+W
+java:S1161+":Add the "@Override" annotation above this method signature(ö´·‹8ôƒêòÙ0
+D
+java:S1125,"'Remove the unnecessary boolean literal.(‰àòÎ8ôƒêòÙ0
+W
+java:S1161/":Add the "@Override" annotation above this method signature(òè‰í8öƒêòÙ0
+I
+java:S11250"'Remove the unnecessary boolean literal.(ò‡ƒªÿÿÿÿÿ8÷ƒêòÙ0
+W
+java:S11613":Add the "@Override" annotation above this method signature( öôÌ8øƒêòÙ0
+D
+java:S11254"'Remove the unnecessary boolean literal.(Ìßøä8ùƒêòÙ0
+W
+java:S11617":Add the "@Override" annotation above this method signature(Îœ¿©8úƒêòÙ0
+I
+java:S11258"'Remove the unnecessary boolean literal.(Œ‚áäûÿÿÿÿ8ûƒêòÙ0
+\
+java:S1161;":Add the "@Override" annotation above this method signature(Î×ä„şÿÿÿÿ8ıƒêòÙ0
+D
+java:S1125<"'Remove the unnecessary boolean literal.(ŒË¬ó8şƒêòÙ0
+\
+java:S1161?":Add the "@Override" annotation above this method signature(±¶¼¶ÿÿÿÿÿ8€„êòÙ0
+D
+java:S1125@"'Remove the unnecessary boolean literal.(§½¦‚8„êòÙ0

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.jarvis.framework</groupId>
+        <artifactId>jarvis-framework-dependencies</artifactId>
+        <version>1.2-SNAPSHOT</version>
+        <relativePath>../jarvis-framework-dependencies</relativePath>
+    </parent>
+
+    <groupId>com.jarvis.platform</groupId>
+    <artifactId>jarvis-basic</artifactId>
+    <version>4.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <modules>
+        <!--<module>archives-parent-war</module>-->
+        <module>jarvis-dependencies</module>
+        <module>jarvis-common</module>
+        <module>jarvis-parent</module>
+        <module>jarvis-parent-war</module>
+    </modules>
+
+    <properties>
+        <!-- 基础环境变量 -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <!-- 组织信息 -->
+    <organization>
+        <name>jarvis</name>
+        <url>http://www.jarvis.com.cn/</url>
+    </organization>
+
+    <!-- 发布仓库 -->
+    <!-- 中心仓库 -->
+    <distributionManagement>
+        <repository>
+            <id>archive-releases</id>
+            <name>archive-releases</name>
+            <url>http://nexus.cesgroup.com.cn/content/repositories/releases-archive/</url>
+        </repository>
+        <snapshotRepository>
+            <id>archive-snapshots</id>
+            <name>archive-snapshots</name>
+            <url>http://nexus.cesgroup.com.cn/content/repositories/snapshots-archive/</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <!-- 仓库地址 -->
+    <repositories>
+        <repository>
+            <id>cesgroup</id>
+            <url>http://nexus.cesgroup.com.cn/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-snapshots</id>
+            <name>Spring Snapshots</name>
+            <url>https://repo.spring.io/snapshot</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>cesgroup</id>
+            <url>http://nexus.cesgroup.com.cn/content/groups/public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>

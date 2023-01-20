@@ -1,0 +1,17 @@
+
+‡
+java:S1488M"eImmediately return this expression instead of assigning it to the temporary variable "localDateTime".(È¤ÿ³øÿÿÿÿ8ïÑ¾šÒ0
+\
+java:S1161":Add the "@Override" annotation above this method signature(ìÛÅ¬øÿÿÿÿ8ÿÑ¾šÒ0
+\
+java:S1161&":Add the "@Override" annotation above this method signature(ÜµÔªÿÿÿÿÿ8ƒÒ¾šÒ0
+\
+java:S1161/":Add the "@Override" annotation above this method signature(¼ÍşÌûÿÿÿÿ8…Ò¾šÒ0
+R
+java:S19054"0Remove this unnecessary cast to "LocalDateTime".(»…“Èùÿÿÿÿ8†Ò¾šÒ0
+W
+java:S11618":Add the "@Override" annotation above this method signature(€£…8†Ò¾šÒ0
+M
+java:S1905="0Remove this unnecessary cast to "LocalDateTime".(Ã­ôª8‡Ò¾šÒ0
+\
+java:S1161A":Add the "@Override" annotation above this method signature(ƒÒ‘ıúÿÿÿÿ8‰Ò¾šÒ0

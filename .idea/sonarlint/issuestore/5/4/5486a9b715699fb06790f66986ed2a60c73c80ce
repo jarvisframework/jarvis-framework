@@ -1,0 +1,109 @@
+
+R
+java:S3740ø"/Provide the parametrized type for this generic.(ÿì÷ªûÿÿÿÿ8æ÷·İÖ0
+R
+java:S3740ı"/Provide the parametrized type for this generic.( •²Üøÿÿÿÿ8æ÷·İÖ0
+L
+java:S3740±"/Provide the parametrized type for this generic.(²²"8æ÷·İÖ0
+R
+java:S3740Ï"/Provide the parametrized type for this generic.(çœ˜…ıÿÿÿÿ8æ÷·İÖ0
+R
+java:S3740"/Provide the parametrized type for this generic.(Ê’Ãüúÿÿÿÿ8ç÷·İÖ0
+¯
+java:S1192+"ŒDefine a constant instead of duplicating this literal "INSERT INTO sys_upgrade_version (id, version, remark) VALUES (%d, %d, '%s')" 5 times.(ÒÑ€îøÿÿÿÿ8è÷·İÖ0
+W
+java:S1141Z"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8é÷·İÖ0
+W
+java:S1141^"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8é÷·İÖ0
+W
+java:S1141b"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ê÷·İÖ0
+W
+java:S1141r"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ê÷·İÖ0
+X
+java:S1141ƒ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ê÷·İÖ0
+X
+java:S1141”"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ê÷·İÖ0
+X
+java:S1141¶"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ë÷·İÖ0
+X
+java:S1141È"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ë÷·İÖ0
+X
+java:S1141ó"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ë÷·İÖ0
+X
+java:S1141÷"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ì÷·İÖ0
+X
+java:S1141Œ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ì÷·İÖ0
+X
+java:S1141"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ì÷·İÖ0
+X
+java:S1141Æ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8í÷·İÖ0
+X
+java:S1141Ê"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8í÷·İÖ0
+X
+java:S1141ß"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8î÷·İÖ0
+X
+java:S1141ğ"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8î÷·İÖ0
+X
+java:S1141†"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8î÷·İÖ0
+X
+java:S1141Š"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8î÷·İÖ0
+X
+java:S1141 "5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ï÷·İÖ0
+X
+java:S1141±"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8ï÷·İÖ0
+U
+java:S2589î"7Remove this expression which always evaluates to "true"(¡ææú8´ş·İÖ0
+U
+java:S2589Æ"7Remove this expression which always evaluates to "true"(±”Ìï8µş·İÖ0
+U
+java:S2589¯"7Remove this expression which always evaluates to "true"(¡ææú8¶ş·İÖ0
+U
+java:S2589›"7Remove this expression which always evaluates to "true"(¡ææú8µş·İÖ0
+U
+java:S2589"7Remove this expression which always evaluates to "true"(±”Ìï8·ş·İÖ0
+U
+java:S2589İ"7Remove this expression which always evaluates to "true"(±”Ìï8²ş·İÖ0
+U
+java:S2589Š"7Remove this expression which always evaluates to "true"(±”Ìï8²ş·İÖ0
+>
+java:S1170("!Make this final field static too.(Ş¨Ç†8¹ş·İÖ0
+C
+java:S1170)"!Make this final field static too.(ñ¼Ë¶ÿÿÿÿÿ8¹ş·İÖ0
+>
+java:S1170*"!Make this final field static too.(¢‚’×8¹ş·İÖ0
+C
+java:S1170+"!Make this final field static too.(ÒÑ€îøÿÿÿÿ8ºş·İÖ0
+U
+java:S1611>"8Remove the parentheses around the "properties" parameter(è„³É8Àş·İÖ0
+p
+java:S1602>"SRemove useless curly braces around statement and then remove useless return keyword(è„³É8Àş·İÖ0
+[
+java:S1117>">Rename "properties" which hides the field declared at line 37.(è„³É8Àş·İÖ0
+S
+java:S1611@"6Remove the parentheses around the "upgrades" parameter(äÏ°é8Áş·İÖ0
+I
+java:S1602@",Remove useless curly braces around statement(äÏ°é8Áş·İÖ0
+R
+java:S1611A"5Remove the parentheses around the "upgrade" parameter(ûÎ­Å8Áş·İÖ0
+]
+java:S1117B";Rename "version" which hides the field declared at line 39.(ÎÚÏìùÿÿÿÿ8Áş·İÖ0
+o
+java:S3776S"RRefactor this method to reduce its Cognitive Complexity from 32 to the 15 allowed.(°ğ™8Ãş·İÖ0
+X
+java:S1117T";Rename "version" which hides the field declared at line 39.(óşÛŠ8Ãş·İÖ0
+u
+java:S3776®"RRefactor this method to reduce its Cognitive Complexity from 30 to the 15 allowed.(¥¸ƒşÿÿÿÿ8Éş·İÖ0
+p
+java:S3776ê"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(Å ÁÏ8Îş·İÖ0
+u
+java:S3776Á"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(½ÑÜãøÿÿÿÿ8Ùş·İÖ0
+p
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 20 to the 15 allowed.(ñÒ×ù8Şş·İÖ0
+Q
+java:S1068("4Remove this unused "selectVersionSql" private field.(Ş¨Ç†8âş·İÖ0
+Y
+java:S1068)"7Remove this unused "updateDdlVersionSql" private field.(ñ¼Ë¶ÿÿÿÿÿ8ãş·İÖ0
+T
+java:S1068*"7Remove this unused "updateDmlVersionSql" private field.(¢‚’×8ãş·İÖ0
+T
+java:S1068+"2Remove this unused "initVersionSql" private field.(ÒÑ€îøÿÿÿÿ8ãş·İÖ0

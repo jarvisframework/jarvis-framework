@@ -1,0 +1,9 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(Î€İ³øÿÿÿÿ8ØÂ±€Ò0
+e	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(æüş8æÂ±€Ò0
+e	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(Á£µÆ8çÂ±€Ò0
+L
+java:S1611*"/Remove the parentheses around the "o" parameter(ÄÓ•8ëÂ±€Ò0
+p
+java:S1602*"SRemove useless curly braces around statement and then remove useless return keyword(ÄÓ•8ìÂ±€Ò0

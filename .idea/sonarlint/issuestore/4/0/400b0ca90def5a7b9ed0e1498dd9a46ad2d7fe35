@@ -1,0 +1,26 @@
+
+L
+java:S3740"/Provide the parametrized type for this generic.(™ÛÜ¡8ŸúÔûÑ0
+L
+java:S3740"/Provide the parametrized type for this generic.(™ÛÜ¡8ŸúÔûÑ0
+L
+java:S3740 "/Provide the parametrized type for this generic.(™ÛÜ¡8 úÔûÑ0
+M
+java:S3740—"/Provide the parametrized type for this generic.(´™›ş8ó°˜ùÑ0
+R
+java:S3740"/Provide the parametrized type for this generic.(²’Ğıÿÿÿÿ8ó°˜ùÑ0
+e	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(²â´•8±˜ùÑ0
+ƒ
+java:S12218"aEither override Object.equals(Object obj), or totally rename the method to prevent any confusion.(ı€ä£ıÿÿÿÿ8şôûÑ0
+V
+java:S1611k"4Remove the parentheses around the "column" parameter(›¾œüÿÿÿÿ8œ±˜ùÑ0
+u
+java:S1602k"SRemove useless curly braces around statement and then remove useless return keyword(›¾œüÿÿÿÿ8±˜ùÑ0
+]
+java:S1612k";Replace this lambda with method reference 'this::toColumn'.(›¾œüÿÿÿÿ8óúÔûÑ0
+Q
+java:S1611r"4Remove the parentheses around the "column" parameter(®È‡ü8Ÿ±˜ùÑ0
+p
+java:S1602r"SRemove useless curly braces around statement and then remove useless return keyword(®È‡ü8Ÿ±˜ùÑ0
+X
+java:S1612r";Replace this lambda with method reference 'this::toColumn'.(®È‡ü8úúÔûÑ0

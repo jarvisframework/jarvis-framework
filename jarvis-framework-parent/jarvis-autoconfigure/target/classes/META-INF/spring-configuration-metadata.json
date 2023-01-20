@@ -1,0 +1,78 @@
+{
+  "groups": [
+    {
+      "name": "spring.datasource.druid",
+      "type": "com.gdda.archives.framework.autoconfigure.mybatis.DruidExtendProperties",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.mybatis.DruidExtendProperties"
+    },
+    {
+      "name": "spring.security",
+      "type": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "spring.datasource.druid.password-callback-class-name",
+      "type": "java.lang.String",
+      "description": "自定义密码加密器",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.mybatis.DruidExtendProperties"
+    },
+    {
+      "name": "spring.security.authority-urls",
+      "type": "java.util.List<com.gdda.archives.framework.autoconfigure.security.AuthorityUrl>",
+      "description": "需要权限的url",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    },
+    {
+      "name": "spring.security.bad-creadentials",
+      "type": "com.gdda.archives.framework.security.authentication.config.BadCreadentialsProperties",
+      "description": "登录密码连续输错配置",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    },
+    {
+      "name": "spring.security.deny-urls",
+      "type": "java.util.List<java.lang.String>",
+      "description": "禁止访问的url",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    },
+    {
+      "name": "spring.security.ignore-urls",
+      "type": "java.util.List<java.lang.String>",
+      "description": "忽略的URL",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    },
+    {
+      "name": "spring.security.password-encoder",
+      "type": "java.lang.String",
+      "description": "密码加密方式：bcrypt\/scrypt\/SM3\/MD5\/MD4\/ldap\/noop\/pbkdf2\/SHA-1\/SHA-256\/sha256\/argon2 默认是MD5",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties",
+      "defaultValue": "MD5"
+    },
+    {
+      "name": "spring.security.permit-access-id",
+      "type": "java.lang.String",
+      "description": "允许无登录访问的ID（feign接口使用）",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    },
+    {
+      "name": "spring.security.permit-urls",
+      "type": "java.util.List<java.lang.String>",
+      "description": "放行的url",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    },
+    {
+      "name": "spring.security.sso-token",
+      "type": "com.gdda.archives.framework.autoconfigure.security.SsoTokenProperties",
+      "description": "SSO单点登录",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    },
+    {
+      "name": "spring.security.validate-code",
+      "type": "com.gdda.archives.framework.security.validation.code.config.ValidateCodeProperties",
+      "description": "验证码",
+      "sourceType": "com.gdda.archives.framework.autoconfigure.security.ArchiveSecurityProperties"
+    }
+  ],
+  "hints": []
+}

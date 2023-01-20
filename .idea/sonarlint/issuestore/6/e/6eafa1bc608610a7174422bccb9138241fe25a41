@@ -1,0 +1,8 @@
+
+z
+java:S1192("]Use already-defined constant 'REMOTE_ADDR_SESSION_KEY' instead of duplicating its value here.(çÉæ8‡ê´Ö0
+\
+java:S1118
+":Add a private constructor to hide the implicit public one.(È¢ü¼ûÿÿÿÿ8Äê´Ö0
+N
+java:S2692M"10 is a valid index, but is ignored by this check.(×ı‡8Ğê´Ö0

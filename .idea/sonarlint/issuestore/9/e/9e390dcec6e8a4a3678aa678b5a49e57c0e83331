@@ -1,0 +1,25 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(Áç‹£þÿÿÿÿ8›±¹ÚÙ0
+L
+java:S3740"/Provide the parametrized type for this generic.(Øê«¤8›±¹ÚÙ0
+L
+java:S3740"/Provide the parametrized type for this generic.(Ê¿„´8œ±¹ÚÙ0
+K
+java:S3740"/Provide the parametrized type for this generic.(Ò‰‘)8œ±¹ÚÙ0
+ž
+java:S1186H"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ŸÙ¯”8¥±¹ÚÙ0
+j
+java:S4275"NRefactor this getter so that it actually refers to the field "permitAccessId".(éçßO8«±¹ÚÙ0
+k
+java:S4275$"ORefactor this getter so that it actually refers to the field "passwordEncoder".(ê‰¾8¬±¹ÚÙ0
+f
+java:S42750"JRefactor this getter so that it actually refers to the field "ignoreUrls".(ñê—8®±¹ÚÙ0
+l
+java:S42758"ORefactor this setter so that it actually refers to the field "passwordEncoder".(¢»óŽ8°±¹ÚÙ0
+l
+java:S4275<"JRefactor this getter so that it actually refers to the field "permitUrls".(”ÙÚîùÿÿÿÿ8±±¹ÚÙ0
+j
+java:S4275K"HRefactor this getter so that it actually refers to the field "denyUrls".(©É…¾þÿÿÿÿ8³±¹ÚÙ0
+p
+java:S4275O"NRefactor this setter so that it actually refers to the field "permitAccessId".(—ß÷èüÿÿÿÿ8´±¹ÚÙ0

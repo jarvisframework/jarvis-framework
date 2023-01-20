@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-dependencies/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-common/jarvis-logback/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-common/jarvis-eureka-client/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-common/jarvis-util/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent/jarvis-file-storage/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent/jarvis-configure/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent/jarvis-configure/jarvis-type-base/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent-war/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent/jarvis-configure/jarvis-configure-sdk/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent/jarvis-configure/jarvis-configure-core/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent/jarvis-auth/jarvis-excel-util/src/main/resources/archetype-resources" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/jarvis-basic/jarvis-parent/jarvis-configure/jarvis-configure-client/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jarvis-oauth2-resource" />
+        <module name="jarvis-mybatis-spring-boot-starter" />
+        <module name="jarvis-openfeign" />
+        <module name="jarvis-knife4j-spring-cloud-starter" />
+        <module name="jarvis-util" />
+        <module name="jarvis-spring-boot-starter" />
+        <module name="jarvis-openfeign-spring-cloud-starter" />
+        <module name="jarvis-token" />
+        <module name="jarvis-parent-war" />
+        <module name="jarvis-logback" />
+        <module name="framework-core" />
+        <module name="jarvis-eureka-client" />
+        <module name="framework-base" />
+        <module name="jarvis-bizlog" />
+        <module name="jarvis-core" />
+        <module name="jarvis-file-storage-sdk" />
+        <module name="jarvis-database-upgrade" />
+        <module name="jarvis-mybatis-security-spring-boot-starter" />
+        <module name="jarvis-oauth2-authorization" />
+        <module name="jarvis-baseweb" />
+        <module name="jarvis-database-upgrade-spring-boot-starter" />
+        <module name="framework-cache" />
+        <module name="jarvis-javax-persistence" />
+        <module name="jarvis-webmvc-spring-boot-starter" />
+        <module name="framework-tool" />
+        <module name="jarvis-security" />
+        <module name="jarvis-mybatis" />
+        <module name="jarvis-redis" />
+        <module name="jarvis-webmvc" />
+        <module name="jarvis-oauth2-authorization-spring-boot-starter" />
+        <module name="jarvis-bizlog-spring-boot-starter" />
+        <module name="jarvis-oauth2-common" />
+        <module name="jarvis-oauth2-resource-spring-boot-starter" />
+        <module name="jarvis-security-spring-boot-starter" />
+        <module name="jarvis-springfox-spring-boot-starter" />
+        <module name="jarvis-autoconfigure" />
+        <module name="jarvis-excel-util" />
+        <module name="jarvis-cypto" />
+        <module name="jarvis-web" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="framework-csharp-api" target="1.8" />
+      <module name="jarvis-configure" target="1.8" />
+      <module name="jarvis-configure-client" target="1.8" />
+      <module name="jarvis-configure-core" target="1.8" />
+      <module name="jarvis-configure-sdk" target="1.8" />
+      <module name="jarvis-framework-autoconfigure" target="1.8" />
+      <module name="jarvis-framework-baseweb" target="1.8" />
+      <module name="jarvis-type-base" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="framework-base" options="-Xlint:unchecked" />
+      <module name="framework-cache" options="-Xlint:unchecked" />
+      <module name="framework-core" options="-Xlint:unchecked" />
+      <module name="framework-csharp-api" options="" />
+      <module name="framework-tool" options="-Xlint:unchecked" />
+      <module name="jarvis-auth" options="-Xlint:unchecked" />
+      <module name="jarvis-autoconfigure" options="-Xlint:unchecked" />
+      <module name="jarvis-baseweb" options="-Xlint:unchecked" />
+      <module name="jarvis-basic" options="-Xlint:unchecked" />
+      <module name="jarvis-bizlog" options="-Xlint:unchecked" />
+      <module name="jarvis-bizlog-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-common" options="-Xlint:unchecked" />
+      <module name="jarvis-configure" options="-Xlint:unchecked" />
+      <module name="jarvis-configure-client" options="-Xlint:unchecked" />
+      <module name="jarvis-configure-core" options="-Xlint:unchecked" />
+      <module name="jarvis-configure-sdk" options="-Xlint:unchecked" />
+      <module name="jarvis-core" options="-Xlint:unchecked" />
+      <module name="jarvis-cypto" options="-Xlint:unchecked" />
+      <module name="jarvis-database-upgrade" options="-Xlint:unchecked" />
+      <module name="jarvis-database-upgrade-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-dependencies" options="-Xlint:unchecked" />
+      <module name="jarvis-eureka-client" options="-Xlint:unchecked" />
+      <module name="jarvis-excel-util" options="-Xlint:unchecked" />
+      <module name="jarvis-file-storage" options="-Xlint:unchecked" />
+      <module name="jarvis-file-storage-sdk" options="-Xlint:unchecked" />
+      <module name="jarvis-framework" options="-Xlint:unchecked" />
+      <module name="jarvis-framework-autoconfigure" options="-Xlint:unchecked" />
+      <module name="jarvis-framework-baseweb" options="-Xlint:unchecked" />
+      <module name="jarvis-framework-dependencies" options="-Xlint:unchecked" />
+      <module name="jarvis-framework-modules" options="-Xlint:unchecked" />
+      <module name="jarvis-framework-parent" options="-Xlint:unchecked" />
+      <module name="jarvis-framework-starters" options="-Xlint:unchecked" />
+      <module name="jarvis-javax-persistence" options="-Xlint:unchecked" />
+      <module name="jarvis-knife4j-spring-cloud-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-logback" options="-Xlint:unchecked" />
+      <module name="jarvis-mybatis" options="-Xlint:unchecked" />
+      <module name="jarvis-mybatis-security-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-mybatis-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-oauth2-authorization" options="-Xlint:unchecked" />
+      <module name="jarvis-oauth2-authorization-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-oauth2-common" options="-Xlint:unchecked" />
+      <module name="jarvis-oauth2-resource" options="-Xlint:unchecked" />
+      <module name="jarvis-oauth2-resource-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-openfeign" options="-Xlint:unchecked" />
+      <module name="jarvis-openfeign-spring-cloud-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-parent" options="-Xlint:unchecked" />
+      <module name="jarvis-parent-war" options="-Xlint:unchecked" />
+      <module name="jarvis-redis" options="-Xlint:unchecked" />
+      <module name="jarvis-security" options="-Xlint:unchecked" />
+      <module name="jarvis-security-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-springfox-spring-boot-starter" options="-Xlint:unchecked" />
+      <module name="jarvis-token" options="-Xlint:unchecked" />
+      <module name="jarvis-type-base" options="-Xlint:unchecked" />
+      <module name="jarvis-util" options="-Xlint:unchecked" />
+      <module name="jarvis-web" options="-Xlint:unchecked" />
+      <module name="jarvis-webmvc" options="-Xlint:unchecked" />
+      <module name="jarvis-webmvc-spring-boot-starter" options="-Xlint:unchecked" />
+    </option>
+  </component>
+</project>

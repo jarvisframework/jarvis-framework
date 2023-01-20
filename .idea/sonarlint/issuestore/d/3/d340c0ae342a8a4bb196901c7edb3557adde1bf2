@@ -1,0 +1,25 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(ñ‚«ïÿÿÿÿÿ8ì¿™Ò0
+Q
+java:S3740"/Provide the parametrized type for this generic.(î¹áˆÿÿÿÿÿ8ì¿™Ò0
+L
+java:S3740/"/Provide the parametrized type for this generic.(ƒÉ˜¾8ì¿™Ò0
+Q
+java:S3740X"/Provide the parametrized type for this generic.(œËåùÿÿÿÿ8ì¿™Ò0
+w
+java:S1192g"UUse already-defined constant 'COUNT_MS_SUFFIX' instead of duplicating its value here.(½”İÇùÿÿÿÿ8ì¿™Ò0
+[
+java:S5993"9Change the visibility of this constructor to "protected".(ÌÎêµûÿÿÿÿ8±ì¿™Ò0
+?
+java:S1118"Hide this public constructor.(ÌÎêµûÿÿÿÿ8²ì¿™Ò0
+I
+java:S1602$",Remove useless curly braces around statement(˜ß¹8»ì¿™Ò0
+n
+java:S1612$"QReplace this lambda with method reference 'pageBoundSql::setAdditionalParameter'.(˜ß¹8¼ì¿™Ò0
+I
+java:S1602m",Remove useless curly braces around statement(˜ß¹8Æì¿™Ò0
+o
+java:S1612m"RReplace this lambda with method reference 'countBoundSql::setAdditionalParameter'.(˜ß¹8Æì¿™Ò0
+N
+java:S3011v",This accessibility update should be removed.(Š‹«üÿÿÿÿ8Çì¿™Ò0

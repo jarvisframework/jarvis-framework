@@ -1,0 +1,50 @@
+
+Q
+java:S3740"/Provide the parametrized type for this generic.(ª­±Ñûÿÿÿÿ8û¨»ûÑ0
+Q
+java:S3740"/Provide the parametrized type for this generic.(Öóìõùÿÿÿÿ8û¨»ûÑ0
+Q
+java:S3740"/Provide the parametrized type for this generic.(ãè¦ıÿÿÿÿ8ü¨»ûÑ0
+L
+java:S3740"/Provide the parametrized type for this generic.(ç˜¥‚8û¨»ûÑ0
+R
+java:S3740§"/Provide the parametrized type for this generic.(ªÙï»ıÿÿÿÿ8Ø¦¼ûÑ0
+M
+java:S3740¸"/Provide the parametrized type for this generic.(é¤¶È8ü¨»ûÑ0
+M
+java:S3740Ã"/Provide the parametrized type for this generic.(ËûëÀ8½ŞıûÑ0
+h
+java:S1192a"FDefine a constant instead of duplicating this literal ") AS " 7 times.(Óí³ğûÿÿÿÿ8ş¨»ûÑ0
+c
+java:S1192O"FDefine a constant instead of duplicating this literal ") as " 3 times.(û‡»è8ş¨»ûÑ0
+{
+java:S1192H"YDefine a constant instead of duplicating this literal "å­—æ®µåˆ«åä¸èƒ½ä¸ºç©º" 6 times.(ã›´®üÿÿÿÿ8ş¨»ûÑ0
+j	java:S119"IRename this generic name to match the regular expression '^[A-Z][0-9]?$'.(õ›¢¶ÿÿÿÿÿ8¡©»ûÑ0
+J
+java:S19055"-Remove this unnecessary cast to "Collection".(Ñ‘ó½8ûŞıûÑ0
+Q
+java:S16115"4Remove the parentheses around the "column" parameter(Ñ‘ó½8¨©»ûÑ0
+p
+java:S16025"SRemove useless curly braces around statement and then remove useless return keyword(Ñ‘ó½8©©»ûÑ0
+X
+java:S16125";Replace this lambda with method reference 'this::toColumn'.(Ñ‘ó½8©©»ûÑ0
+I
+java:S1905<"-Remove this unnecessary cast to "Collection".(éÁÂ8€ßıûÑ0
+P
+java:S1611<"4Remove the parentheses around the "column" parameter(éÁÂ8¬©»ûÑ0
+o
+java:S1602<"SRemove useless curly braces around statement and then remove useless return keyword(éÁÂ8¬©»ûÑ0
+W
+java:S1612<";Replace this lambda with method reference 'this::toColumn'.(éÁÂ8¬©»ûÑ0
+P
+java:S1905"-Remove this unnecessary cast to "Collection".(ÿÒ”€ùÿÿÿÿ8ŒßıûÑ0
+W
+java:S1611"4Remove the parentheses around the "column" parameter(ÿÒ”€ùÿÿÿÿ8¹©»ûÑ0
+v
+java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(ÿÒ”€ùÿÿÿÿ8¹©»ûÑ0
+^
+java:S1612";Replace this lambda with method reference 'this::toColumn'.(ÿÒ”€ùÿÿÿÿ8¹©»ûÑ0
+E
+java:S1905ª"'Remove this unnecessary cast to "List".(ùÙ®½8”ßıûÑ0
+E
+java:S1905ª"'Remove this unnecessary cast to "List".(ùÙ®½8•ßıûÑ0

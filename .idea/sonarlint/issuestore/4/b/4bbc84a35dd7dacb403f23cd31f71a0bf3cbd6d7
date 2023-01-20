@@ -1,0 +1,52 @@
+
+Q
+java:S3740'"/Provide the parametrized type for this generic.(Çð ÷ùÿÿÿÿ8Æêð™Ò0
+L
+java:S3740)"/Provide the parametrized type for this generic.(æ´ý¹8Çêð™Ò0
+Q
+java:S3740+"/Provide the parametrized type for this generic.(¶ÚÒ¶ÿÿÿÿÿ8Çêð™Ò0
+L
+java:S3740h"/Provide the parametrized type for this generic.(¨Õ»8Çêð™Ò0
+M
+java:S3740€"/Provide the parametrized type for this generic.(ÆþÊ´8Çêð™Ò0
+M
+java:S3740§"/Provide the parametrized type for this generic.(û•ü†8Çêð™Ò0
+R
+java:S3740Ã"/Provide the parametrized type for this generic.(ýÖÞÎþÿÿÿÿ8Çêð™Ò0
+R
+java:S3740Þ"/Provide the parametrized type for this generic.(¾®©úÿÿÿÿ8Èêð™Ò0
+R
+java:S3740ì"/Provide the parametrized type for this generic.(Í¡’»þÿÿÿÿ8Èêð™Ò0
+R
+java:S3740ü"/Provide the parametrized type for this generic.(¯´€õýÿÿÿÿ8Èêð™Ò0
+M
+java:S3740ž"/Provide the parametrized type for this generic.(Ü©Ž’8Èêð™Ò0
+o
+java:S1192?"RUse already-defined constant 'KEEP_ORDERBY' instead of duplicating its value here.(Õ®–§8Éêð™Ò0
+m	java:S117h"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨Õ»8Êêð™Ò0
+n	java:S117ƒ"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦Àãà8Êêð™Ò0
+€
+java:S1488S"^Immediately return this expression instead of assigning it to the temporary variable "result".(»Áœõýÿÿÿÿ8Ëêð™Ò0
+B
+java:S1181D"%Catch Exception instead of Throwable.(åüÛ¤8•ìð™Ò0
+o
+java:S3776x"RRefactor this method to reduce its Cognitive Complexity from 56 to the 15 allowed.(ê•‚ˆ8Ÿìð™Ò0
+^
+java:S1119†";Refactor the code to remove this label and the need for it.(Î¸Ï¯øÿÿÿÿ8 ìð™Ò0
+p
+java:S3776¶"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(—óé½8¤ìð™Ò0
+\
+java:S1155Á">Use isEmpty() to check whether the collection is empty or not.(ÿô²è8¦ìð™Ò0
+\
+java:S1155Ü">Use isEmpty() to check whether the collection is empty or not.(ÓòøÌ8©ìð™Ò0
+\
+java:S1155ë">Use isEmpty() to check whether the collection is empty or not.(Áú¬¶8«ìð™Ò0
+p
+java:S3776ø"RRefactor this method to reduce its Cognitive Complexity from 23 to the 15 allowed.(¹Ö8­ìð™Ò0
+\
+java:S1155û">Use isEmpty() to check whether the collection is empty or not.(ñ¦Ã•8®ìð™Ò0
+T
+java:S1854®"7Remove this useless assignment to local variable "sql".(Öõ”8²ìð™Ò0
+E
+java:S1481®"(Remove this unused "sql" local variable.(Öõ”8³ìð™Ò0
+V	java:S106¯"9Replace this use of System.out or System.err by a logger.(ëÐêé8´ìð™Ò0

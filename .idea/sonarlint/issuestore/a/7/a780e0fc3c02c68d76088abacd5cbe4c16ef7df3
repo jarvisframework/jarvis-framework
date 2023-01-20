@@ -1,0 +1,29 @@
+
+o
+java:S3008"MRename this field "OS" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ã—¢Ùûÿÿÿÿ8§¬ ûÑ0
+u
+java:S3008"SRename this field "INSTANCE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¦ïÿşÿÿÿÿ8¨¬ ûÑ0
+N
+java:S2692"10 is a valid index, but is ignored by this check.(æ»Òß8­¬ ûÑ0
+N
+java:S2692"10 is a valid index, but is ignored by this check.(Í²¥Â8­¬ ûÑ0
+t
+java:S3776K"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(ıÍ´Çÿÿÿÿÿ8²¬ ûÑ0
+Z	java:S106t"9Replace this use of System.out or System.err by a logger.(·ı»şÿÿÿÿ8¸¬ ûÑ0
+{	java:S115x"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¤ïûÆıÿÿÿÿ8¸¬ ûÑ0
+u	java:S115y"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¨¨8¸¬ ûÑ0
+{	java:S115z"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(‡Õ£‘ûÿÿÿÿ8¹¬ ûÑ0
+{	java:S115{"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÿõ¿„ùÿÿÿÿ8¹¬ ûÑ0
+v	java:S115}"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(›ì —8¹¬ ûÑ0
+{	java:S115~"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÚÃÚøÿÿÿÿ8¹¬ ûÑ0
+{	java:S115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¶ŞŠÕüÿÿÿÿ8º¬ ûÑ0
+w	java:S115ƒ"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ß§Ìã8º¬ ûÑ0
+|	java:S115„"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(± ”¼ÿÿÿÿÿ8º¬ ûÑ0
+v	java:S115…"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Íšß8º¬ ûÑ0
+w	java:S115†"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(œù¥Á8º¬ ûÑ0
+|	java:S115ˆ"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(˜ß¥øÿÿÿÿ8»¬ ûÑ0
+v	java:S115‰"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¼†ƒ$8»¬ ûÑ0
+o
+java:S2786w"RRemove this redundant "static" qualifier; nested enum types are implicitly static.(šÓãà8»¬ ûÑ0
+X
+java:S1161‘":Add the "@Override" annotation above this method signature(Á»›ê8¿¬ ûÑ0

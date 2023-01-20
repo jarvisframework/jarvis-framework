@@ -1,0 +1,26 @@
+{
+  "groups": [
+    {
+      "name": "snowflake",
+      "type": "com.jarvis.framework.mybatis.snowflake.SnowflakeIdProperties",
+      "sourceType": "com.jarvis.framework.mybatis.snowflake.SnowflakeIdProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "snowflake.data-center-id",
+      "type": "java.lang.Integer",
+      "description": "数据中心ID，从0~7",
+      "sourceType": "com.jarvis.framework.mybatis.snowflake.SnowflakeIdProperties",
+      "defaultValue": 0
+    },
+    {
+      "name": "snowflake.worker-id",
+      "type": "java.lang.Integer",
+      "description": "机器ID，从0~31",
+      "sourceType": "com.jarvis.framework.mybatis.snowflake.SnowflakeIdProperties",
+      "defaultValue": 0
+    }
+  ],
+  "hints": []
+}

@@ -1,0 +1,37 @@
+database-upgrades:
+  - version: 1
+    create-tables:
+      - table-name: t_user
+        comment: 用户表
+        columns:
+          - {column-name: id, comment: 主键ID, length: 10, data-type: INT}
+          - {column-name: username, comment: 用户名, length: 100, data-type: VARCHAR}
+          - {column-name: password, comment: 密码, length: 32, data-type: VARCHAR}
+          - {column-name: sex, comment: 性别, length: 1, data-type: VARCHAR, default-value: 0}
+          - {column-name: birth_date, comment: 出生日期, length: 20, data-type: DATE}
+  - version: 2
+    add-columns:
+      - table-name: t_user
+        columns:
+          - {column-name: address, comment: 地址, length: 255, data-type: VARCHAR}
+          - {column-name: c1, comment: 字段c1, length: 255, data-type: VARCHAR}
+          - {column-name: c2, comment: 字段c2, length: 20, data-type: BIGINT}
+          - {column-name: c3, comment: 字段c3, length: 16, data-type: DATE}
+          - {column-name: c4, comment: 字段c4, length: 24, data-type: DATETIME}
+          - {column-name: c5, comment: 字段c4, length: 11, data-type: INT}
+  - version: 3
+    modify-columns:
+      - table-name: t_user,
+        columns:
+          - {column-name: sex, comment: 性别, length: 8, data-type: VARCHAR, default-value: 女}
+  - version: 4
+    rename-columns:
+      - table-name: t_user
+        column-name: c1
+        new-column: {column-name: c0, comment: 字段c1, length: 255, data-type: VARCHAR}
+  - version: 5
+    create-indexes:
+      - {index-name: idx_user_username, table-name: t_user, columnNames: username}
+  - version: 6
+    sqls:
+      - insert into t_user(id, username, password, birth_date) values (1, 'superadmin', '000000', $date{2020-07-26})

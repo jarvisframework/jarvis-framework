@@ -1,0 +1,55 @@
+
+Š
+java:S1192"hUse already-defined constant 'SPRING_SECURITY_FORM_EXTENSION_KEY' instead of duplicating its value here.(ö¤Æ‚üÿÿÿÿ8¶‡••Õ0
+ƒ
+java:S1192"fUse already-defined constant 'SPRING_SECURITY_FORM_ADDRESS_KEY' instead of duplicating its value here.(õ÷²¤8·‡••Õ0
+‡
+java:S1192"jUse already-defined constant 'SPRING_SECURITY_FORM_NATIONALITY_KEY' instead of duplicating its value here.(…ØÄ8·‡••Õ0
+Š
+java:S1192"mUse already-defined constant 'SPRING_SECURITY_FORM_ID_CARD_NUMBER_KEY' instead of duplicating its value here.(ãèôÇ8·‡••Õ0
+‹
+java:S1192"iUse already-defined constant 'SPRING_SECURITY_FORM_BIRTH_DATE_KEY' instead of duplicating its value here.(á¿·­úÿÿÿÿ8¸‡••Õ0
+>
+java:S1170"!Make this final field static too.(ãèôÇ8Ï‡••Õ0
+C
+java:S1170"!Make this final field static too.(¼şÅÑùÿÿÿÿ8Ğ‡••Õ0
+>
+java:S1170"!Make this final field static too.(Ò¥½©8Ğ‡••Õ0
+>
+java:S1170"!Make this final field static too.(…ØÄ8Ğ‡••Õ0
+C
+java:S1170"!Make this final field static too.(á¿·­úÿÿÿÿ8Ğ‡••Õ0
+>
+java:S1170"!Make this final field static too.(õ÷²¤8Ğ‡••Õ0
+C
+java:S1170"!Make this final field static too.(ö¤Æ‚üÿÿÿÿ8Ğ‡••Õ0
+Q
+java:S1172)"/Remove this unused method parameter "response".(ªœİÉûÿÿÿÿ8Ù‡••Õ0
+V
+java:S3400l"9Remove this method and declare a constant for this value.(Ÿ·¾Ú8ô‡••Õ0
+V
+java:S3400p"9Remove this method and declare a constant for this value.(½°ôŒ8„ˆ••Õ0
+V
+java:S3400t"9Remove this method and declare a constant for this value.(±Î™ï8‡ˆ••Õ0
+[
+java:S3400x"9Remove this method and declare a constant for this value.(ĞÛşƒúÿÿÿÿ8ˆˆ••Õ0
+[
+java:S3400|"9Remove this method and declare a constant for this value.(é‹—Áúÿÿÿÿ8‰ˆ••Õ0
+W
+java:S3400€"9Remove this method and declare a constant for this value.(ÒÙ‘£8Šˆ••Õ0
+\
+java:S3400„"9Remove this method and declare a constant for this value.(¡İ‚ııÿÿÿÿ8Šˆ••Õ0
+V
+java:S1068"9Remove this unused "idCardNumberParameter" private field.(ãèôÇ8Œˆ••Õ0
+S
+java:S1068"1Remove this unused "nameParameter" private field.(¼şÅÑùÿÿÿÿ8Œˆ••Õ0
+M
+java:S1068"0Remove this unused "sexParameter" private field.(Ò¥½©8ˆ••Õ0
+U
+java:S1068"8Remove this unused "nationalityParameter" private field.(…ØÄ8ˆ••Õ0
+X
+java:S1068"6Remove this unused "birthDateParameter" private field.(á¿·­úÿÿÿÿ8ˆ••Õ0
+Q
+java:S1068"4Remove this unused "addressParameter" private field.(õ÷²¤8¬ˆ••Õ0
+X
+java:S1068"6Remove this unused "extensionParameter" private field.(ö¤Æ‚üÿÿÿÿ8­ˆ••Õ0

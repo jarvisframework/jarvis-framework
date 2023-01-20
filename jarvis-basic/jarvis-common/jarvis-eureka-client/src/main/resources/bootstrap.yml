@@ -1,0 +1,33 @@
+spring:
+  cloud:
+    config:
+      #uri: http://eureka:300469@archive-eureka:8761/config/ #这就是对应的config服务的路径,必须加上配置的config前缀,否则无法获取配置
+      profile: ${spring.profiles.active:prod}
+      username: eureka
+      password: 300469
+      discovery:
+        enabled: true
+        service-id: ARCHIVES-EUREKA
+    util:
+      enabled: false
+    inetutils:
+      # 忽略虚拟机网卡
+      ignored-interfaces: ${IGNORED_INTERFACES:VMware.*,vEthernet.*}
+      use-only-site-local-interfaces: ${ONLY_SITE_LOCAL_INTERFACES:false}
+      # 优先使用IP，如：192.168.0.100
+      preferred-networks: ${PREFERRED_NETWORKS:}
+
+# 注册中心
+eureka:
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.name}:${server.port}
+    prefer-ip-address: true
+    #ip-address: ${SERVICE_IP_IN_EUREKA:}
+    metadataMap:
+      version: 1.0
+      configPath: /config
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://eureka:300469@${EUREKA_SERVER:archive-eureka}:${EUREKA_PORT:8761}/eureka/
