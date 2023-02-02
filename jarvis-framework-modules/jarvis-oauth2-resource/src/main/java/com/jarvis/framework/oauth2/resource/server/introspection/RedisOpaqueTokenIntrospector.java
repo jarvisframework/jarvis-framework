@@ -5,7 +5,6 @@ import com.jarvis.framework.oauth2.server.token.Oauth2TokenObtainService;
 import org.springframework.beans.BeanUtils;
 import org.springframework.core.ResolvableType;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.oauth2.core.OAuth2AuthenticatedPrincipal;
 import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.OAuth2Error;
@@ -15,7 +14,6 @@ import org.springframework.util.ClassUtils;
 import java.beans.PropertyDescriptor;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
-import java.util.Collection;
 import java.util.HashMap;
 
 public class RedisOpaqueTokenIntrospector implements OpaqueTokenIntrospector {
@@ -38,9 +36,9 @@ public class RedisOpaqueTokenIntrospector implements OpaqueTokenIntrospector {
             throw new OAuth2AuthenticationException(new OAuth2Error("invalid_token", "令牌无效或过期", (String)null));
         } else {
             Object principal = authentication.getPrincipal();
-            Collection<GrantedAuthority> authorities = authentication.getAuthorities();
+            // Collection<GrantedAuthority> authorities = authentication.getAuthorities();
             Oauth2SecurityUser oAuth2AuthenticatedPrincipal = toOAuth2AuthenticatedPrincipal(principal);
-            oAuth2AuthenticatedPrincipal.addAuthorities(authorities);
+            // oAuth2AuthenticatedPrincipal.addAuthorities(null);
             return oAuth2AuthenticatedPrincipal;
         }
     }
