@@ -1,5 +1,7 @@
 package com.jarvis.framework.mybatis.mapper;
 
+import com.jarvis.framework.core.entity.BaseDynamicEntity;
+import com.jarvis.framework.mybatis.provider.DynamicEntityExecuteProvider;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;

@@ -1,6 +1,13 @@
 package com.jarvis.framework.mybatis.parser;
 
+import com.jarvis.framework.core.exception.FrameworkException;
 import com.jarvis.framework.mybatis.mapping.DatabaseIdHolder;
+import com.jarvis.framework.mybatis.update.CriteriaUpdate;
+import com.jarvis.framework.mybatis.update.data.CalcColumn;
+import com.jarvis.framework.mybatis.update.data.ColumnValue;
+import com.jarvis.framework.mybatis.update.data.ConcatColumn;
+import com.jarvis.framework.mybatis.util.ConditionParserUtil;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;

@@ -3,6 +3,9 @@ package com.jarvis.framework.mybatis.mapping.support;
 import com.jarvis.framework.mybatis.constant.ScriptBindConstant;
 import com.jarvis.framework.mybatis.mapping.AbstractCurdDialect;
 import com.jarvis.framework.mybatis.mapping.CurdDialect;
+import com.jarvis.framework.search.CriteriaQuery;
+import com.jarvis.framework.search.MultipleQuery;
+import com.jarvis.framework.search.Page;
 
 public class SqlserverCurdDialect extends AbstractCurdDialect {
 

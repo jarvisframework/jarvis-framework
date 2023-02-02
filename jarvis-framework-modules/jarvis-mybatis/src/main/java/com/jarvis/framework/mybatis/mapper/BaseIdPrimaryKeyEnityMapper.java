@@ -1,5 +1,12 @@
 package com.jarvis.framework.mybatis.mapper;
 
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
+import com.jarvis.framework.mybatis.provider.BaseEntityExecuteProvider;
+import com.jarvis.framework.mybatis.update.CriteriaDelete;
+import com.jarvis.framework.mybatis.update.CriteriaUpdate;
+import com.jarvis.framework.search.CriteriaQuery;
+import com.jarvis.framework.search.MultipleQuery;
+import com.jarvis.framework.search.Page;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.InsertProvider;
 import org.apache.ibatis.annotations.Param;

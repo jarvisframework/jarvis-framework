@@ -1,12 +1,18 @@
 package com.jarvis.framework.mybatis.mapping.support;
 
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
 import com.jarvis.framework.mybatis.constant.ScriptBindConstant;
 import com.jarvis.framework.mybatis.handler.EntityAutoFillingHolder;
 import com.jarvis.framework.mybatis.mapping.AbstractCurdDialect;
 import com.jarvis.framework.mybatis.mapping.CurdDialect;
 import com.jarvis.framework.mybatis.parser.EntityProvideParser;
+import com.jarvis.framework.mybatis.util.PersistentUtil;
+import com.jarvis.framework.search.CriteriaQuery;
+import com.jarvis.framework.search.MultipleQuery;
+import com.jarvis.framework.search.Page;
 
 import java.util.Collection;
+import java.util.Iterator;
 
 public class OracleCurdDialect extends AbstractCurdDialect {
     public static final CurdDialect INSTANCE = new OracleCurdDialect();

@@ -1,5 +1,14 @@
 package com.jarvis.framework.mybatis.util;
 
+import com.jarvis.framework.core.entity.BaseDynamicEntity;
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
+import com.jarvis.framework.core.entity.BaseSimpleEntity;
+import com.jarvis.framework.core.exception.FrameworkException;
+import com.jarvis.framework.search.ConditionExpression;
+import com.jarvis.framework.search.ConditionOperatorEnum;
+import com.jarvis.framework.search.CriteriaQuery;
+import com.jarvis.framework.search.SingleCondition;
+
 import java.beans.BeanInfo;
 import java.beans.Introspector;
 import java.beans.PropertyDescriptor;

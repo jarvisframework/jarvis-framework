@@ -1,5 +1,6 @@
 package com.jarvis.framework.mybatis.parser;
 
+import com.jarvis.framework.search.CriteriaQuery;
 import org.springframework.util.StringUtils;
 
 import java.util.Collection;

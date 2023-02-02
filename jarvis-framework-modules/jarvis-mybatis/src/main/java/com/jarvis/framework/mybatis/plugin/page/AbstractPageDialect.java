@@ -1,5 +1,16 @@
 package com.jarvis.framework.mybatis.plugin.page;
 
+import com.jarvis.framework.search.Page;
+import org.apache.ibatis.cache.CacheKey;
+import org.apache.ibatis.mapping.MappedStatement;
+import org.apache.ibatis.mapping.ParameterMapping;
+import org.apache.ibatis.session.RowBounds;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+
 public abstract class AbstractPageDialect implements PageDialect {
 
     protected final String startNumberParameter = "page::startNumber";

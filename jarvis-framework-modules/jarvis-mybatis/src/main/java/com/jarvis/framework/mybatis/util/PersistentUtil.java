@@ -1,5 +1,21 @@
 package com.jarvis.framework.mybatis.util;
 
+import com.jarvis.framework.annotation.IgnoreUpdate;
+import com.jarvis.framework.core.entity.BaseDynamicEntity;
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
+import com.jarvis.framework.core.entity.BaseSimpleEntity;
+import com.jarvis.framework.core.entity.LongIdDynamicEntity;
+import com.jarvis.framework.core.entity.LongIdSimpleEntity;
+import com.jarvis.framework.core.entity.StringIdDynamicEntity;
+import com.jarvis.framework.core.entity.StringIdSimpleEntity;
+import com.jarvis.framework.core.exception.FrameworkException;
+import com.jarvis.framework.util.ColumnFunctionUtil;
+import org.apache.ibatis.builder.annotation.ProviderContext;
+import org.springframework.core.GenericTypeResolver;
+import org.springframework.util.ReflectionUtils;
+
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.io.Serializable;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -15,12 +31,6 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import javax.persistence.Table;
-import javax.persistence.Transient;
-
-import org.apache.ibatis.builder.annotation.ProviderContext;
-import org.springframework.core.GenericTypeResolver;
-import org.springframework.util.ReflectionUtils;
 
 public class PersistentUtil {
 

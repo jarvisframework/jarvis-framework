@@ -1,5 +1,6 @@
 package com.jarvis.framework.mybatis.util;
 
+import com.jarvis.framework.mapping.SnowflakeIdGenerator;
 import com.jarvis.framework.mybatis.snowflake.SnowflakeWorkIdHolder;
 
 public final class SnowflakeIdGeneratorUtil {

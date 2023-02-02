@@ -1,5 +1,7 @@
 package com.jarvis.framework.mybatis.util;
 
+import com.jarvis.framework.mapping.UuidGenerator;
+
 public final class UuidGeneratorUtil {
 
     private final UuidGenerator uuidGenerator;

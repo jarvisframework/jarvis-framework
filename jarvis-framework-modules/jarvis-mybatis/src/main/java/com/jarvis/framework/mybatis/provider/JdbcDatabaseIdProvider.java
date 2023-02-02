@@ -1,14 +1,15 @@
 package com.jarvis.framework.mybatis.provider;
 
-import java.sql.SQLException;
-import java.util.Iterator;
-import java.util.Properties;
-import java.util.Map.Entry;
-import javax.sql.DataSource;
-
+import com.jarvis.framework.util.DatabaseProductNameUtil;
 import org.apache.ibatis.mapping.DatabaseIdProvider;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.sql.DataSource;
+import java.sql.SQLException;
+import java.util.Iterator;
+import java.util.Map.Entry;
+import java.util.Properties;
 
 public class JdbcDatabaseIdProvider implements DatabaseIdProvider {
 

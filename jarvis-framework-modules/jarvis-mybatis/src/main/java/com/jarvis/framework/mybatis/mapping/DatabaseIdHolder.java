@@ -1,5 +1,13 @@
 package com.jarvis.framework.mybatis.mapping;
 
+import com.jarvis.framework.constant.DatabaseIdEnum;
+import com.jarvis.framework.util.DatabaseProductNameUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import javax.sql.DataSource;
+import java.sql.SQLException;
+
 public class DatabaseIdHolder {
     private static Logger log = LoggerFactory.getLogger(DatabaseIdHolder.class);
     private static String databaseId;

@@ -1,5 +1,6 @@
 package com.jarvis.framework.oauth2.authorization.server.config;
 
+import com.jarvis.framework.oauth2.server.token.support.AbstractRedisOauth2TokenService;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.util.Assert;

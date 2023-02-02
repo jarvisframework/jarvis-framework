@@ -1,5 +1,15 @@
 package com.jarvis.framework.mybatis.parser;
 
+import com.jarvis.framework.core.exception.FrameworkException;
+import com.jarvis.framework.mybatis.util.ConditionParserUtil;
+import com.jarvis.framework.mybatis.util.PersistentUtil;
+import com.jarvis.framework.search.BetweenValue;
+import com.jarvis.framework.search.ComposedCondition;
+import com.jarvis.framework.search.ConditionExpression;
+import com.jarvis.framework.search.ConditionOperatorEnum;
+import com.jarvis.framework.search.LogicalOperatorEnum;
+import com.jarvis.framework.search.SingleCondition;
+
 import java.util.List;
 
 public final class ComposedConditionParser {

@@ -1,5 +1,12 @@
 package com.jarvis.framework.mybatis.mapping;
 
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
+import com.jarvis.framework.search.CriteriaQuery;
+import com.jarvis.framework.search.MultipleQuery;
+import com.jarvis.framework.search.Page;
+
+import java.util.Collection;
+
 public interface CurdDialect {
     String insertAll(Collection<BaseIdPrimaryKeyEntity<?>> var1);
 

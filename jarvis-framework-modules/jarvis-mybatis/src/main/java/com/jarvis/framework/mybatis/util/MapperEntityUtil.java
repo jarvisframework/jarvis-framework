@@ -1,5 +1,9 @@
 package com.jarvis.framework.mybatis.util;
 
+import com.jarvis.framework.core.entity.BaseDynamicEntity;
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
+import com.jarvis.framework.core.entity.BaseSimpleEntity;
+import com.jarvis.framework.core.exception.FrameworkException;
 import com.jarvis.framework.mybatis.handler.EntityAutoFillingHolder;
 
 import java.util.Collection;

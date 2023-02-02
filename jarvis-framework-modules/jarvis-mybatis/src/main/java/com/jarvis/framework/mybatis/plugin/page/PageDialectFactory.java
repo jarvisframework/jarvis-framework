@@ -1,6 +1,11 @@
 package com.jarvis.framework.mybatis.plugin.page;
 
+import com.jarvis.framework.constant.DatabaseIdEnum;
+import com.jarvis.framework.core.exception.FrameworkException;
 import com.jarvis.framework.mybatis.mapping.DatabaseIdHolder;
+import com.jarvis.framework.mybatis.plugin.page.support.MysqlPageDialect;
+import com.jarvis.framework.mybatis.plugin.page.support.OraclePageDialect;
+import com.jarvis.framework.mybatis.plugin.page.support.SqlserverPageDialect;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,5 +1,13 @@
 package com.jarvis.framework.oauth2.authorization.server.token;
 
+import com.jarvis.framework.oauth2.authorization.server.config.Oauth2ServerProperties;
+import com.jarvis.framework.oauth2.authorization.server.util.AccessTokenUtil;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.core.endpoint.OAuth2AccessTokenResponse;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class DefaultOauth2TokenCreationService implements Oauth2TokenCreationService {
     private final Oauth2TokenStoreService tokenStoreService;
     private final Oauth2ServerProperties properties;

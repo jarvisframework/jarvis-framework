@@ -1,5 +1,8 @@
 package com.jarvis.framework.mybatis.parser;
 
+import com.jarvis.framework.criteria.AbstractCriteriaCondition;
+import com.jarvis.framework.search.ComposedCondition;
+
 import java.util.ArrayList;
 import java.util.List;
 

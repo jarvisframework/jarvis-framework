@@ -1,5 +1,7 @@
 package com.jarvis.framework.mybatis.handler;
 
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
+
 public class EntityAutoFillingHolder {
     private static EntityAutoFillingHandler entityAutoFillingHandler;
 

@@ -1,6 +1,7 @@
 package com.jarvis.framework.mybatis.provider;
 
 import com.jarvis.framework.mybatis.mapping.CrudDialectFactory;
+import com.jarvis.framework.mybatis.util.PersistentUtil;
 import org.apache.ibatis.builder.annotation.ProviderContext;
 import org.apache.ibatis.builder.annotation.ProviderMethodResolver;
 

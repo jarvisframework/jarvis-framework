@@ -1,5 +1,14 @@
 package com.jarvis.framework.mybatis.parser;
 
+import com.jarvis.framework.mybatis.update.CriteriaDelete;
+import com.jarvis.framework.mybatis.update.CriteriaUpdate;
+import com.jarvis.framework.search.ComposedCondition;
+import com.jarvis.framework.search.CriteriaQuery;
+import com.jarvis.framework.search.CriteriaQueryBuilder;
+import com.jarvis.framework.search.MultipleQuery;
+
+import java.util.Map;
+
 public class EntityProvideParser {
 
     public static ScriptBindUpdate<?> parseUpdate(CriteriaUpdate<?> criterion) {

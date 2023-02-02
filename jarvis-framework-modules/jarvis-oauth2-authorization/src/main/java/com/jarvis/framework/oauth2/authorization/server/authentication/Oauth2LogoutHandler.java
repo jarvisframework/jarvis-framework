@@ -1,5 +1,18 @@
 package com.jarvis.framework.oauth2.authorization.server.authentication;
 
+import com.jarvis.framework.oauth2.authorization.server.token.Oauth2TokenStoreService;
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.security.authentication.event.LogoutSuccessEvent;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
+import org.springframework.security.oauth2.core.OAuth2Error;
+import org.springframework.security.oauth2.server.resource.web.BearerTokenResolver;
+import org.springframework.security.web.authentication.logout.LogoutHandler;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 public class Oauth2LogoutHandler implements LogoutHandler, ApplicationEventPublisherAware {
     private ApplicationEventPublisher eventPublisher;
     private final Oauth2TokenStoreService oauth2TokenStoreService;

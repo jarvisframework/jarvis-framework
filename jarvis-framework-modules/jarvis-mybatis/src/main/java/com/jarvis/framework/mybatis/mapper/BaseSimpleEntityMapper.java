@@ -1,5 +1,8 @@
 package com.jarvis.framework.mybatis.mapper;
 
+import com.jarvis.framework.core.entity.BaseSimpleEntity;
+import com.jarvis.framework.function.Getter;
+import com.jarvis.framework.mybatis.provider.SimpleEntityExecuteProvider;
 import org.apache.ibatis.annotations.DeleteProvider;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.SelectProvider;

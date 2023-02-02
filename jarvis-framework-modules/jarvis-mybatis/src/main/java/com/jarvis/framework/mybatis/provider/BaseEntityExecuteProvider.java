@@ -1,11 +1,22 @@
 package com.jarvis.framework.mybatis.provider;
 
+import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
+import com.jarvis.framework.core.exception.FrameworkException;
+import com.jarvis.framework.criteria.AbstractCriteriaCondition;
 import com.jarvis.framework.mybatis.constant.ScriptBindConstant;
 import com.jarvis.framework.mybatis.mapping.CrudDialectFactory;
+import com.jarvis.framework.mybatis.update.CriteriaDelete;
+import com.jarvis.framework.mybatis.update.CriteriaUpdate;
+import com.jarvis.framework.mybatis.util.MapperEntityUtil;
+import com.jarvis.framework.mybatis.util.PersistentUtil;
+import com.jarvis.framework.search.CriteriaQuery;
+import com.jarvis.framework.search.MultipleQuery;
+import com.jarvis.framework.search.Page;
 import org.apache.ibatis.builder.annotation.ProviderContext;
 import org.apache.ibatis.builder.annotation.ProviderMethodResolver;
 import org.springframework.util.StringUtils;
 
+import java.util.Collection;
 import java.util.Map;
 
 public class BaseEntityExecuteProvider implements ProviderMethodResolver {
