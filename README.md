@@ -11,9 +11,8 @@ jarvis-framework
         ├── jarvis-util --
     ├── jarvis-dependencies -- 
     ├── jarvis-parent --
-        ├── jarvis-auth --
-        ├── jarvis-configure --
-        ├── jarvis-file-storage --
+        ├── jarvis-auth -- （应该为独立项目）
+        ├── jarvis-file-storage -- （应该为独立项目）
     ├── jarvis-parent-war -- 作用未知      
 ├── jarvis-framework-dependencies -- 依赖管理类库
 ├── jarvis-framework-modules -- 模块类库
@@ -36,18 +35,18 @@ jarvis-framework
     ├── jarvis-autoconfigure -- 自动配置类库
     ├── jarvis-baseweb -- 基础web类库
 ├── jarvis-framework-starters -- starters
-    ├── jarvis-bizlog-spring-boot-starter -- 业务日志起步器
+    ├── jarvis-bizlog-spring-boot-starter -- 业务日志起步依赖
     ├── jarvis-databse-upgrade-spring-boot-starter -- ****
-    ├── jarvis-knife4j-spring-boot-starter -- knife4j起步器
-    ├── jarvis-mybatis-security-spring-boot-starter -- mybatis安全起步器
-    ├── jarvis-mybatis-spring-boot-starter -- mybatis起步器
+    ├── jarvis-knife4j-spring-boot-starter -- knife4j起步依赖
+    ├── jarvis-mybatis-security-spring-boot-starter -- mybatis安全起步依赖
+    ├── jarvis-mybatis-spring-boot-starter -- mybatis起步依赖
     ├── jarvis-oauth2-authorization-spring-boot-starter -- ****
     ├── jarvis-jarvis-oauth2-resource-spring-boot-starter -- ****
     ├── jarvis-openfeign-spring-cloud-starter -- ****
     ├── jarvis-security-spring-boot-starter -- ****
-    ├── jarvis-spring-boot-starter -- spring起步器
+    ├── jarvis-spring-boot-starter -- spring起步依赖
     ├── jarvis-springfox-spring-boot-starter -- ****
-    ├── jarvis-webmvc-spring-boot-starter -- webmvc起步器
+    ├── jarvis-webmvc-spring-boot-starter -- webmvc起步依赖
     
 ```
 
