@@ -22,19 +22,33 @@ import org.springframework.context.annotation.Configuration;
 
 import javax.sql.DataSource;
 
+/**
+ * @author qiucs
+ * @version 1.0.0 2021年1月26日
+ */
 @Configuration
 @ConditionalOnClass({SqlSessionFactory.class, SqlSessionFactoryBean.class})
 @EnableConfigurationProperties({SnowflakeIdProperties.class, DruidExtendProperties.class})
 @AutoConfigureAfter({MybatisAutoConfiguration.class})
 public class ArchiveMybatisAutoConfiguration {
+
+    public ArchiveMybatisAutoConfiguration(ObjectProvider<EntityAutoFillingHandler> entityAutoFillingProvider) {
+        EntityAutoFillingHolder.setHandler(entityAutoFillingProvider.getIfAvailable());
+    }
+
     @Bean
     public JdbcDatabaseIdProvider databaseIdProvider() {
         return new JdbcDatabaseIdProvider();
     }
 
     @Bean
-    public DatabaseIdHolder databaseIdHolder(DataSource a) {
-        return new DatabaseIdHolder(a);
+    public DatabaseIdHolder databaseIdHolder(DataSource dataSource) {
+        return new DatabaseIdHolder(dataSource);
+    }
+
+    @Bean
+    public SnowflakeWorkIdHolder snowflakeWorkIdHolder() {
+        return new SnowflakeWorkIdHolder();
     }
 
     @Bean
@@ -45,18 +59,11 @@ public class ArchiveMybatisAutoConfiguration {
     @Bean
     public ConfigurationCustomizer configurationCustomizer() {
         return new ConfigurationCustomizer() {
-            public void customize(org.apache.ibatis.session.Configuration axx) {
-                axx.setObjectWrapperFactory(new CamelCaseMapWrapperFactory());
+
+            @Override
+            public void customize(org.apache.ibatis.session.Configuration configuration) {
+                configuration.setObjectWrapperFactory(new CamelCaseMapWrapperFactory());
             }
         };
-    }
-
-    public ArchiveMybatisAutoConfiguration(ObjectProvider<EntityAutoFillingHandler> a) {
-        EntityAutoFillingHolder.setHandler((EntityAutoFillingHandler)a.getIfAvailable());
-    }
-
-    @Bean
-    public SnowflakeWorkIdHolder snowflakeWorkIdHolder() {
-        return new SnowflakeWorkIdHolder();
     }
 }

@@ -63,8 +63,10 @@ public class PersistentUtil {
     }
 
     public static String getTableName(BaseIdPrimaryKeyEntity<?> entity) {
-        Class<? extends BaseIdPrimaryKeyEntity<?>> clazz = entity.getClass();
-        return BaseDynamicEntity.class.isAssignableFrom(clazz) ? ((BaseDynamicEntity) entity).tableName() : getTableName(clazz);
+        // todo 编译错误
+        /*Class<? extends BaseIdPrimaryKeyEntity<?>> clazz = entity.getClass();
+        return BaseDynamicEntity.class.isAssignableFrom(clazz) ? ((BaseDynamicEntity) entity).tableName() : getTableName(clazz);*/
+        return null;
     }
 
     public static String getTableName(ProviderContext context) {

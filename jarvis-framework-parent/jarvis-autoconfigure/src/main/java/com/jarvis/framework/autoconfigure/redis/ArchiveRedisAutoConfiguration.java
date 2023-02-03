@@ -1,6 +1,5 @@
 package com.jarvis.framework.autoconfigure.redis;
 
-import com.jarvis.framework.autoconfigure.mybatis.DruidExtendProperties;
 import comjarvis.framework.redis.builder.StringObjectRedisTemplateBuilder;
 import comjarvis.framework.redis.core.StringObjectRedisTemplate;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
@@ -15,37 +14,48 @@ import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
-import org.springframework.data.redis.cache.RedisCacheManager.RedisCacheManagerBuilder;
+import org.springframework.data.redis.cache.RedisCacheManager;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisOperations;
-import org.springframework.data.redis.serializer.RedisSerializationContext.SerializationPair;
+import org.springframework.data.redis.serializer.RedisSerializationContext;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 
 import java.time.Duration;
 
-@Configuration(
-    proxyBeanMethods = false
-)
-@ConditionalOnClass({RedisOperations.class, StringObjectRedisTemplate.class})
-@EnableConfigurationProperties({RedisProperties.class})
-@AutoConfigureAfter({RedisAutoConfiguration.class})
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年11月10日
+ */
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnClass({ RedisOperations.class, StringObjectRedisTemplate.class })
+@EnableConfigurationProperties(RedisProperties.class)
+@AutoConfigureAfter(RedisAutoConfiguration.class)
 @EnableCaching
 public class ArchiveRedisAutoConfiguration {
-    @Bean
-    public CacheManager cacheManager(RedisConnectionFactory a) {
-        RedisCacheConfiguration var2 = RedisCacheConfiguration.defaultCacheConfig().entryTtl(Duration.ZERO).computePrefixWith((ax) -> {
-            return (new StringBuilder()).insert(0, ax).append(DruidExtendProperties.oOoOOo("\u000b")).toString();
-        }).serializeKeysWith(SerializationPair.fromSerializer(new StringRedisSerializer())).serializeValuesWith(SerializationPair.fromSerializer(StringObjectRedisTemplateBuilder.genericJackson2JsonRedisSerializer())).disableCachingNullValues();
-        return RedisCacheManagerBuilder.fromConnectionFactory(a).cacheDefaults(var2).transactionAware().build();
-    }
 
     @Bean
     @ConditionalOnMissingBean
     @ConditionalOnSingleCandidate(RedisConnectionFactory.class)
-    public StringObjectRedisTemplate stringObjectRedisTemplate(RedisConnectionFactory a) {
-        return new StringObjectRedisTemplate(a);
+    public StringObjectRedisTemplate stringObjectRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        return new StringObjectRedisTemplate(redisConnectionFactory);
     }
 
-    public ArchiveRedisAutoConfiguration() {
+    @Bean
+    public CacheManager cacheManager(RedisConnectionFactory lettuceConnectionFactory) {
+        final RedisCacheConfiguration config = RedisCacheConfiguration.defaultCacheConfig()
+                .entryTtl(Duration.ZERO)
+                //变双冒号为单冒号
+                .computePrefixWith(name -> name + ":")
+                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(new StringRedisSerializer()))
+                .serializeValuesWith(RedisSerializationContext.SerializationPair
+                        .fromSerializer(StringObjectRedisTemplateBuilder.genericJackson2JsonRedisSerializer()))
+                .disableCachingNullValues();
+        final RedisCacheManager cacheManager = RedisCacheManager.RedisCacheManagerBuilder
+                .fromConnectionFactory(lettuceConnectionFactory)
+                .cacheDefaults(config)
+                .transactionAware()
+                .build();
+        return cacheManager;
     }
 }

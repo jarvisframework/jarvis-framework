@@ -1,3 +1,0 @@
-# Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-com.jarvis.framework.autoconfigure.knife4j.ArchiveKnife4jAutoConfiguration

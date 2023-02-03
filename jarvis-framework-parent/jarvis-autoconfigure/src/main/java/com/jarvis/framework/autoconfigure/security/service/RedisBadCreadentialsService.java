@@ -1,8 +1,8 @@
 package com.jarvis.framework.autoconfigure.security.service;
 
-import com.jarvis.framework.autoconfigure.mybatis.DruidExtendProperties;
 import com.jarvis.framework.security.authentication.config.BadCreadentialsProperties;
 import com.jarvis.framework.security.service.BadCreadentialsService;
+import com.jarvis.framework.webmvc.util.WebUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.dao.DataAccessException;
@@ -11,75 +11,134 @@ import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.BoundValueOperations;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.serializer.GenericToStringSerializer;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.security.authentication.LockedException;
 
+import java.util.List;
+
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年4月27日
+ */
 public class RedisBadCreadentialsService implements BadCreadentialsService {
-    private static final String BAD_CREADENTIALS = "bad_creadentials";
-    private final RedisTemplate<String, Integer> redisTemplate;
-    private final BadCreadentialsProperties badCreadentials;
+
     private static Logger log = LoggerFactory.getLogger(RedisBadCreadentialsService.class);
 
-    public RedisBadCreadentialsService(RedisConnectionFactory a, BadCreadentialsProperties a) {
-        a.redisTemplate = a.initRedisTemplate(a);
-        a.badCreadentials = a;
+    private static final String BAD_CREADENTIALS = "bad_creadentials";
+
+    private final RedisTemplate<String, Integer> redisTemplate;
+
+    private final BadCreadentialsProperties badCreadentials;
+
+    // private final int timeout; // 单位为秒
+
+    public RedisBadCreadentialsService(RedisConnectionFactory connectionFactory,
+                                       BadCreadentialsProperties badCreadentials) {
+        this.redisTemplate = initRedisTemplate(connectionFactory);
+        this.badCreadentials = badCreadentials;
+        // this.timeout = badCreadentials.getTimeout() * 60;
     }
 
-    public int increaseErrorCount(String a) {
-        final byte[] var2 = a.serializeKey(a);
-        Long var3 = (Long)a.redisTemplate.executePipelined(new RedisCallback<Object>() {
-            public Object doInRedis(RedisConnection axx) throws DataAccessException {
-                axx.incr(var2);
-                int var2x = a.badCreadentials.getTimeout() * 60;
-                if (var2x > 0) {
-                    axx.expire(var2, (long)var2x);
-                }
+    private RedisTemplate<String, Integer> initRedisTemplate(RedisConnectionFactory redisConnectionFactory) {
+        final RedisTemplate<String, Integer> redisTemplate = new RedisTemplate<>();
+        redisTemplate.setKeySerializer(StringRedisSerializer.UTF_8);
+        redisTemplate.setValueSerializer(new GenericToStringSerializer<>(Integer.class));
+        redisTemplate.setConnectionFactory(redisConnectionFactory);
+        redisTemplate.afterPropertiesSet();
+        return redisTemplate;
+    }
 
-                return null;
-            }
-        }).get(0);
-        if (log.isDebugEnabled()) {
-            log.debug(DruidExtendProperties.oOoOOo("甙扣吼\u000fJ)l嶦迯纹凋镍j/L\t欐"), a, var3);
+    /**
+     *
+     * @see com.gdda.archives.framework.security.service.BadCreadentialsService#checkAccountNonLocked(java.lang.String)
+     */
+    @Override
+    public void checkAccountNonLocked(String username) {
+
+        if (badCreadentials.isLockUser()) {
+            return;
         }
 
-        return var3.intValue();
+        final BoundValueOperations<String, Integer> boundValueOps = redisTemplate.boundValueOps(getKey(username));
+        Integer count = redisTemplate.boundValueOps(getKey(username)).get();
+
+        if (null == count) {
+            count = 0;
+        }
+
+        if (count >= badCreadentials.getCount()) {
+            if (badCreadentials.getTimeout() > 0) {
+                final Long expire = (boundValueOps.getExpire() + 59) / 60;
+                throw new LockedException(
+                        String.format("密码已连续出错[%d]次，用户帐号已被锁定，请于[%s]分钟后再登录！", count, expire));
+            } else {
+                throw new LockedException(
+                        String.format("密码已连续出错[%d]次，用户帐号已被锁定，请联系管理员！", count));
+            }
+        }
     }
 
-    public void releaseAccountLocked(String a) {
-        final String a = a.serializeKey(a);
-        a.redisTemplate.executePipelined(new RedisCallback<Object>() {
-            public Object doInRedis(RedisConnection axx) throws DataAccessException {
-                axx.expire(a, 0L);
+    /**
+     *
+     * @see com.gdda.archives.framework.security.service.BadCreadentialsService#increaseErrorCount(java.lang.String)
+     */
+    @Override
+    public int increaseErrorCount(String username) {
+
+        final byte[] badCreadentialsKey = serializeKey(username);
+
+        final List<?> list = redisTemplate.executePipelined(new RedisCallback<Object>() {
+
+            @Override
+            public Object doInRedis(RedisConnection connection) throws DataAccessException {
+                connection.incr(badCreadentialsKey);
+                final int timeout = badCreadentials.getTimeout() * 60;
+                if (timeout > 0) {
+                    connection.expire(badCreadentialsKey, timeout);
+                }
                 return null;
             }
+
+        });
+
+        final Long count = (Long) list.get(0);
+
+        if (log.isDebugEnabled()) {
+            log.debug("用户名[{}]已连续出错[{}]次", username, count);
+        }
+
+        return count.intValue();
+    }
+
+    private String getKey(String username) {
+        final String tenanId = WebUtil.getTenantId();
+        final String key = String.format("%s:%s:%s", BAD_CREADENTIALS, tenanId, username);
+        return key;
+    }
+
+    private byte[] serializeKey(String username) {
+        return StringRedisSerializer.UTF_8.serialize(getKey(username));
+    }
+
+    /**
+     *
+     * @see com.gdda.archives.framework.security.service.BadCreadentialsService#releaseAccountLocked(java.lang.String)
+     */
+    @Override
+    public void releaseAccountLocked(String username) {
+        final byte[] badCreadentialsKey = serializeKey(username);
+
+        redisTemplate.executePipelined(new RedisCallback<Object>() {
+
+            @Override
+            public Object doInRedis(RedisConnection connection) throws DataAccessException {
+                connection.expire(badCreadentialsKey, 0);
+                return null;
+            }
+
         });
     }
 
-    public void checkAccountNonLocked(String a) {
-        BoundValueOperations var2 = a.redisTemplate.boundValueOps(a.getKey(a));
-        String a = (Integer)a.redisTemplate.boundValueOps(a.getKey(a)).get();
-        if (null == a) {
-            a = 0;
-        }
-
-        if (a >= a.badCreadentials.getCount()) {
-            String var10002;
-            Object[] var10003;
-            boolean var10005;
-            if (a.badCreadentials.getTimeout() > 0) {
-                Long var4 = (var2.getExpire() + 59L) / 60L;
-                var10002 = DruidExtendProperties.oOoOOo("宒砰嶦迯纹凋镍jqU\t欐ｘ甙扣帡厣巃裿锰寎］讣亿\u000f\u0014'l剒钮呚冼瘯彤");
-                var10003 = new Object[2];
-                var10005 = true;
-                var10003[0] = a;
-                var10003[1] = var4;
-                throw new LockedException(String.format(var10002, var10003));
-            } else {
-                var10002 = DruidExtendProperties.oOoOOo("宒砰嶦迯纹凋镍jqU\t欐ｘ甙扣帡厣巃裿锰寎］讣亿讣聥粯箐瑒呩");
-                var10003 = new Object[1];
-                var10005 = true;
-                var10003[0] = a;
-                throw new LockedException(String.format(var10002, var10003));
-            }
-        }
-    }
 }

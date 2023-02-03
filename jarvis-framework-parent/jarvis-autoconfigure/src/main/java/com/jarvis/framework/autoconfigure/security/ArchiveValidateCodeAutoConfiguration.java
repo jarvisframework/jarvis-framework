@@ -8,6 +8,7 @@ import com.jarvis.framework.security.validation.code.ValidateCodeStoreService;
 import com.jarvis.framework.security.validation.code.config.ImageCodeProperties;
 import com.jarvis.framework.security.validation.code.config.MobileCodeProperties;
 import com.jarvis.framework.security.validation.code.config.ValidateCodeConfigService;
+import com.jarvis.framework.security.validation.code.config.ValidateCodeProperties;
 import com.jarvis.framework.security.validation.code.config.ValidateCodeSecurityConfig;
 import com.jarvis.framework.security.validation.code.image.ImageCodeGenerator;
 import com.jarvis.framework.security.validation.code.image.ImageCodeProcessor;
@@ -26,130 +27,93 @@ import org.springframework.security.web.authentication.AuthenticationFailureHand
 
 import java.util.Map;
 
-@Configuration(
-    proxyBeanMethods = false
-)
-@ConditionalOnClass({ValidateCodeEndpoint.class})
-@ComponentScan(
-    basePackages = {"com.gdda.archives.framework.security.validation.code.web"}
-)
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年4月26日
+ */
+
+@Configuration(proxyBeanMethods = false)
+//@ConditionalOnProperty(prefix = "spring.security.validate-code", name = "enabled", havingValue = "true")
+@ConditionalOnClass({ ValidateCodeEndpoint.class })
+@ComponentScan(basePackages = { "com.gdda.archives.framework.security.validation.code.web" })
 public class ArchiveValidateCodeAutoConfiguration {
-    @Autowired(
-        required = false
-    )
+
+    @Autowired(required = false)
     private ValidateCodeStoreService validateCodeStoreService;
 
     @Bean
-    ValidateCodeSecurityConfig validateCodeSecurityConfigurer(AuthenticationFailureHandler a, ValidateCodeProcessorHolder a, ArchiveSecurityProperties a) {
-        return new ValidateCodeSecurityConfig(a, a, a.getValidateCode());
-    }
-
-    @Bean
-    @ConditionalOnMissingBean(
-        name = {"imageValidateCodeProcessor"}
-    )
-    ValidateCodeProcessor imageValidateCodeProcessor(@Qualifier("imageValidateCodeGenerator") ValidateCodeGenerator a) {
-        ValidateCodeGenerator a = new ImageCodeProcessor(a);
-        if (null != this.validateCodeStoreService) {
-            a.setValidateCodeStoreService(this.validateCodeStoreService);
-        }
-
-        return a;
-    }
-
-    @Bean
-    ValidateCodeProcessorHolder validateCodeProcessorHolder(Map<String, ValidateCodeProcessor> a) {
-        return new ValidateCodeProcessorHolder(a);
-    }
-
-    @Bean
-    @ConditionalOnMissingBean(
-        name = {"imageValidateCodeGenerator"}
-    )
-    ValidateCodeGenerator imageValidateCodeGenerator(ArchiveSecurityProperties a) {
-        ArchiveSecurityProperties a = a.getValidateCode();
-        ImageCodeProperties var2 = null;
-        if (null != a && null != a.getImage()) {
-            var2 = a.getImage();
+    @ConditionalOnMissingBean(name = "imageValidateCodeGenerator")
+    ValidateCodeGenerator imageValidateCodeGenerator(ArchiveSecurityProperties securityProperties) {
+        final ValidateCodeProperties validateCodeProperties = securityProperties.getValidateCode();
+        ImageCodeProperties imageCodeProperties = null;
+        if (null == validateCodeProperties || null == validateCodeProperties.getImage()) {
+            imageCodeProperties = new ImageCodeProperties();
         } else {
-            var2 = new ImageCodeProperties();
+            imageCodeProperties = validateCodeProperties.getImage();
         }
-
-        return new ImageCodeGenerator(var2);
+        return new ImageCodeGenerator(imageCodeProperties);
     }
 
     @Bean
-    @ConditionalOnMissingBean({SmsCodeSender.class})
+    @ConditionalOnMissingBean(name = "mobileValidateCodeGenerator")
+    ValidateCodeGenerator mobileValidateCodeGenerator(ArchiveSecurityProperties securityProperties) {
+        final ValidateCodeProperties validateCodeProperties = securityProperties.getValidateCode();
+        MobileCodeProperties mobileCodeProperties = null;
+        if (null == validateCodeProperties || null == validateCodeProperties.getMobile()) {
+            mobileCodeProperties = new MobileCodeProperties();
+        } else {
+            mobileCodeProperties = validateCodeProperties.getMobile();
+        }
+        return new MobileCodeGenerator(mobileCodeProperties);
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(name = "imageValidateCodeProcessor")
+    ValidateCodeProcessor imageValidateCodeProcessor(
+            @Qualifier("imageValidateCodeGenerator") ValidateCodeGenerator imageCodeGenerator) {
+        final ValidateCodeProcessor validateCodeProcessor = new ImageCodeProcessor(imageCodeGenerator);
+        if (null != validateCodeStoreService) {
+            validateCodeProcessor.setValidateCodeStoreService(validateCodeStoreService);
+        }
+        return validateCodeProcessor;
+    }
+
+    @Bean
+    @ConditionalOnMissingBean(value = SmsCodeSender.class)
     SmsCodeSender smsCodeSender() {
         return new DefaultSmsSender();
     }
 
     @Bean
-    @ConditionalOnMissingBean(
-        name = {"mobileValidateCodeProcessor"}
-    )
-    ValidateCodeProcessor mobileValidateCodeProcessor(SmsCodeSender smsCodeSender, @Qualifier("mobileValidateCodeGenerator") ValidateCodeGenerator a) {
-        SmsCodeSender smsCodeSender = new MobileCodeProcessor(smsCodeSender, a);
-        if (null != this.validateCodeStoreService) {
-            smsCodeSender.setValidateCodeStoreService(this.validateCodeStoreService);
+    @ConditionalOnMissingBean(name = "mobileValidateCodeProcessor")
+    ValidateCodeProcessor mobileValidateCodeProcessor(SmsCodeSender smsCodeSender,
+                                                      @Qualifier("mobileValidateCodeGenerator") ValidateCodeGenerator mobileCodeGenerator) {
+        final ValidateCodeProcessor validateCodeProcessor = new MobileCodeProcessor(smsCodeSender,
+                mobileCodeGenerator);
+        if (null != validateCodeStoreService) {
+            validateCodeProcessor.setValidateCodeStoreService(validateCodeStoreService);
         }
-
-        return smsCodeSender;
+        return validateCodeProcessor;
     }
 
     @Bean
-    ValidateCodeConfigService validateCodeConfigService(ArchiveSecurityProperties a) {
-        return new ValidateCodeConfigService(a.getValidateCode());
-    }
-
-    public static String oOoOOo(String a) {
-        int var10000 = 5 << 4 ^ 2 << 2 ^ 1;
-        int var10001 = 4 << 4;
-        int var10002 = (3 ^ 5) << 3 ^ 1;
-        int var10003 = (a = (String)a).length();
-        char[] var10004 = new char[var10003];
-        boolean var10006 = true;
-        int var5 = var10003 - 1;
-        var10003 = var10002;
-        int var3;
-        var10002 = var3 = var5;
-        char[] var1 = var10004;
-        int var4 = var10003;
-        var10001 = var10000;
-        var10000 = var10002;
-
-        for(int var2 = var10001; var10000 >= 0; var10000 = var3) {
-            var10001 = var3;
-            char var6 = a.charAt(var3);
-            --var3;
-            var1[var10001] = (char)(var6 ^ var2);
-            if (var3 < 0) {
-                break;
-            }
-
-            var10002 = var3--;
-            var1[var10002] = (char)(a.charAt(var10002) ^ var4);
-        }
-
-        return new String(var1);
+    ValidateCodeProcessorHolder validateCodeProcessorHolder(
+            Map<String, ValidateCodeProcessor> validateCodeProcessors) {
+        return new ValidateCodeProcessorHolder(validateCodeProcessors);
     }
 
     @Bean
-    @ConditionalOnMissingBean(
-        name = {"mobileValidateCodeGenerator"}
-    )
-    ValidateCodeGenerator mobileValidateCodeGenerator(ArchiveSecurityProperties a) {
-        ArchiveSecurityProperties a = a.getValidateCode();
-        MobileCodeProperties var2 = null;
-        if (null != a && null != a.getMobile()) {
-            var2 = a.getMobile();
-        } else {
-            var2 = new MobileCodeProperties();
-        }
-
-        return new MobileCodeGenerator(var2);
+    ValidateCodeSecurityConfig validateCodeSecurityConfigurer(
+            AuthenticationFailureHandler authenticationFailureHandler,
+            ValidateCodeProcessorHolder validateCodeProcessorHolder, ArchiveSecurityProperties securityProperties) {
+        return new ValidateCodeSecurityConfig(authenticationFailureHandler, validateCodeProcessorHolder,
+                securityProperties.getValidateCode());
     }
 
-    public ArchiveValidateCodeAutoConfiguration() {
+    @Bean
+    ValidateCodeConfigService validateCodeConfigService(ArchiveSecurityProperties securityProperties) {
+        return new ValidateCodeConfigService(securityProperties.getValidateCode());
     }
+
 }

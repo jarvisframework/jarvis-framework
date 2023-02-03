@@ -4,7 +4,6 @@ import com.jarvis.framework.core.entity.BaseDynamicEntity;
 import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
 import com.jarvis.framework.core.entity.BaseSimpleEntity;
 import com.jarvis.framework.core.exception.FrameworkException;
-import com.jarvis.framework.mybatis.handler.EntityAutoFillingHolder;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,7 +16,8 @@ public class MapperEntityUtil {
     private static final Map<Class<?>, String> ENTITY_DELETE_SQL_CACHE = new ConcurrentHashMap(16);
 
     public static String mapperEntity2InsertSql(BaseIdPrimaryKeyEntity<?> entity) {
-        Class<?> clazz = entity.getClass();
+        // todo 编译错误
+        /*Class<?> clazz = entity.getClass();
         if (null == entity.getId()) {
             PersistentUtil.setEntityIdPrimaryKey(entity);
         }
@@ -34,11 +34,13 @@ public class MapperEntityUtil {
                 ENTITY_INSERT_SQL_CACHE.putIfAbsent(clazz, sql);
                 return sql;
             }
-        }
+        }*/
+        return null;
     }
 
     public static String mapperEntity2UpdateSql(BaseIdPrimaryKeyEntity<?> entity) {
-        Class<?> clazz = entity.getClass();
+        // todo 编译错误
+        /*Class<?> clazz = entity.getClass();
         EntityAutoFillingHolder.update(entity);
         if (BaseDynamicEntity.class.isAssignableFrom(clazz)) {
             return dynamicUpdateSql((BaseDynamicEntity)entity);
@@ -51,11 +53,13 @@ public class MapperEntityUtil {
                 ENTITY_UPDATE_SQL_CACHE.putIfAbsent(clazz, sql);
                 return sql;
             }
-        }
+        }*/
+        return null;
     }
 
     public static String mapperEntity2DeleteSql(BaseIdPrimaryKeyEntity<?> entity) {
-        Class<?> clazz = entity.getClass();
+        // todo 编译错误
+        /*Class<?> clazz = entity.getClass();
         if (BaseDynamicEntity.class.isAssignableFrom(clazz)) {
             return dynamicDeleteSql((BaseDynamicEntity)entity);
         } else {
@@ -67,7 +71,8 @@ public class MapperEntityUtil {
                 ENTITY_DELETE_SQL_CACHE.putIfAbsent(clazz, sql);
                 return sql;
             }
-        }
+        }*/
+        return null;
     }
 
     private static String dynamicInsertSql(BaseDynamicEntity<?> entity) {

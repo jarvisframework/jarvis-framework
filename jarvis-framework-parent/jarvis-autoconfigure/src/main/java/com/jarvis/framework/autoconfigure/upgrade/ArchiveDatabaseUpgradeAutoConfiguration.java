@@ -17,35 +17,39 @@ import javax.sql.DataSource;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年4月7日
+ */
 @Configuration
-@ConditionalOnClass({UpgradeProcessorApplicationRunner.class})
-@EnableConfigurationProperties({UpgradeProperties.class})
+@ConditionalOnClass({ UpgradeProcessorApplicationRunner.class })
+@EnableConfigurationProperties(UpgradeProperties.class)
 public class ArchiveDatabaseUpgradeAutoConfiguration implements InitializingBean {
-    @Autowired(
-        required = false
-    )
+
+    @Autowired(required = false)
     private TableConverter tableConverter;
-    @Autowired(
-        required = false
-    )
+
+    @Autowired(required = false)
     private List<FunctionConverter> functionConverters;
 
     @Bean
-    UpgradeProcessorApplicationRunner upgradeProcessorApplicationRunner(DataSource a, UpgradeProperties a) throws SQLException {
-        return new UpgradeProcessorApplicationRunner(a, a);
+    UpgradeProcessorApplicationRunner upgradeProcessorApplicationRunner(DataSource dataSource,
+                                                                        UpgradeProperties properties) throws SQLException {
+        return new UpgradeProcessorApplicationRunner(dataSource, properties);
     }
 
-    public ArchiveDatabaseUpgradeAutoConfiguration() {
-    }
-
+    /**
+     *
+     * @see org.springframework.beans.factory.InitializingBean#afterPropertiesSet()
+     */
+    @Override
     public void afterPropertiesSet() throws Exception {
-        if (null != a.functionConverters) {
-            DelegateFunctionConverter.registConverter(a.functionConverters);
+        if (null != functionConverters) {
+            DelegateFunctionConverter.registConverter(functionConverters);
         }
-
-        if (null != a.tableConverter) {
-            DelegateTableConverter.registConverter(a.tableConverter);
+        if (null != tableConverter) {
+            DelegateTableConverter.registConverter(tableConverter);
         }
-
     }
 }

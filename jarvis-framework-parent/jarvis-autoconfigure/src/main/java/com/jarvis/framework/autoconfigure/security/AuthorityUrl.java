@@ -1,25 +1,48 @@
 package com.jarvis.framework.autoconfigure.security;
 
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年2月3日
+ */
 public class AuthorityUrl {
-    private String[] authorities;
+
+    /**
+     * url地址，如 /menu/**
+     */
     private String url;
 
+    /**
+     * 权限
+     */
+    private String[] authorities;
+
+    /**
+     * @return the url
+     */
     public String getUrl() {
-        return a.url;
+        return url;
     }
 
-    public void setAuthorities(String[] a) {
-        a.authorities = a;
+    /**
+     * @param url the url to set
+     */
+    public void setUrl(String url) {
+        this.url = url;
     }
 
-    public void setUrl(String a) {
-        a.url = a;
-    }
-
+    /**
+     * @return the authorities
+     */
     public String[] getAuthorities() {
-        return a.authorities;
+        return authorities;
     }
 
-    public AuthorityUrl() {
+    /**
+     * @param authorities the authorities to set
+     */
+    public void setAuthorities(String[] authorities) {
+        this.authorities = authorities;
     }
+
 }

@@ -1,5 +1,7 @@
 package com.jarvis.framework.mybatis.mapping;
 
+import com.jarvis.framework.constant.DatabaseIdEnum;
+import com.jarvis.framework.core.exception.FrameworkException;
 import com.jarvis.framework.mybatis.mapping.support.DmCurdDialect;
 import com.jarvis.framework.mybatis.mapping.support.GbaseCurdDialect;
 import com.jarvis.framework.mybatis.mapping.support.H2CurdDialect;

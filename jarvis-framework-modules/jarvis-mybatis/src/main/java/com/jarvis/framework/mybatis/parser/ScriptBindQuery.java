@@ -1,10 +1,11 @@
 package com.jarvis.framework.mybatis.parser;
 
 import com.jarvis.framework.search.CriteriaQuery;
-import org.springframework.util.StringUtils;
 
 import java.util.Collection;
 import java.util.stream.Collectors;
+
+import org.springframework.util.StringUtils;
 
 public class ScriptBindQuery<Column> extends AbstractScriptBind<Column, CriteriaQuery<Column>, ScriptBindQuery<Column>> {
     private String columns;
@@ -28,7 +29,7 @@ public class ScriptBindQuery<Column> extends AbstractScriptBind<Column, Criteria
     }
 
     protected void toSelectColumns() {
-        this.columns = StringUtils.collectionToCommaDelimitedString(((CriteriaQuery)this.criterion).getColumns());
+        this.columns = StringUtils.collectionToCommaDelimitedString(((CriteriaQuery) this.criterion).getColumns());
         if (!StringUtils.hasLength(this.columns)) {
             this.columns = "*";
         }
@@ -36,13 +37,14 @@ public class ScriptBindQuery<Column> extends AbstractScriptBind<Column, Criteria
     }
 
     protected void toGroupBy() {
-        this.groupBy = StringUtils.collectionToCommaDelimitedString(((CriteriaQuery)this.criterion).getGroupBy());
+        this.groupBy = StringUtils.collectionToCommaDelimitedString(((CriteriaQuery) this.criterion).getGroupBy());
     }
 
     protected void toOrderBy() {
-        this.orderBy = StringUtils.collectionToCommaDelimitedString((Collection)((CriteriaQuery)this.criterion).getOrders().stream().map((o) -> {
+        // todo 编译错误
+        /*this.orderBy = StringUtils.collectionToCommaDelimitedString((Collection) ((CriteriaQuery) this.criterion).getOrders().stream().map((o) -> {
             return o.getColumn() + " " + o.getOrderBy().name().toUpperCase();
-        }).collect(Collectors.toList()));
+        }).collect(Collectors.toList()));*/
     }
 
     public String getColumns() {

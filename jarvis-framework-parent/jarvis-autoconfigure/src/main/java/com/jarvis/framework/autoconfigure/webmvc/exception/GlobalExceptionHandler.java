@@ -1,11 +1,9 @@
 package com.jarvis.framework.autoconfigure.webmvc.exception;
 
-import com.jarvis.framework.webmvc.web.exception.handler.ExceptionProcessor;
-import com.jarvis.framework.autoconfigure.mybatis.DruidExtendProperties;
-import com.jarvis.framework.autoconfigure.security.ArchiveSecurityConfiguration;
 import com.jarvis.framework.core.exception.BusinessException;
 import com.jarvis.framework.core.exception.FrameworkException;
 import com.jarvis.framework.web.rest.RestResponse;
+import com.jarvis.framework.webmvc.web.exception.handler.ExceptionProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,82 +12,129 @@ import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
+import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.multipart.MaxUploadSizeExceededException;
+import org.springframework.web.multipart.MultipartException;
 
-import java.util.Iterator;
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.ValidationException;
 import java.util.List;
 
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年7月8日
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    @Autowired(
-        required = false
-    )
-    private List<ExceptionProcessor> exceptionProcessors;
+
     private static Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    @ExceptionHandler({BindException.class})
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public RestResponse<?> bindException(BindException a) {
-        if (log.isErrorEnabled()) {
-            log.error(ArchiveSecurityConfiguration.oOoOOo("史敖绡宼弲帞＼锿诟俇恟＼K["), a);
-        }
+    @Autowired(required = false)
+    private List<ExceptionProcessor> exceptionProcessors;
 
-        StringBuilder var2 = new StringBuilder();
-        a.getBindingResult().getFieldErrors().forEach((ax) -> {
-            var2.append(ax.getDefaultMessage()).append(DruidExtendProperties.oOoOOo(";"));
-        });
-        return RestResponse.response(HttpStatus.BAD_REQUEST, var2);
-    }
-
-    @ExceptionHandler({BusinessException.class})
+    @ExceptionHandler({ Exception.class, RuntimeException.class })
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public RestResponse<?> businessException(BusinessException a) {
+    public RestResponse<?> globalException(Exception e) {
         if (log.isErrorEnabled()) {
-            log.error(DruidExtendProperties.oOoOOo("乎劐奐琷彖帉ｘ锨讻俐总Ｋ/L"), a);
+            log.error("全局异常", e);
         }
-
-        return RestResponse.failure(a.getMessage());
-    }
-
-    @ExceptionHandler({FrameworkException.class})
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public RestResponse<?> frameworkException(FrameworkException a) {
-        if (log.isErrorEnabled()) {
-            log.error(ArchiveSecurityConfiguration.oOoOOo("桶析头琠弲帞＼锿诟俇恟＼K["), a);
-        }
-
-        return RestResponse.failure(a.getMessage());
-    }
-
-    public GlobalExceptionHandler() {
-    }
-
-    @ExceptionHandler({IllegalArgumentException.class})
-    @ResponseStatus(HttpStatus.BAD_REQUEST)
-    public RestResponse<?> illegalArgumentException(IllegalArgumentException a) {
-        if (log.isErrorEnabled()) {
-            log.error(DruidExtendProperties.oOoOOo("厖敁梔柔彖帉ｘ锨讻俐总Ｋ/L"), a);
-        }
-
-        return RestResponse.response(HttpStatus.BAD_REQUEST, a.getMessage());
-    }
-
-    @ExceptionHandler({Exception.class, RuntimeException.class})
-    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-    public RestResponse<?> globalException(Exception a) {
-        if (log.isErrorEnabled()) {
-            log.error(DruidExtendProperties.oOoOOo("儼山彖帉"), a);
-        }
-
-        Iterator var2;
-        if (null != a.exceptionProcessors) {
-            for(Iterator var10000 = var2 = a.exceptionProcessors.iterator(); var10000.hasNext(); var10000 = var2) {
-                ExceptionProcessor var3;
-                if ((var3 = (ExceptionProcessor)var2.next()).support(a)) {
-                    return var3.process(a);
+        if (null != exceptionProcessors) {
+            for (final ExceptionProcessor ep : exceptionProcessors) {
+                if (!ep.support(e)) {
+                    continue;
                 }
+                return ep.process(e);
             }
         }
 
-        return RestResponse.error(ArchiveSecurityConfiguration.oOoOOo("稭庿凜锩啀"));
+        return RestResponse.error("程序出错啦！");
     }
+
+    @ExceptionHandler(HttpClientErrorException.class)
+    public RestResponse<?> httpClientErrorException(HttpServletResponse resp, HttpClientErrorException e) {
+        resp.setStatus(e.getStatusCode().value());
+        if (log.isErrorEnabled()) {
+            log.error("客户端异常，异常信息！", e);
+        }
+        return RestResponse.response(e.getStatusCode(), e.getMessage());
+    }
+
+    @ExceptionHandler(HttpStatusException.class)
+    public RestResponse<?> httpStatusException(HttpServletResponse resp, HttpStatusException e) {
+        resp.setStatus(e.getHttpStatus().value());
+        if (log.isErrorEnabled()) {
+            log.error("HttpStatus异常，异常信息！", e);
+        }
+        return RestResponse.response(e.getHttpStatus(), e.getMessage());
+    }
+
+    @ExceptionHandler(BusinessException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public RestResponse<?> businessException(BusinessException e) {
+        if (log.isErrorEnabled()) {
+            log.error("业务处理异常，错误信息！", e);
+        }
+        return RestResponse.failure(e.getMessage());
+    }
+
+    @ExceptionHandler(FrameworkException.class)
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    public RestResponse<?> frameworkException(FrameworkException e) {
+        if (log.isErrorEnabled()) {
+            log.error("框架处理异常，错误信息！", e);
+        }
+        return RestResponse.failure(e.getMessage());
+    }
+
+    @ExceptionHandler(ValidationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RestResponse<?> validationException(ValidationException e) {
+        if (log.isErrorEnabled()) {
+            log.error("参数校验异常，错误信息！", e);
+        }
+        return RestResponse.response(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RestResponse<?> illegalArgumentException(IllegalArgumentException e) {
+        if (log.isErrorEnabled()) {
+            log.error("参数检查异常，错误信息！", e);
+        }
+        return RestResponse.response(HttpStatus.BAD_REQUEST, e.getMessage());
+    }
+
+    @ExceptionHandler(BindException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RestResponse<?> bindException(BindException e) {
+        if (log.isErrorEnabled()) {
+            log.error("参数绑定异常，错误信息！", e);
+        }
+        final StringBuilder sb = new StringBuilder();
+        e.getBindingResult().getFieldErrors().forEach(error -> {
+            sb.append(error.getDefaultMessage()).append("\n");
+        });
+        return RestResponse.response(HttpStatus.BAD_REQUEST, sb);
+    }
+
+    @ExceptionHandler(MultipartException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RestResponse<?> multipartException(MultipartException e) {
+        if (log.isErrorEnabled()) {
+            log.error("文件上传异常，错误信息！", e);
+        }
+        return RestResponse.response(HttpStatus.BAD_REQUEST, "文件上传出错：" + e.getMessage());
+    }
+
+    @ExceptionHandler(MaxUploadSizeExceededException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    public RestResponse<?> maxUploadSizeExceededException(MaxUploadSizeExceededException e) {
+        if (log.isErrorEnabled()) {
+            log.error("上传文件过大，错误信息！", e);
+        }
+        return RestResponse.response(HttpStatus.BAD_REQUEST,
+                "上传文件过大：最大不超过" + FileUtil.readableSize(e.getMaxUploadSize()));
+    }
+
 }

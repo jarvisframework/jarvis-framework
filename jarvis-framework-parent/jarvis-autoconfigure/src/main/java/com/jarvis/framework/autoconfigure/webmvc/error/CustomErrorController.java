@@ -1,7 +1,6 @@
 package com.jarvis.framework.autoconfigure.webmvc.error;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.jarvis.framework.autoconfigure.security.ArchiveValidateCodeAutoConfiguration;
 import com.jarvis.framework.web.rest.RestResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.ErrorProperties;
@@ -18,27 +17,46 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * 处理异常并返回结构一致的 JSON
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年5月7日
+ */
 public class CustomErrorController extends BasicErrorController {
+
     @Autowired
     private ObjectMapper objectMapper;
 
+    /**
+     * @param errorAttributes
+     * @param errorProperties
+     */
+    public CustomErrorController(ErrorAttributes errorAttributes, ErrorProperties errorProperties,
+                                 List<ErrorViewResolver> errorViewResolvers) {
+        super(errorAttributes, errorProperties, errorViewResolvers);
+    }
+
+    /**
+     * @see org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(
+     *      javax.servlet.http.HttpServletRequest)
+     */
+    @SuppressWarnings("unchecked")
+    @Override
     @RequestMapping
-    public ResponseEntity<Map<String, Object>> error(HttpServletRequest a) {
-        HttpStatus var2;
-        if ((var2 = a.getStatus(a)) == HttpStatus.NO_CONTENT) {
-            return new ResponseEntity(var2);
-        } else {
-            Object a;
-            if (ObjectUtils.isEmpty(a = a.getErrorAttributes(a, a.getErrorAttributeOptions(a, MediaType.ALL)).get(ArchiveValidateCodeAutoConfiguration.oOoOOo("4T*B8V<")))) {
-                a = ArchiveValidateCodeAutoConfiguration.oOoOOo("穒庾冣锨唿");
-            }
-
-            HttpServletRequest a = (Map)a.objectMapper.convertValue(RestResponse.response(var2, a), Map.class);
-            return new ResponseEntity(a, var2);
+    public ResponseEntity<Map<String, Object>> error(HttpServletRequest request) {
+        final HttpStatus status = getStatus(request);
+        if (status == HttpStatus.NO_CONTENT) {
+            return new ResponseEntity<>(status);
         }
+        final Map<String, Object> body = getErrorAttributes(request, getErrorAttributeOptions(request, MediaType.ALL));
+        Object message = body.get("message");
+        if (ObjectUtils.isEmpty(message)) {
+            message = "程序出错啦";
+        }
+        final Map<String,
+                Object> response = objectMapper.convertValue(RestResponse.response(status, message), Map.class);
+        return new ResponseEntity<>(response, status);
     }
 
-    public CustomErrorController(ErrorAttributes a, ErrorProperties a, List<ErrorViewResolver> a) {
-        super(a, a, a);
-    }
 }

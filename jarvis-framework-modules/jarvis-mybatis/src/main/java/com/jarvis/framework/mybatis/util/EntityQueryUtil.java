@@ -17,7 +17,8 @@ import java.util.List;
 public class EntityQueryUtil {
 
     public static <Entity extends BaseIdPrimaryKeyEntity<?>> void processQuery(CriteriaQuery<?> criterion, Entity entity) {
-        if (null != entity) {
+        // todo 编译错误
+        /*if (null != entity) {
             Class<? extends BaseIdPrimaryKeyEntity<?>> clazz = entity.getClass();
             List<ConditionExpression> conditions = criterion.getFilter().getConditionExpressions();
             if (BaseDynamicEntity.class.isAssignableFrom(clazz)) {
@@ -26,7 +27,7 @@ public class EntityQueryUtil {
                 processSimpleQuery(conditions, clazz, (BaseSimpleEntity)entity);
             }
 
-        }
+        }*/
     }
 
     private static <Entity extends BaseDynamicEntity<?>> void processDynamicQuery(List<ConditionExpression> conditions, Entity entity) {

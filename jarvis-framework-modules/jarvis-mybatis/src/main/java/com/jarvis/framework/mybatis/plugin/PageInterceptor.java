@@ -88,7 +88,8 @@ public class PageInterceptor implements Interceptor {
     private int processDefaultCount(Executor executor, MappedStatement ms, Object parameter, RowBounds rowBounds, ResultHandler resultHandler, BoundSql boundSql) throws SQLException {
         String msId = ms.getId();
         String countMsId = msId.substring(0, msId.length() - 4) + "count";
-        int count = false;
+        // todo 编译错误
+        // int count = false;
         MappedStatement countMs = this.getExistedMappedStatement(ms.getConfiguration(), countMsId);
         if (countMs != null) {
             int count = this.doDefaultCount(executor, countMs, parameter, boundSql, resultHandler);
@@ -146,7 +147,8 @@ public class PageInterceptor implements Interceptor {
         String countSql = CountSqlParser.getSmartCountSql(boundSql.getSql());
         MappedStatement countMs = PageQueryUtil.countMappedStatement(ms);
         BoundSql countBoundSql = PageQueryUtil.countBoundSql(countMs, boundSql, countSql, parameterMappings, parameter);
-        int count = false;
+        // todo 编译错误
+        // int count = false;
         if (countMs != null) {
             int count = this.doCustomCount(executor, countMs, parameter, countBoundSql, cacheKey, resultHandler);
             return count;

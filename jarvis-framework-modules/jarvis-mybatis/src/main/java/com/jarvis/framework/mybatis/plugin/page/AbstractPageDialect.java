@@ -2,8 +2,10 @@ package com.jarvis.framework.mybatis.plugin.page;
 
 import com.jarvis.framework.search.Page;
 import org.apache.ibatis.cache.CacheKey;
+import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;
 import org.apache.ibatis.mapping.ParameterMapping;
+import org.apache.ibatis.session.Configuration;
 import org.apache.ibatis.session.RowBounds;
 
 import java.util.ArrayList;
@@ -12,11 +14,8 @@ import java.util.List;
 import java.util.Map;
 
 public abstract class AbstractPageDialect implements PageDialect {
-
     protected final String startNumberParameter = "page::startNumber";
-
     protected final String endNumberParameter = "page::endNumber";
-
     protected final String limitNumberParameter = "page::pageSize";
 
     public AbstractPageDialect() {
@@ -26,7 +25,7 @@ public abstract class AbstractPageDialect implements PageDialect {
         if (null == parameter) {
             return true;
         } else if (parameter instanceof Map) {
-            Map<String, Object> parameterMap = (Map)parameter;
+            Map<String, Object> parameterMap = (Map) parameter;
             return !parameterMap.values().stream().anyMatch((val) -> {
                 return val instanceof Page;
             });
@@ -50,20 +49,20 @@ public abstract class AbstractPageDialect implements PageDialect {
     }
 
     protected String getPageKey(Object parameter, CacheKey cacheKey) {
-        Entry<String, Object> pageEntry = this.getPage(parameter);
-        Page page = (Page)pageEntry.getValue();
+        Map.Entry<String, Object> pageEntry = this.getPage(parameter);
+        Page page = (Page) pageEntry.getValue();
         cacheKey.update(page.getPageNumber());
         cacheKey.update(page.getPageSize());
-        return (String)this.getPage(parameter).getKey();
+        return (String) this.getPage(parameter).getKey();
     }
 
-    private Entry<String, Object> getPage(Object parameter) {
-        Map<String, Object> parameterMap = (Map)parameter;
-        Entry<String, Object> entry = null;
+    private Map.Entry<String, Object> getPage(Object parameter) {
+        Map<String, Object> parameterMap = (Map) parameter;
+        Map.Entry<String, Object> entry = null;
         Iterator var4 = parameterMap.entrySet().iterator();
 
-        while(var4.hasNext()) {
-            Entry<String, Object> e = (Entry)var4.next();
+        while (var4.hasNext()) {
+            Map.Entry<String, Object> e = (Map.Entry) var4.next();
             if (e.getValue() instanceof Page) {
                 entry = e;
                 break;
@@ -86,6 +85,6 @@ public abstract class AbstractPageDialect implements PageDialect {
     }
 
     protected ParameterMapping createParameterMapping(Configuration configuration, String property) {
-        return (new Builder(configuration, property, Integer.class)).build();
+        return (new ParameterMapping.Builder(configuration, property, Integer.class)).build();
     }
 }

@@ -11,28 +11,26 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.web.AuthenticationEntryPoint;
 
-@Configuration(
-    proxyBeanMethods = false
-)
-@ConditionalOnProperty(
-    prefix = "spring.security.sso-token",
-    name = {"enabled"},
-    havingValue = "true"
-)
-@ConditionalOnClass({ValidateCodeEndpoint.class})
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2022年3月21日
+ */
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnProperty(prefix = "spring.security.sso-token", name = "enabled", havingValue = "true")
+@ConditionalOnClass({ ValidateCodeEndpoint.class })
 public class ArchiveSsoTokenConfiguration {
-    public ArchiveSsoTokenConfiguration() {
+
+    @Bean
+    @ConditionalOnMissingBean(SsoDetailsService.class)
+    SsoDetailsService ssoDetailsService(ArchiveSecurityProperties properties) {
+        final SsoTokenProperties ssoToken = properties.getSsoToken();
+        return new InMemorySsoDetailsService(ssoToken.getUsers());
     }
 
     @Bean
-    SsoAuthenticationSecurityConfig ssoAuthenticationSecurityConfig(AuthenticationEntryPoint a, SsoDetailsService a) {
-        return new SsoAuthenticationSecurityConfig(a, a);
-    }
-
-    @Bean
-    @ConditionalOnMissingBean({SsoDetailsService.class})
-    SsoDetailsService ssoDetailsService(ArchiveSecurityProperties a) {
-        ArchiveSecurityProperties a = a.getSsoToken();
-        return new InMemorySsoDetailsService(a.getUsers());
+    SsoAuthenticationSecurityConfig ssoAuthenticationSecurityConfig(
+            AuthenticationEntryPoint authenticationEntryPoint, SsoDetailsService ssoDetailsService) {
+        return new SsoAuthenticationSecurityConfig(authenticationEntryPoint, ssoDetailsService);
     }
 }

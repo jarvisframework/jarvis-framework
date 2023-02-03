@@ -36,6 +36,7 @@ public class RedisOpaqueTokenIntrospector implements OpaqueTokenIntrospector {
             throw new OAuth2AuthenticationException(new OAuth2Error("invalid_token", "令牌无效或过期", (String)null));
         } else {
             Object principal = authentication.getPrincipal();
+            // todo 编译错误
             // Collection<GrantedAuthority> authorities = authentication.getAuthorities();
             Oauth2SecurityUser oAuth2AuthenticatedPrincipal = toOAuth2AuthenticatedPrincipal(principal);
             // oAuth2AuthenticatedPrincipal.addAuthorities(null);

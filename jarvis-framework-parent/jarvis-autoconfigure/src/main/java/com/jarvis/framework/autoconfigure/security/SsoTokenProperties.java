@@ -4,26 +4,43 @@ import com.jarvis.framework.security.authentication.sso.SsoTokenUser;
 
 import java.util.List;
 
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2022年3月18日
+ */
 public class SsoTokenProperties {
+
     private boolean enabled;
+
     private List<SsoTokenUser> users;
 
+    /**
+     * @return the enabled
+     */
     public boolean isEnabled() {
-        return a.enabled;
+        return enabled;
     }
 
-    public SsoTokenProperties() {
+    /**
+     * @param enabled the enabled to set
+     */
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
     }
 
-    public void setUsers(List<SsoTokenUser> a) {
-        a.users = a;
-    }
-
-    public void setEnabled(boolean a) {
-        a.enabled = a;
-    }
-
+    /**
+     * @return the users
+     */
     public List<SsoTokenUser> getUsers() {
-        return a.users;
+        return users;
     }
+
+    /**
+     * @param users the users to set
+     */
+    public void setUsers(List<SsoTokenUser> users) {
+        this.users = users;
+    }
+
 }

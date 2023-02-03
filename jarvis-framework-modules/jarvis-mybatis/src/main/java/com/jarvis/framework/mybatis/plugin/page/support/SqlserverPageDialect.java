@@ -1,6 +1,7 @@
 package com.jarvis.framework.mybatis.plugin.page.support;
 
 import com.jarvis.framework.mybatis.plugin.page.AbstractPageDialect;
+import com.jarvis.framework.mybatis.plugin.page.PageDialect;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.mapping.BoundSql;
 import org.apache.ibatis.mapping.MappedStatement;

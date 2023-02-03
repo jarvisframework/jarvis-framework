@@ -15,9 +15,9 @@ import org.springframework.security.config.annotation.SecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity.IgnoredRequestConfigurer;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.config.annotation.web.configurers.FormLoginConfigurer;
+import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
+import org.springframework.security.config.annotation.web.configurers.LogoutConfigurer;
 import org.springframework.security.core.userdetails.UserDetailsPasswordService;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -32,101 +32,173 @@ import org.springframework.security.web.authentication.rememberme.PersistentToke
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
-@Configuration(
-    proxyBeanMethods = false
-)
-@ConditionalOnClass({WebSecurityConfigurerAdapter.class})
-@ConditionalOnMissingClass({"com.gdda.archives.framework.oauth2.resource.server.config.Oauth2ResourceServerSecurityConfig"})
-@EnableConfigurationProperties({ArchiveSecurityProperties.class})
-@Import({ArchiveSecurityConfiguration.class, ArchiveRedisBadCreadentialsConfiguration.class, ArchiveSsoTokenConfiguration.class})
+/**
+ *
+ * @author qiucs
+ * @version 1.0.0 2021年1月29日
+ */
+@Configuration(proxyBeanMethods = false)
+@ConditionalOnClass({ WebSecurityConfigurerAdapter.class })
+@ConditionalOnMissingClass("com.gdda.archives.framework.oauth2.resource.server.config.Oauth2ResourceServerSecurityConfig")
+@EnableConfigurationProperties(ArchiveSecurityProperties.class)
+@Import({ ArchiveSecurityConfiguration.class, ArchiveRedisBadCreadentialsConfiguration.class,
+        ArchiveSsoTokenConfiguration.class })
 public class ArchiveSecurityAutoConfiguration extends WebSecurityConfigurerAdapter {
-    @Autowired(
-        required = false
-    )
-    private List<LogoutHandler> logoutHandlers;
-    @Autowired
-    private PersistentTokenRepository persistentTokenRepository;
-    @Autowired(
-        required = false
-    )
-    private HttpSecurityProcessor httpSecurityProcessor;
-    @Autowired
-    private AuthenticationEntryPoint authenticationEntryPoint;
-    @Autowired
-    private UserDetailsService userDetailsService;
-    @Autowired
-    private AuthenticationFailureHandler authenticationFailureHandler;
-    @Autowired
-    private AccessDeniedHandler accessDeniedHandler;
-    @Autowired(
-        required = false
-    )
-    private List<SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>> securityConfigurers;
-    @Autowired
-    private LogoutSuccessHandler logoutSuccessHandler;
+
     @Autowired
     private AuthenticationSuccessHandler authenticationSuccessHandler;
+
+    @Autowired
+    private AuthenticationFailureHandler authenticationFailureHandler;
+
+    @Autowired
+    private LogoutSuccessHandler logoutSuccessHandler;
+
+    @Autowired
+    private AuthenticationEntryPoint authenticationEntryPoint;
+
+    @Autowired
+    private AccessDeniedHandler accessDeniedHandler;
+
+    @Autowired(required = false)
+    private List<SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>> securityConfigurers;
+
+    @Autowired
+    private UserDetailsService userDetailsService;
+
+    @Autowired
+    private PersistentTokenRepository persistentTokenRepository;
+
     @Autowired
     private ArchiveSecurityProperties securityProperties;
 
-    protected void configure(AuthenticationManagerBuilder a) throws Exception {
-        BadCreadentialsProperties var2 = a.securityProperties.getBadCreadentials();
-        LimitBadCreadentialsDaoAuthenticationProvider var3 = new LimitBadCreadentialsDaoAuthenticationProvider();
-        UserDetailsService var4 = (UserDetailsService)a.getBeanOrNull(UserDetailsService.class);
-        PasswordEncoder var5 = (PasswordEncoder)a.getBeanOrNull(PasswordEncoder.class);
-        UserDetailsPasswordService var6 = (UserDetailsPasswordService)a.getBeanOrNull(UserDetailsPasswordService.class);
-        BadCreadentialsService var7 = (BadCreadentialsService)a.getBeanOrNull(BadCreadentialsService.class);
-        var3.setUserDetailsService(var4);
-        var3.setBadCreadentialsProperties(var2);
-        if (null != var5) {
-            var3.setPasswordEncoder(var5);
-        }
+    @Autowired(required = false)
+    private List<LogoutHandler> logoutHandlers;
 
-        if (null != var6) {
-            var3.setUserDetailsPasswordService(var6);
-        }
+    @Autowired(required = false)
+    private HttpSecurityProcessor httpSecurityProcessor;
 
-        if (null != var7) {
-            var3.setBadCreadentialsService(var7);
-        }
-
-        var3.afterPropertiesSet();
-        a.authenticationProvider(var3);
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        final List<String> ignoreUrls = new ArrayList<>(securityProperties.getIgnoreUrls());
+        Collections.addAll(ignoreUrls, SecurityConstant.GLOBAL_IGNORE_URLS);
+        web.ignoring().antMatchers(ignoreUrls.toArray(new String[ignoreUrls.size()]));
     }
 
-    public ArchiveSecurityAutoConfiguration() {
+    /**
+     *
+     * @see org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter#configure(org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder)
+     */
+    @Override
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+        final BadCreadentialsProperties badCreadentials = securityProperties.getBadCreadentials();
+        final LimitBadCreadentialsDaoAuthenticationProvider provider = new LimitBadCreadentialsDaoAuthenticationProvider();
+        final UserDetailsService userDetailsService = getBeanOrNull(UserDetailsService.class);
+        final PasswordEncoder passwordEncoder = getBeanOrNull(PasswordEncoder.class);
+        final UserDetailsPasswordService passwordManager = getBeanOrNull(UserDetailsPasswordService.class);
+        final BadCreadentialsService badCreadentialsService = getBeanOrNull(BadCreadentialsService.class);
+        final AccountLockService accountLockService = getBeanOrNull(AccountLockService.class);
+        provider.setUserDetailsService(userDetailsService);
+        provider.setBadCreadentialsProperties(badCreadentials);
+        if (null != passwordEncoder) {
+            provider.setPasswordEncoder(passwordEncoder);
+        }
+        if (null != passwordManager) {
+            provider.setUserDetailsPasswordService(passwordManager);
+        }
+        if (null != badCreadentialsService) {
+            provider.setBadCreadentialsService(badCreadentialsService);
+        }
+        if (null != accountLockService) {
+            provider.setAccountLockService(accountLockService);
+        }
+        provider.afterPropertiesSet();
+
+        auth.authenticationProvider(provider);
     }
 
-    protected void configure(HttpSecurity a) throws Exception {
-        a.authorize(a);
-        if (null != a.securityConfigurers) {
-            Iterator var2;
-            Iterator var10000 = var2 = a.securityConfigurers.iterator();
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        //
+        authorize(http);
 
-            while(var10000.hasNext()) {
-                SecurityConfigurerAdapter var3 = (SecurityConfigurerAdapter)var2.next();
-                var10000 = var2;
-                a.apply(var3);
+        if (null != securityConfigurers) {
+            for (final SecurityConfigurerAdapter<DefaultSecurityFilterChain,
+                    HttpSecurity> sc : securityConfigurers) {
+                http.apply(sc);
             }
         }
 
-        ((HttpSecurity)((HttpSecurity)((HttpSecurity)((FormLoginConfigurer)((FormLoginConfigurer)((FormLoginConfigurer)a.formLogin().loginProcessingUrl(ArchiveSecurityConfiguration.oOoOOo("\t\\IWO^\tEUUT^G]C"))).successHandler(a.authenticationSuccessHandler)).failureHandler(a.authenticationFailureHandler)).and()).rememberMe().key(ArchiveValidateCodeAutoConfiguration.oOoOOo("P+R1X/T*")).tokenRepository(a.persistentTokenRepository).userDetailsService(a.userDetailsService).and()).csrf().disable()).exceptionHandling().accessDeniedHandler(a.accessDeniedHandler).authenticationEntryPoint(a.authenticationEntryPoint);
-        a.logout(a);
-        Optional.ofNullable(a.httpSecurityProcessor).ifPresent((ax) -> {
-            ax.process(a);
+        http.formLogin()
+                .loginProcessingUrl("/login/username")
+                .successHandler(authenticationSuccessHandler)
+                .failureHandler(authenticationFailureHandler)
+                .and()
+                .rememberMe()
+                .key("archives")
+                .tokenRepository(persistentTokenRepository)
+                .userDetailsService(userDetailsService)
+                .and()
+                .csrf()
+                .disable()
+                .exceptionHandling()
+                .accessDeniedHandler(accessDeniedHandler)
+                .authenticationEntryPoint(authenticationEntryPoint);
+
+        // 退出配置
+        logout(http);
+
+        // 定制化HttpSecurity配置
+        Optional.ofNullable(httpSecurityProcessor).ifPresent((p) -> {
+            p.process(http);
         });
     }
 
-    public void configure(WebSecurity a) throws Exception {
-        ArrayList var2 = new ArrayList(a.securityProperties.getIgnoreUrls());
-        Collections.addAll(var2, SecurityConstant.GLOBAL_IGNORE_URLS);
-        IgnoredRequestConfigurer var10000 = a.ignoring();
-        String[] var10002 = new String[var2.size()];
-        boolean var10004 = true;
-        var10000.antMatchers((String[])var2.toArray(var10002));
+    private void authorize(HttpSecurity http) throws Exception {
+        final ExpressionUrlAuthorizationConfigurer<
+                        HttpSecurity>.ExpressionInterceptUrlRegistry authorizeRequests = http
+                .authorizeRequests();
+        if (null != securityProperties.getAuthorityUrls() || !securityProperties.getAuthorityUrls().isEmpty()) {
+            securityProperties.getAuthorityUrls().forEach(authorityUrl -> {
+                authorizeRequests.antMatchers(authorityUrl.getUrl()).hasAnyAuthority(authorityUrl.getAuthorities());
+            });
+        }
+
+        if (null != securityProperties.getDenyUrls() || !securityProperties.getDenyUrls().isEmpty()) {
+            final String[] arrayUrl = securityProperties.getDenyUrls()
+                    .toArray(new String[securityProperties.getDenyUrls().size()]);
+            authorizeRequests.antMatchers(arrayUrl).denyAll();
+        }
+
+        if (null != securityProperties.getPermitUrls() || !securityProperties.getPermitUrls().isEmpty()) {
+            final String[] arrayUrl = securityProperties.getPermitUrls()
+                    .toArray(new String[securityProperties.getPermitUrls().size()]);
+            authorizeRequests.antMatchers(arrayUrl).permitAll();
+        }
+
+        authorizeRequests.anyRequest().authenticated();
+    }
+
+    private <T> T getBeanOrNull(Class<T> type) {
+        final String[] beanNames = getApplicationContext().getBeanNamesForType(type);
+        if (beanNames.length != 1) {
+            return null;
+        }
+        return getApplicationContext().getBean(beanNames[0], type);
+    }
+
+    private void logout(HttpSecurity http) throws Exception {
+        final LogoutConfigurer<HttpSecurity> logout = http.logout();
+
+        if (null != logoutHandlers && !logoutHandlers.isEmpty()) {
+            logoutHandlers.forEach(h -> logout.addLogoutHandler(h));
+        }
+
+        logout.logoutUrl("/logout")
+                .logoutSuccessHandler(logoutSuccessHandler)
+                .permitAll();
     }
 }
