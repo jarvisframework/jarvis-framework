@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.jarvis.framework</groupId>
+        <artifactId>jarvis-parent</artifactId>
+        <version>1.2-SNAPSHOT</version>
+        <relativePath>../jarvis-parent</relativePath>
+    </parent>
+
+    <artifactId>jarvis-starters</artifactId>
+
+    <name>jarvis-starters</name>
+    <packaging>pom</packaging>
+    <description>jarvis module starter</description>
+
+    <modules>
+        <module>jarvis-spring-boot-starter</module>
+        <module>jarvis-mybatis-spring-boot-starter</module>
+        <module>jarvis-webmvc-spring-boot-starter</module>
+        <module>jarvis-security-spring-boot-starter</module>
+        <module>jarvis-database-upgrade-spring-boot-starter</module>
+        <module>jarvis-oauth2-authorization-spring-boot-starter</module>
+        <module>jarvis-oauth2-resource-spring-boot-starter</module>
+        <module>jarvis-openfeign-spring-cloud-starter</module>
+        <module>jarvis-bizlog-spring-boot-starter</module>
+        <module>jarvis-springfox-spring-boot-starter</module>
+        <module>jarvis-knife4j-spring-cloud-starter</module>
+        <module>jarvis-mybatis-security-spring-boot-starter</module>
+    </modules>
+
+</project>

@@ -1,0 +1,10 @@
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.jarvis.framework.autoconfigure.mybatis.ArchiveMybatisAutoConfiguration,\
+com.jarvis.framework.autoconfigure.webmvc.ArchiveWebMvcAutoConfiguration,\
+com.jarvis.framework.autoconfigure.security.ArchiveSecurityAutoConfiguration,\
+com.jarvis.framework.autoconfigure.security.ArchiveValidateCodeAutoConfiguration,\
+com.jarvis.framework.autoconfigure.upgrade.ArchiveDatabaseUpgradeAutoConfiguration,\
+com.jarvis.framework.autoconfigure.oauth2.authorization.ArchiveOauth2AuthorizationServerSecurityAutoConfiguration,\
+com.jarvis.framework.autoconfigure.oauth2.resource.ArchiveOauth2ResourceServerSecurityAutoConfiguration,\
+com.jarvis.framework.autoconfigure.redis.ArchiveRedisAutoConfiguration

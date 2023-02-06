@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>com.jarvis.framework</groupId>
+        <artifactId>jarvis-parent</artifactId>
+        <version>1.2-SNAPSHOT</version>
+        <relativePath>../jarvis-parent</relativePath>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>jarvis-modules</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>jarvis-core</module>
+        <module>jarvis-mybatis</module>
+        <module>jarvis-security</module>
+        <module>jarvis-webmvc</module>
+        <module>jarvis-javax-persistence</module>
+        <module>jarvis-database-upgrade</module>
+        <module>jarvis-oauth2-resource</module>
+        <module>jarvis-oauth2-authorization</module>
+        <module>jarvis-oauth2-common</module>
+        <module>jarvis-redis</module>
+        <module>jarvis-openfeign</module>
+        <module>jarvis-resilience4j-openfeign</module>
+        <module>jarvis-bizlog</module>
+        <module>jarvis-web</module>
+        <module>jarvis-cypto</module>
+        <module>jarvis-token</module>
+    </modules>
+
+</project>

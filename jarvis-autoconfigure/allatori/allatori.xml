@@ -1,0 +1,40 @@
+<config>
+    <input>
+        <!--in表示需要混淆的jar包, out表示混淆后的jar包, 名称相同时会覆盖原来的jar包-->
+        <!--        <jar in="test.jar" out="obf-test.jar"/>-->
+        <jar in="jarvis-autoconfigure-1.2-SNAPSHOT.jar" out="allatori_jarvis-autoconfigure-1.2-SNAPSHOT.jar"/>
+
+    </input>
+
+    <keep-names>
+        <class template="class * instanceof java.io.Serializable"/>
+        <!--设置混淆级别,protected+ 表示访问权限在protected(包含)之上的名称不会被混淆-->
+        <class access="protected+">
+            <field access="protected+"/>
+            <method access="protected+"/>
+        </class>
+    </keep-names>
+
+    <!--用于排除某些不需要混淆的类-->
+    <ignore-classes>
+        <!--    以com.code1开头的类不进行混淆    -->
+        <!--        <class template="class regex:^(?!com.code1).*"/>-->
+        <!--        <class template="class org.springframework.*"/>-->
+    </ignore-classes>
+
+    <!--名称混淆方式-->
+    <!--    <property name="classes-naming" value="iii"/>-->
+    <!--    <property name="methods-naming" value="iii"/>-->
+    <property name="fields-naming" value="abc"/>
+    <property name="line-numbers" value="keep"/>
+    <property name="log-file" value="log.xml"/>
+
+    <!-- 用于为混淆的应用程序设置类路径-->
+    <!--<classpath basedir="../lib">-->
+    <!-- Adding library.jar to the classpath -->
+    <!-- Adding all jars in the lib directory to the classpath -->
+    <!--<jar name="*.jar"/>-->
+    <!-- Adding all jars in the lib2 directory and its subdirectories to the classpath -->
+    <!--</classpath>-->
+
+</config>
