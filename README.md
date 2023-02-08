@@ -1,19 +1,9 @@
+# jarvis-framework
+
 ``` lua
 jarvis-framework
-├── framework-base -- 基础类库
-├── framework-cache -- 缓存类库
-├── framework-core -- 核心类库
-├── framework-tool -- 工具类库
-├── jarvis-basic -- platform basic
-    ├── jarvis-common --
-        ├── jarvis-eureka-client -- 
-        ├── jarvis-logback --
-        ├── jarvis-util --
-    ├── jarvis-dependencies -- 
-    ├── jarvis-parent --
-        ├── jarvis-auth -- （应该为独立项目）
-        ├── jarvis-file-storage -- （应该为独立项目）
-    ├── jarvis-parent-war -- 作用未知      
+├── jarvis-autoconfigure -- 自动配置类库
+├── jarvis-baseweb -- 基础web类库
 ├── jarvis-dependencies -- 依赖管理类库
 ├── jarvis-modules -- 模块类库
     ├── jarvis-bizlog -- 业务日志类库
@@ -32,9 +22,7 @@ jarvis-framework
     ├── jarvis-token -- token类库
     ├── jarvis-web -- web类库
     ├── jarvis-webmvc -- webmvc类库
-├── 》》》jarvis-parent -- ****
-    ├── jarvis-autoconfigure -- 自动配置类库
-    ├── jarvis-baseweb -- 基础web类库
+├── jarvis-parent -- ****
 ├── jarvis-starters -- starters
     ├── jarvis-bizlog-spring-boot-starter -- 业务日志起步依赖
     ├── jarvis-databse-upgrade-spring-boot-starter -- ****
@@ -51,18 +39,3 @@ jarvis-framework
 ├── jarvis-dev-ops -- 规约检查依赖
     
 ```
-
-platform架构
-
-jarvis-parent-war作用未知
-archives-parent-war 还未找到
-
-archives-backstage-log
-archives-qc-checker-core
-archives-qc-checker-client
-archives-qc-checker-mvc
-archives-file-checker-core
-archives-file-checker-client
-archives-file-checker-mvc
-
-编译错误注释TODO
