@@ -1,18 +1,0 @@
-
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(È«ˆ8ÑíËµÖ0
-b	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(È«ˆ8ÑíËµÖ0
-b	java:S112$"FDefine and throw a dedicated exception instead of using a generic one.(È«ˆ8ÒíËµÖ0
-•
-java:S1192"xDefine a constant instead of duplicating this literal "ç”¨æˆ·åå’Œå¯†ç ä¸èƒ½åŒ…å«è‹±æ–‡å†’å·ï¼ˆ:ï¼‰å­—ç¬¦" 3 times.(È«ˆ8×íËµÖ0
-n
-java:S1192+"LUse already-defined constant 'SCHEME' instead of duplicating its value here.(¿ê²Æùÿÿÿÿ8×íËµÖ0
-V
-java:S5993"9Change the visibility of this constructor to "protected".(â§Ç¢8ïíËµÖ0
-:
-java:S1118"Hide this public constructor.(â§Ç¢8ôíËµÖ0
-P
-java:S1172(".Remove this unused method parameter "timeout".(¥„–ÿÿÿÿÿ8ƒîËµÖ0
-P
-java:S1172.".Remove this unused method parameter "timeout".(ËÇˆªşÿÿÿÿ8†îËµÖ0
-I
-java:S1068",Remove this unused "TIME_OUT" private field.(¢ŞÛŒ8‰îËµÖ0

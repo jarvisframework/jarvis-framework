@@ -1,8 +1,0 @@
-
-v
-java:S1192
-"TUse already-defined constant 'HOST_OWNER_KEY' instead of duplicating its value here.(Ú˜¥ïøÿÿÿÿ8È´¶ûÑ0
-W
-java:S1118":Add a private constructor to hide the implicit public one.(°à¯º8Î´¶ûÑ0
-T
-java:S1068"2Remove this unused "HOST_OWNER_KEY" private field.(Ç ´ªÿÿÿÿÿ8Ð´¶ûÑ0

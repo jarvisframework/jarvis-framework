@@ -1,7 +1,0 @@
-
-T
-java:S1611"7Remove the parentheses around the "condition" parameter(Á÷ ã8±Ö’şÑ0
-Z	java:S106 "9Replace this use of System.out or System.err by a logger.(½è£°ÿÿÿÿÿ8³Ö’şÑ0
-Z	java:S106!"9Replace this use of System.out or System.err by a logger.( ª¸şÿÿÿÿ8³Ö’şÑ0
-Z	java:S106""9Replace this use of System.out or System.err by a logger.(ù…ÒËüÿÿÿÿ8´Ö’şÑ0
-Z	java:S106#"9Replace this use of System.out or System.err by a logger.(äŠÉÒúÿÿÿÿ8µÖ’şÑ0

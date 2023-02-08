@@ -1,11 +1,0 @@
-
-w
-java:S14881"[Immediately return this expression instead of assigning it to the temporary variable "sql".(Œ¹“z8ĞŒ®€Ò0
-L
-java:S1611"0Remove the parentheses around the "jt" parameter(Ç•ê88æŒ®€Ò0
-o
-java:S1602"SRemove useless curly braces around statement and then remove useless return keyword(Ç•ê88æŒ®€Ò0
-L
-java:S1611"/Remove the parentheses around the "j" parameter(Ú’ÜÓ8çŒ®€Ò0
-I
-java:S1602",Remove useless curly braces around statement(Ú’ÜÓ8çŒ®€Ò0
