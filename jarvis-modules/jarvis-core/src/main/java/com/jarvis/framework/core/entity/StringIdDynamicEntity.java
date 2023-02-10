@@ -25,7 +25,7 @@ public class StringIdDynamicEntity extends HashMap<String, Object> implements Ba
     private String tableName;
 
     /**
-     * @see com.gdda.archives.framework.core.entity.BaseEntity#getId()
+     * @see com.jarvis.framework.core.entity.BaseEntity#getId()
      */
     @Override
     public String getId() {
@@ -33,7 +33,7 @@ public class StringIdDynamicEntity extends HashMap<String, Object> implements Ba
     }
 
     /**
-     * @see com.gdda.archives.framework.core.entity.BaseEntity#setId(java.io.Serializable)
+     * @see com.jarvis.framework.core.entity.BaseEntity#setId(java.io.Serializable)
      */
     @Override
     public void setId(String id) {
