@@ -20,7 +20,7 @@ public class DelegateFunctionConverter implements FunctionConverter {
 
     /**
      *
-     * @see com.gdda.archives.framework.database.upgrade.convert.FunctionConvert#convert(java.lang.String, java.lang.String)
+     * @see com.jarvis.framework.database.upgrade.convert.FunctionConverter#convert(java.lang.String, java.lang.String)
      */
     @Override
     public String convert(String sql, String databaseId) {

@@ -43,7 +43,7 @@ import java.util.Optional;
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass({ WebSecurityConfigurerAdapter.class })
-@ConditionalOnMissingClass("com.gdda.archives.framework.oauth2.resource.server.config.Oauth2ResourceServerSecurityConfig")
+@ConditionalOnMissingClass("com.jarvis.framework.oauth2.resource.server.config.Oauth2ResourceServerSecurityConfig")
 @EnableConfigurationProperties(ArchiveSecurityProperties.class)
 @Import({ ArchiveSecurityConfiguration.class, ArchiveRedisBadCreadentialsConfiguration.class,
         ArchiveSsoTokenConfiguration.class })

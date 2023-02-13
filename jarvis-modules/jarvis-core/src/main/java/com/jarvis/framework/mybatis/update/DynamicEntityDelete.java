@@ -39,7 +39,7 @@ public class DynamicEntityDelete extends CriteriaDelete<String> {
 
     /**
      *
-     * @see com.jarvis.framework.mybatis.update.CriteriaDelete#filter(com.gdda.archives.framework.function.BuildFunction)
+     * @see com.jarvis.framework.mybatis.update.CriteriaDelete#filter(com.jarvis.framework.function.BuildFunction)
      */
     @Override
     public DynamicEntityDelete filter(BuildFunction<ComposedCondition<String>> function) {

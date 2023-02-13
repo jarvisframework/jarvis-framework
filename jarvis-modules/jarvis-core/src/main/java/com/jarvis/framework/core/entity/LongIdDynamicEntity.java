@@ -26,7 +26,7 @@ public class LongIdDynamicEntity extends HashMap<String, Object> implements Base
     private String tableName;
 
     /**
-     * @see com.gdda.archives.framework.core.entity.BaseEntity#getId()
+     * @see com.jarvis.framework.core.entity.BaseEntity#getId()
      */
     @Override
     public Long getId() {
@@ -34,7 +34,7 @@ public class LongIdDynamicEntity extends HashMap<String, Object> implements Base
     }
 
     /**
-     * @see com.gdda.archives.framework.core.entity.BaseEntity#setId(java.io.Serializable)
+     * @see com.jarvis.framework.core.entity.BaseEntity#setId(java.io.Serializable)
      */
     @Override
     public void setId(Long id) {

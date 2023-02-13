@@ -73,7 +73,7 @@ public class H2UpgradeDialect extends PostgresqlUpgradeDialect {
     }
 
     /**
-     * @see com.gdda.archives.framework.database.upgrade.dialect.support.PostgresqlUpgradeDialect#getRenameColumnSql(com.gdda.archives.framework.database.upgrade.model.RenameColumn)
+     * @see com.jarvis.framework.database.upgrade.dialect.support.PostgresqlUpgradeDialect#getRenameColumnSql(com.jarvis.framework.database.upgrade.model.RenameColumn)
      */
     @Override
     public Collection<String> getRenameColumnSql(RenameColumn model) {
@@ -88,7 +88,7 @@ public class H2UpgradeDialect extends PostgresqlUpgradeDialect {
     }
 
     /**
-     * @see com.gdda.archives.framework.database.upgrade.dialect.support.PostgresqlUpgradeDialect#getColumnDataType(com.gdda.archives.framework.database.upgrade.model.Column)
+     * @see com.jarvis.framework.database.upgrade.dialect.support.PostgresqlUpgradeDialect#getColumnDataType(com.jarvis.framework.database.upgrade.model.Column)
      */
     @Override
     protected String getColumnDataType(Column model) {

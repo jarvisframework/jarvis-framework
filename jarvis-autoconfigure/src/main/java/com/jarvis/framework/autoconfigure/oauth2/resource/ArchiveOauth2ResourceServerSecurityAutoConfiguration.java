@@ -39,12 +39,12 @@ import java.util.Optional;
 @ConditionalOnClass({ Oauth2ResourceServerSecurityConfig.class })
 @EnableConfigurationProperties({ ArchiveSecurityProperties.class })
 @Import(ArchiveOauth2ResourceServerConfiguration.class)
-@ConditionalOnMissingClass("com.gdda.archives.framework.oauth2.authorization.server.config.Oauth2AuthenticationServerSecurityConfig")
+@ConditionalOnMissingClass("com.jarvis.framework.oauth2.authorization.server.config.Oauth2AuthenticationServerSecurityConfig")
 public class ArchiveOauth2ResourceServerSecurityAutoConfiguration {
 
     @Configuration(proxyBeanMethods = false)
     @ConditionalOnClass({ Oauth2ResourceServerSecurityConfig.class })
-    @ConditionalOnMissingClass("com.gdda.archives.framework.oauth2.authorization.server.config.Oauth2AuthenticationServerSecurityConfig")
+    @ConditionalOnMissingClass("com.jarvis.framework.oauth2.authorization.server.config.Oauth2AuthenticationServerSecurityConfig")
     static class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         @Autowired
