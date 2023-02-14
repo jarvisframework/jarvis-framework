@@ -59,7 +59,7 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- archives framework -->
+            <!-- jarvis framework -->
             <dependency>
                 <groupId>com.jarvis.framework</groupId>
                 <artifactId>jarvis-core</artifactId>

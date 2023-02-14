@@ -12,7 +12,7 @@
     <artifactId>jarvis-redis</artifactId>
 
     <dependencies>
-        <!-- archives framework -->
+        <!-- jarvis framework -->
         <dependency>
             <groupId>com.jarvis.framework</groupId>
             <artifactId>jarvis-core</artifactId>

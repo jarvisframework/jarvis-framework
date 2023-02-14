@@ -130,8 +130,8 @@
                 <artifactId>maven-source-plugin</artifactId>
                 <configuration>
                     <excludes>
-                        <exclude>com/gdda/archives/framework/activation/**</exclude>
-                        <exclude>com/gdda/archives/framework/autoconfigure/webmvc/ArchiveWebMvcAutoConfiguration.java</exclude>
+                        <exclude>com/jarvis/framework/activation/**</exclude>
+                        <exclude>com/jarvis/framework/autoconfigure/webmvc/ArchiveWebMvcAutoConfiguration.java</exclude>
                     </excludes>
                 </configuration>
             </plugin>

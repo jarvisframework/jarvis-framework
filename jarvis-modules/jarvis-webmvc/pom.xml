@@ -13,12 +13,12 @@
     <description>webmvc配置</description>
 
     <dependencies>
-        <!-- archives framework -->
+        <!-- jarvis framework -->
         <dependency>
             <groupId>com.jarvis.framework</groupId>
             <artifactId>jarvis-core</artifactId>
         </dependency>
-        <!-- archives web -->
+        <!-- jarvis web -->
         <dependency>
             <groupId>com.jarvis.framework</groupId>
             <artifactId>jarvis-web</artifactId>

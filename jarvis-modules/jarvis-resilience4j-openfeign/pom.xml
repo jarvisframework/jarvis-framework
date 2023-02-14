@@ -9,7 +9,7 @@
     <artifactId>jarvis-resilience4j-openfeign</artifactId>
 
     <dependencies>
-        <!-- archives framework -->
+        <!-- jarvis framework -->
         <dependency>
             <groupId>com.jarvis.framework</groupId>
             <artifactId>jarvis-webmvc</artifactId>
