@@ -14,7 +14,7 @@
 
 ```
 jarvis-framework
-├── jarvis-autoconfigure -- 自动配置类库
+├── jarvis-autoconfigure -- 自动配置类库(有代码混淆)
 ├── jarvis-baseweb -- 基础web类库
 ├── jarvis-dependencies -- 依赖管理类库
 ├── jarvis-modules -- 模块类库
@@ -46,7 +46,7 @@ jarvis-framework
     ├── jarvis-openfeign-spring-cloud-starter -- ****
     ├── jarvis-security-spring-boot-starter -- ****
     ├── jarvis-spring-boot-starter -- spring起步依赖
-    ├── jarvis-springfox-spring-boot-starter -- ****
+    ├── jarvis-springfox-spring-boot-starter -- swagger起步依赖
     ├── jarvis-webmvc-spring-boot-starter -- webmvc起步依赖
 ├── jarvis-dev-ops -- 规约检查依赖
     
