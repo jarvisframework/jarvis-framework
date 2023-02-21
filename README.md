@@ -14,6 +14,7 @@
 
 ```
 jarvis-framework
+├── doc -- 项目文档
 ├── jarvis-autoconfigure -- 自动配置类库(有代码混淆)
 ├── jarvis-baseweb -- 基础web类库
 ├── jarvis-dependencies -- 依赖管理类库
