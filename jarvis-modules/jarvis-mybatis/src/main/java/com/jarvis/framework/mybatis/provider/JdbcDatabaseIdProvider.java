@@ -15,7 +15,7 @@ import java.util.Properties;
  * jdbc.url=jdbc:oracle://127.0.0.1:1521:orcl，则databaseId=oracle
  * jdbc.url=jdbc:oscar://127.0.0.1:2003/OSRDB，则databaseId=oscar
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月18日
  */
 public class JdbcDatabaseIdProvider implements DatabaseIdProvider {

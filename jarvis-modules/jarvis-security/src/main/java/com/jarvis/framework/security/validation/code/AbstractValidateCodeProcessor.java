@@ -8,7 +8,7 @@ import org.springframework.web.context.request.ServletWebRequest;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月15日
  */
 public abstract class AbstractValidateCodeProcessor<C extends ValidateCode> implements ValidateCodeProcessor {

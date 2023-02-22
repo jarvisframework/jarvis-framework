@@ -4,7 +4,7 @@ import io.swagger.v3.oas.models.OpenAPI;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年8月2日
  */
 public class ArchiveOpenAPI extends OpenAPI {

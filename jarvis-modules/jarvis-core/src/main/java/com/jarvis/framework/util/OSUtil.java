@@ -2,7 +2,7 @@ package com.jarvis.framework.util;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月25日
  */
 public final class OSUtil {
@@ -137,7 +137,7 @@ public final class OSUtil {
      * 描述：操作系统描述
      * </p>
      *
-     * @author qiucs
+     * @author Doug Wang
      */
     public enum OSName {
 

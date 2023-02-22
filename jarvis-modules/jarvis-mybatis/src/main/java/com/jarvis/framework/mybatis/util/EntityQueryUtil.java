@@ -16,7 +16,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月27日
  */
 public class EntityQueryUtil {

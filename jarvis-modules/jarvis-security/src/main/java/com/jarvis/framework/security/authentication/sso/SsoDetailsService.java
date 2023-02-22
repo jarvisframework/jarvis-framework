@@ -5,7 +5,7 @@ import com.jarvis.framework.security.model.SecurityUser;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月18日
  */
 public interface SsoDetailsService {

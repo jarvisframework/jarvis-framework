@@ -20,7 +20,7 @@ import java.util.Map;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月22日
  */
 public class Oauth2AuthenticationSuccessHandler implements AuthenticationSuccessHandler {

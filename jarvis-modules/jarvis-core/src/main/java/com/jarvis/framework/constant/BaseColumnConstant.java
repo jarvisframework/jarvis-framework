@@ -3,7 +3,7 @@ package com.jarvis.framework.constant;
 /**
  * 基础字段常量
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月14日
  */
 public class BaseColumnConstant {

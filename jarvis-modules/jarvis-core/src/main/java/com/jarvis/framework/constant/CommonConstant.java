@@ -2,7 +2,7 @@ package com.jarvis.framework.constant;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年8月4日
  */
 public class CommonConstant {

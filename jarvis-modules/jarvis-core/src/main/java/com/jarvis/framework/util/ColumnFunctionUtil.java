@@ -7,7 +7,7 @@ import org.springframework.util.StringUtils;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月22日
  */
 public class ColumnFunctionUtil {

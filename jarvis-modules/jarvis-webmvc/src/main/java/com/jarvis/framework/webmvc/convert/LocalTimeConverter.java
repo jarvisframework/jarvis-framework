@@ -10,7 +10,7 @@ import static com.jarvis.framework.webmvc.constant.DateTimeFormatterPattern.NORM
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月7日
  */
 public class LocalTimeConverter implements Converter<String, LocalTime> {

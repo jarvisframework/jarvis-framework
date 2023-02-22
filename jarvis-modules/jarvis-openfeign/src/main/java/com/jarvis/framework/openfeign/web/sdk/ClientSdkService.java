@@ -5,7 +5,7 @@ import com.jarvis.framework.web.rest.RestResponse;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年10月9日
  */
 public interface ClientSdkService {

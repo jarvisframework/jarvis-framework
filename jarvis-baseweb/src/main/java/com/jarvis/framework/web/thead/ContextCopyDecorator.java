@@ -8,7 +8,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年12月1日
  */
 public class ContextCopyDecorator implements TaskDecorator {

@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public class SecurityUser extends DefaultUser implements LoginUser, UserDetails, CredentialsContainer {

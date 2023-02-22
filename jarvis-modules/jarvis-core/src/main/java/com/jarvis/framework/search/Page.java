@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * 分页信息
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月13日
  */
 public class Page implements Serializable {

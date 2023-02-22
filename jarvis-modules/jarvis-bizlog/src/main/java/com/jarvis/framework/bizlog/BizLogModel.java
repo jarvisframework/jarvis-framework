@@ -2,7 +2,7 @@ package com.jarvis.framework.bizlog;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月21日
  */
 public interface BizLogModel {

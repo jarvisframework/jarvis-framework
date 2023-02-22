@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年3月18日
  */
 public class OraclePageDialect extends AbstractPageDialect {

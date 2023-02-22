@@ -9,7 +9,7 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年5月12日
  */
 public class StringObjectRedisTemplate extends RedisTemplate<String, Object> {

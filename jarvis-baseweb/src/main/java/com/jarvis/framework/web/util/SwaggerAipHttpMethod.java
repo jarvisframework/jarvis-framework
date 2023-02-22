@@ -3,7 +3,7 @@ package com.jarvis.framework.web.util;
 /**
  * swagger文档中httpMethod对应的常量池
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月1日
  */
 public class SwaggerAipHttpMethod {

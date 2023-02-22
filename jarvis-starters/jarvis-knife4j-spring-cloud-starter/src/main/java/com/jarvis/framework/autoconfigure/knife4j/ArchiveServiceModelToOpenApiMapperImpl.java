@@ -9,7 +9,7 @@ import springfox.documentation.service.Documentation;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年8月2日
  */
 public class ArchiveServiceModelToOpenApiMapperImpl extends ServiceModelToOpenApiMapperImpl {

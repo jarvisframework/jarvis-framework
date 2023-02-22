@@ -6,7 +6,7 @@ import com.jarvis.framework.webmvc.web.exception.handler.ExceptionProcessor;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月8日
  */
 public class ValidateCodeExceptionProcessor implements ExceptionProcessor {

@@ -19,7 +19,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月14日
  */
 public interface BaseIdPrimaryKeyEnityMapper<Id extends Serializable, Entity extends BaseIdPrimaryKeyEntity<Id>,

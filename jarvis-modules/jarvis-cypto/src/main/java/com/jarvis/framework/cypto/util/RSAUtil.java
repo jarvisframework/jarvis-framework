@@ -18,7 +18,7 @@ import java.security.spec.X509EncodedKeySpec;
 /**
  * RSA加密解密
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年11月4日
  */
 public class RSAUtil {
@@ -165,7 +165,7 @@ public class RSAUtil {
     /**
      * RSA公私钥
      *
-     * @author qiucs
+     * @author Doug Wang
      * @version 1.0.0 2022年11月4日
      */
     public static class RSAKey {

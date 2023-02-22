@@ -20,7 +20,7 @@ import java.util.Map;
 /**
  * 处理异常并返回结构一致的 JSON
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年5月7日
  */
 public class CustomErrorController extends BasicErrorController {

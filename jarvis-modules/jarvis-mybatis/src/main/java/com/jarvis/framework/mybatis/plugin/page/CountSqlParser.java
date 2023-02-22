@@ -32,7 +32,7 @@ import java.util.Set;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年2月7日
  */
 public abstract class CountSqlParser {

@@ -9,7 +9,7 @@ import java.util.Collection;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月22日
  */
 public class SsoAuthenticationToken extends AbstractAuthenticationToken {

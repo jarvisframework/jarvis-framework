@@ -2,7 +2,7 @@ package com.jarvis.framework.security.authentication.idcard;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月29日
  */
 public class IdcardModel {

@@ -17,7 +17,7 @@ import java.time.ZoneId;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月25日
  */
 @MappedTypes(LocalDateTime.class)

@@ -4,7 +4,7 @@ import java.net.InetAddress;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月8日
  */
 public class UuidGenerator {

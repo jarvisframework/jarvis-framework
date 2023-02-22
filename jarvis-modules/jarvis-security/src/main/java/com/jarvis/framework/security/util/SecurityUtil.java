@@ -7,7 +7,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月29日
  */
 public class SecurityUtil {

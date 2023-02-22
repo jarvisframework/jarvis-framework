@@ -9,7 +9,7 @@ import java.util.Map;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年10月8日
  */
 public class ColumnLabelUtil {

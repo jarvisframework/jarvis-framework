@@ -16,7 +16,7 @@ import java.util.function.Consumer;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年9月29日
  */
 public class DynamicEntityUpdate extends CriteriaUpdate<String> {

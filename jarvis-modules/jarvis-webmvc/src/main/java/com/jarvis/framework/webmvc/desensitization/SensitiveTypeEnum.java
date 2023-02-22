@@ -3,7 +3,7 @@ package com.jarvis.framework.webmvc.desensitization;
 /**
  * 脱敏类型
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月16日
  */
 public enum SensitiveTypeEnum {

@@ -15,7 +15,7 @@ import java.util.stream.Stream;
 /**
  * 注册码
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月29日
  */
 public class LicenseInfo {

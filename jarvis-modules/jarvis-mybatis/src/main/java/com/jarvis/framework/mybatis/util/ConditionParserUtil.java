@@ -6,7 +6,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月21日
  */
 public class ConditionParserUtil {

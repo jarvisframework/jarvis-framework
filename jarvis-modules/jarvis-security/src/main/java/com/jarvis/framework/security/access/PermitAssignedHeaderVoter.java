@@ -10,7 +10,7 @@ import java.util.Collection;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年5月14日
  */
 public class PermitAssignedHeaderVoter implements AccessDecisionVoter<Object> {

@@ -4,7 +4,7 @@ import com.jarvis.framework.constant.WebMvcConstant;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月7日
  */
 public class DateTimeFormatterPattern {

@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月19日
  */
 public class DynamicEntityExecuteProvider implements ProviderMethodResolver {

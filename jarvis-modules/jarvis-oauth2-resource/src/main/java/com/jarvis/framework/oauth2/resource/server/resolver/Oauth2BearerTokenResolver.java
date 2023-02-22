@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年12月12日
  */
 public class Oauth2BearerTokenResolver implements BearerTokenResolver {

@@ -10,7 +10,7 @@ import java.util.function.Consumer;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年4月26日
  */
 public class MultipleQuery extends CriteriaQuery<String> {

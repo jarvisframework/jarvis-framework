@@ -11,7 +11,7 @@ import org.springframework.security.jackson2.SecurityJackson2Modules;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月23日
  */
 public abstract class AbstractRedisOauth2TokenService {

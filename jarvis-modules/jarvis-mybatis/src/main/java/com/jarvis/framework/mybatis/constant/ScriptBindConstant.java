@@ -4,7 +4,7 @@ import com.jarvis.framework.mybatis.parser.EntityProvideParser;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月14日
  */
 public class ScriptBindConstant {

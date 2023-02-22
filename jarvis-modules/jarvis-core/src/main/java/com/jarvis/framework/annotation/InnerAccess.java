@@ -10,7 +10,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 /**
  * 内部访问控制
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年11月2日
  */
 @Target({ METHOD, TYPE })

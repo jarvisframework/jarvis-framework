@@ -7,7 +7,7 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 /**
  * 所有Controller基类
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月22日
  */
 public abstract class BaseController {

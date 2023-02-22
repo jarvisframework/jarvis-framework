@@ -6,7 +6,7 @@ import com.jarvis.framework.web.service.StringIdSimpleEntityService;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public class StringIdSimpleEntityController<Entity extends StringIdSimpleEntity,

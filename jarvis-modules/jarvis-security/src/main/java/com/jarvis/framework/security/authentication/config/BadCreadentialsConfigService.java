@@ -2,7 +2,7 @@ package com.jarvis.framework.security.authentication.config;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年7月28日
  */
 public class BadCreadentialsConfigService {

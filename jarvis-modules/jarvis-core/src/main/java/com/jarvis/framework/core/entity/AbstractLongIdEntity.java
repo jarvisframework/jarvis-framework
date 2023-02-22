@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年11月2日
  */
 public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRevisionEntity<Long> {

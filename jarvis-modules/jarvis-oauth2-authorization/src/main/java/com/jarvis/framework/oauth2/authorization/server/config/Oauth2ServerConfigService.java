@@ -8,7 +8,7 @@ import org.springframework.util.Assert;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年7月28日
  */
 public class Oauth2ServerConfigService extends AbstractRedisOauth2TokenService {

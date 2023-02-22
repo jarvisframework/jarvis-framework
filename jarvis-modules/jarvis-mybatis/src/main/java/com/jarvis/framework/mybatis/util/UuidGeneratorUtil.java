@@ -4,7 +4,7 @@ import com.jarvis.framework.mapping.UuidGenerator;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public final class UuidGeneratorUtil {

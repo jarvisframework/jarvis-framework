@@ -2,7 +2,7 @@ package com.jarvis.framework.core.code;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年9月29日
  */
 public interface CodeEnum<T> {

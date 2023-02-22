@@ -2,7 +2,7 @@ package com.jarvis.framework.security.validation.code.config;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年7月28日
  */
 public class ValidateCodeConfigService {

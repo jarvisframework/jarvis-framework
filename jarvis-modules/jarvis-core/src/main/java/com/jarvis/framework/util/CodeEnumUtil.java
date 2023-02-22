@@ -11,7 +11,7 @@ import java.util.stream.Stream;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年9月29日
  */
 public abstract class CodeEnumUtil {

@@ -24,7 +24,7 @@ import java.time.Duration;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年11月10日
  */
 @Configuration(proxyBeanMethods = false)

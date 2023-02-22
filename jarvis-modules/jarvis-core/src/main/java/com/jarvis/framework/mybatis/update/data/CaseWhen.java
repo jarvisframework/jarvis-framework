@@ -8,7 +8,7 @@ import java.util.Map;
 /**
  * case c1 when v1 then a when v2 then b else c end
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年12月2日
  */
 public class CaseWhen<T> {

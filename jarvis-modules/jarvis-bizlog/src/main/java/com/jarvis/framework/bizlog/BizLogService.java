@@ -4,7 +4,7 @@ import com.jarvis.framework.bizlog.entity.BizLog;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月19日
  */
 public interface BizLogService {

@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年3月10日
  */
 @ConfigurationProperties(prefix = "spring.datasource.druid")

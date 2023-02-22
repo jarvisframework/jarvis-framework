@@ -6,7 +6,7 @@ import com.jarvis.framework.mybatis.snowflake.SnowflakeWorkIdHolder;
 /**
  * ID生成器工具类
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月17日
  */
 public final class SnowflakeIdGeneratorUtil {

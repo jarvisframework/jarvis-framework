@@ -7,7 +7,7 @@ import org.springframework.scheduling.annotation.Async;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月20日
  */
 public class BizLogEventListener {

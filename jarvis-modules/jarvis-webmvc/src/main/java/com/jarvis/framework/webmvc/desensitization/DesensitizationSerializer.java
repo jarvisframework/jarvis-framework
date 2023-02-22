@@ -17,7 +17,7 @@ import java.util.Objects;
 /**
  * 脱敏序列化
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月16日
  */
 public class DesensitizationSerializer extends JsonSerializer<String> implements ContextualSerializer {

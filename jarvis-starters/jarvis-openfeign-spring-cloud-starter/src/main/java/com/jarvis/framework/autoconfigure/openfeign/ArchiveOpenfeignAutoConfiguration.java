@@ -43,7 +43,7 @@ import static feign.form.ContentType.MULTIPART;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年6月4日
  */
 @EnableFeignClients(basePackages = { "com.jarvis.platform.client" })

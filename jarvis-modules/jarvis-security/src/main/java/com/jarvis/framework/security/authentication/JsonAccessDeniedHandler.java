@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月1日
  */
 public class JsonAccessDeniedHandler implements AccessDeniedHandler {

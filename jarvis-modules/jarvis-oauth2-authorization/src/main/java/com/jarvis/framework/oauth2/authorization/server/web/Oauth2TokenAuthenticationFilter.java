@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月20日
  */
 public class Oauth2TokenAuthenticationFilter extends AbstractAuthenticationProcessingFilter {

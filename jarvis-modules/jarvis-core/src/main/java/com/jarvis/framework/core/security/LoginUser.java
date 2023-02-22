@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public interface LoginUser extends Serializable {

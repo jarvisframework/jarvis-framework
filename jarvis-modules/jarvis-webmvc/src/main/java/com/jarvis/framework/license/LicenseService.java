@@ -2,7 +2,7 @@ package com.jarvis.framework.license;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年4月18日
  */
 public interface LicenseService {

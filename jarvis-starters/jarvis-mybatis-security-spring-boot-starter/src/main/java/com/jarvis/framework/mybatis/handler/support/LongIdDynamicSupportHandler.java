@@ -10,7 +10,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年8月6日
  */
 public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler, Ordered {

@@ -20,7 +20,7 @@ import java.time.format.DateTimeFormatter;
 /**
  * RedisTemplate<String, Object>对象构造器
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年5月12日
  */
 public abstract class StringObjectRedisTemplateBuilder {

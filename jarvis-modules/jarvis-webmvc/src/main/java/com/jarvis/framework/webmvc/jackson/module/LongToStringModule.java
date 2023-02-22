@@ -7,7 +7,7 @@ import com.jarvis.framework.webmvc.jackson.serializer.LongToStringSerializer;
 /**
  * java 中的long类型，在js中会丢失精度，因此在返回给前端时，要转成string类型
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2019年9月12日
  */
 public class LongToStringModule extends SimpleModule {

@@ -2,7 +2,7 @@ package com.jarvis.framework.security.authentication.sso;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月18日
  */
 public class SsoTokenUser {

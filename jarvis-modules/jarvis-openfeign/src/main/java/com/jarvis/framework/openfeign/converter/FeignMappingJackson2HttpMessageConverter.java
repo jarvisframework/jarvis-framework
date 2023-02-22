@@ -16,7 +16,7 @@ import java.lang.reflect.Type;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年10月21日
  */
 public class FeignMappingJackson2HttpMessageConverter extends AbstractJackson2HttpMessageConverter {

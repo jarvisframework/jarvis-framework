@@ -2,7 +2,7 @@
     <input>
         <!--in表示需要混淆的jar包, out表示混淆后的jar包, 名称相同时会覆盖原来的jar包-->
         <!--        <jar in="test.jar" out="obf-test.jar"/>-->
-        <jar in="jarvis-autoconfigure-1.2-SNAPSHOT.jar" out="allatori_jarvis-autoconfigure-1.2-SNAPSHOT.jar"/>
+        <jar in="jarvis-autoconfigure-2023.1.1-SNAPSHOT.jar" out="allatori_jarvis-autoconfigure-2023.1.1-SNAPSHOT.jar"/>
 
     </input>
 

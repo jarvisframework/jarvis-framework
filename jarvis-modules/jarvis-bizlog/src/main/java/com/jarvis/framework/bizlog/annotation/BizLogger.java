@@ -10,7 +10,7 @@ import java.lang.annotation.Target;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月14日
  */
 @Retention(RetentionPolicy.RUNTIME)

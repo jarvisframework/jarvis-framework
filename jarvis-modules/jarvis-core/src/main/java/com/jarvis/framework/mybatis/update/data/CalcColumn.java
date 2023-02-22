@@ -2,7 +2,7 @@ package com.jarvis.framework.mybatis.update.data;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年4月28日
  */
 public class CalcColumn {

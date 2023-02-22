@@ -3,7 +3,7 @@ package com.jarvis.framework.core.exception;
 /**
  * 框架内部统一异常类
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月19日
  */
 public class FrameworkException extends RuntimeException {

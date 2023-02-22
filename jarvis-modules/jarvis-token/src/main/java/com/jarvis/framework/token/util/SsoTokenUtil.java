@@ -4,7 +4,7 @@ import com.jarvis.framework.cypto.util.AESUtil;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月18日
  */
 public abstract class SsoTokenUtil {

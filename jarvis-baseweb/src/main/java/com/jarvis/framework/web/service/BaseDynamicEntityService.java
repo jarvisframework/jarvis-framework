@@ -14,7 +14,7 @@ import java.util.function.BiFunction;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月27日
  */
 public interface BaseDynamicEntityService<Id extends Serializable, Entity extends BaseDynamicEntity<Id>,

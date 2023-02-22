@@ -23,7 +23,7 @@ import static springfox.documentation.builders.RequestHandlerSelectors.withMetho
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月22日
  */
 @Configuration(proxyBeanMethods = false)

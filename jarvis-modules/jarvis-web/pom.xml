@@ -5,7 +5,7 @@
     <parent>
         <artifactId>jarvis-modules</artifactId>
         <groupId>com.jarvis.framework</groupId>
-        <version>1.2-SNAPSHOT</version>
+        <version>2023.1.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 

@@ -4,7 +4,7 @@ import java.text.DecimalFormat;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年12月15日
  */
 public class FileUtil {

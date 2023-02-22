@@ -13,7 +13,7 @@ import java.util.Set;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月15日
  */
 public class ObjectMapperConverter implements ConditionalGenericConverter {

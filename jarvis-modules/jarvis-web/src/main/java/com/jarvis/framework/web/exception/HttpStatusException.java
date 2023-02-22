@@ -4,7 +4,7 @@ import org.springframework.http.HttpStatus;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年11月23日
  */
 public class HttpStatusException extends RuntimeException {

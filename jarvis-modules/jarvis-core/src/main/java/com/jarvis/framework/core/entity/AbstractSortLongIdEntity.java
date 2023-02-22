@@ -2,7 +2,7 @@ package com.jarvis.framework.core.entity;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年11月2日
  */
 public class AbstractSortLongIdEntity extends AbstractLongIdEntity implements SortSimpleEntity {

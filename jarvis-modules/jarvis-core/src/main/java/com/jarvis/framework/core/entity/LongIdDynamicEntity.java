@@ -10,7 +10,7 @@ import static com.jarvis.framework.constant.BaseFieldConstant.ID;
 /**
  * 所有动态表对应的实体基类
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月14日
  */
 public class LongIdDynamicEntity extends HashMap<String, Object> implements BaseDynamicEntity<Long> {

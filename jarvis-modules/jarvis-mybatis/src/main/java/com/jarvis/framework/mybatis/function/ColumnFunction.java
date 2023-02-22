@@ -4,7 +4,7 @@ import com.jarvis.framework.function.SerializableFunction;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月22日
  */
 @FunctionalInterface

@@ -2,7 +2,7 @@ package com.jarvis.framework.autoconfigure.security;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月3日
  */
 public class AuthorityUrl {

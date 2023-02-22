@@ -2,7 +2,7 @@ package com.jarvis.framework.security.validation.code;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月19日
  */
 public interface SmsCodeSender {

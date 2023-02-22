@@ -3,7 +3,7 @@ package com.jarvis.framework.search;
 /**
  * 条件关系 等于、大于、小于等等
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月13日
  */
 public enum ConditionOperatorEnum {

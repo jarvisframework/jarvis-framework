@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年10月21日
  */
 public class FeignHttpMessageConverters extends HttpMessageConverters {

@@ -21,7 +21,7 @@ import java.io.PrintWriter;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public class JsonAuthenctiationFailureHandler implements AuthenticationFailureHandler {

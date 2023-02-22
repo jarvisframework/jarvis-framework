@@ -14,7 +14,7 @@ import java.util.Collection;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月1日
  */
 public interface UpgradeDialect {

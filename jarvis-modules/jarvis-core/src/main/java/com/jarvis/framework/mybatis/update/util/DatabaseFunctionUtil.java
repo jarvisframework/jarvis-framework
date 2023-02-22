@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年10月12日
  */
 public class DatabaseFunctionUtil {

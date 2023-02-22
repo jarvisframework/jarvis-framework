@@ -2,7 +2,7 @@ package com.jarvis.framework.search;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2023年1月30日
  */
 public class Highlight {

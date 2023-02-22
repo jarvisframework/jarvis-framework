@@ -3,7 +3,7 @@ package com.jarvis.framework.constant;
 /**
  * 数据库标识枚举
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月18日
  */
 public enum DatabaseIdEnum {

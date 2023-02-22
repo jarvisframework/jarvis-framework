@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年4月27日
  */
 public class EntityDelete<T extends Serializable> extends CriteriaDelete<Getter<T>> {

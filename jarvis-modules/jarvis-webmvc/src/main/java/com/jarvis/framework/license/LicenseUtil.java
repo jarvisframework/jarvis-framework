@@ -21,7 +21,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月29日
  */
 public class LicenseUtil {

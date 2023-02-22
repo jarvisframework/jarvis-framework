@@ -7,7 +7,7 @@ import java.io.Serializable;
 /**
  * Rest接口统一返回对象
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年9月3日
  */
 public class RestResponse<T> implements Serializable {

@@ -12,7 +12,7 @@ import java.io.Serializable;
 /**
  * 简单的实体对应的基类Mapper
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月19日
  */
 public interface BaseSimpleEntityMapper<Id extends Serializable, Entity extends BaseSimpleEntity<Id>>

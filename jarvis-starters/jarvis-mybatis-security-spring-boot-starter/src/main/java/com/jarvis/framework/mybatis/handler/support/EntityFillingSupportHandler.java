@@ -5,7 +5,7 @@ import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年8月6日
  */
 public interface EntityFillingSupportHandler {

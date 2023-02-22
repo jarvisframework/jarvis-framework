@@ -8,7 +8,7 @@ import java.util.function.Consumer;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月21日
  */
 public abstract class AbstractCriteriaCondition<Column, Criteria extends AbstractCriteriaCondition<Column, Criteria>> {

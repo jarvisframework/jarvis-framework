@@ -3,7 +3,7 @@ package com.jarvis.framework.constant;
 /**
  * 基础属性常量
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年5月20日
  */
 public class BaseFieldConstant {

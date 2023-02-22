@@ -3,7 +3,7 @@ package com.jarvis.framework.core.exception;
 /**
  * 业务处理异常统一使用类
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月27日
  */
 public class BusinessException extends RuntimeException {

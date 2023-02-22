@@ -17,7 +17,7 @@ import java.lang.reflect.Type;
 /**
  * JavaScript能表示并进行精确算术运算的整数范围为：正负2的53次方，也即从最小值-9007199254740992到最大值+9007199254740992之间的范围；对于超过这个范围的整数转成stirng类型
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2019年9月12日
  */
 public class LongToStringSerializer extends StdSerializer<Long> {

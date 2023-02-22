@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月25日
  */
 public class BooleanExtTypeHandler extends BooleanTypeHandler {

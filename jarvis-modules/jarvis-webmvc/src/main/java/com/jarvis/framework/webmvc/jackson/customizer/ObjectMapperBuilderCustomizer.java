@@ -22,7 +22,7 @@ import static com.jarvis.framework.webmvc.constant.DateTimeFormatterPattern.NORM
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月8日
  */
 public class ObjectMapperBuilderCustomizer implements Jackson2ObjectMapperBuilderCustomizer {

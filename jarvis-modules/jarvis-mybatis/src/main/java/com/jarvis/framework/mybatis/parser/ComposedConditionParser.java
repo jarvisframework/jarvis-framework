@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * 解析查询条件
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月21日
  */
 public final class ComposedConditionParser {

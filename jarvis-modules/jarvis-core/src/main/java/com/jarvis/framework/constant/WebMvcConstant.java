@@ -4,7 +4,7 @@ import com.jarvis.framework.util.RandomStringUtil;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年5月25日
  */
 public abstract class WebMvcConstant {

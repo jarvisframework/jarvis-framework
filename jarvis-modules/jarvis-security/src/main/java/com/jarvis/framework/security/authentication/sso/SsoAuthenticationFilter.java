@@ -22,7 +22,7 @@ import java.io.IOException;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月22日
  */
 public class SsoAuthenticationFilter extends OncePerRequestFilter {

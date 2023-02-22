@@ -14,7 +14,7 @@ import java.util.Collections;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月1日
  */
 public abstract class AbstractUpgradeDialect implements UpgradeDialect {

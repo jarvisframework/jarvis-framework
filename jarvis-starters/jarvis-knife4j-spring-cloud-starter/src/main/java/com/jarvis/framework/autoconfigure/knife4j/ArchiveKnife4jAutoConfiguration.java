@@ -11,7 +11,7 @@ import springfox.documentation.oas.mappers.ServiceModelToOpenApiMapper;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年8月2日
  */
 @Configuration(proxyBeanMethods = false)

@@ -6,7 +6,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年11月18日
  */
 public class SubEntityQuery<T extends Serializable> extends EntityQuery<T> implements ConditionExpression {

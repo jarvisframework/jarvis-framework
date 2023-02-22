@@ -8,7 +8,7 @@ import org.apache.ibatis.session.RowBounds;
 /**
  * 数据分页方言
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年3月18日
  */
 public interface PageDialect {

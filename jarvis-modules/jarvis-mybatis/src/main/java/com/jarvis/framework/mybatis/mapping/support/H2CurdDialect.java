@@ -4,7 +4,7 @@ import com.jarvis.framework.mybatis.mapping.CurdDialect;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年8月2日
  */
 public class H2CurdDialect extends PostgreCurdDialect {

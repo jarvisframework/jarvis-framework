@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年5月5日
  */
 public class SelectOption extends HashMap<String, Object> {

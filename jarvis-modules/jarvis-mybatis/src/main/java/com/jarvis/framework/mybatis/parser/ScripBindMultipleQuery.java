@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年4月26日
  */
 public class ScripBindMultipleQuery extends ScriptBindQuery<String> {

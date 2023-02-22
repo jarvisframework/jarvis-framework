@@ -4,7 +4,7 @@ import com.jarvis.framework.core.entity.BaseSimpleEntity;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月26日
  */
 public class CriteriaDeleteBuilder {

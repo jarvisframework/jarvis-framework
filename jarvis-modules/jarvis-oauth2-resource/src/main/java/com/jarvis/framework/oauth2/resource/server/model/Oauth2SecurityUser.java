@@ -8,7 +8,7 @@ import java.util.Map;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月25日
  */
 public class Oauth2SecurityUser extends SecurityUser implements OAuth2AuthenticatedPrincipal {

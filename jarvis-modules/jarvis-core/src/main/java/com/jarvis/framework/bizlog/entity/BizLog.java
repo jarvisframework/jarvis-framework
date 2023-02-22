@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月19日
  */
 public class BizLog {

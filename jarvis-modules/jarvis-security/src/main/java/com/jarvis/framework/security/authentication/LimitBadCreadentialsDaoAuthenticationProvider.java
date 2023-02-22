@@ -12,7 +12,7 @@ import org.springframework.security.core.AuthenticationException;
 /**
  * 针对BadCredentialsException进行限制登录功能
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月27日
  */
 public class LimitBadCreadentialsDaoAuthenticationProvider extends DaoAuthenticationProvider {

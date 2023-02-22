@@ -7,7 +7,7 @@ import com.jarvis.framework.webmvc.util.WebUtil;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月19日
  */
 public abstract class BizLoggerUtil {

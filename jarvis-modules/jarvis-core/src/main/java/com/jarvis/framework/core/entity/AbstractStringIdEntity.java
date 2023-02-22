@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public abstract class AbstractStringIdEntity implements StringIdSimpleEntity, BaseRevisionEntity<String> {

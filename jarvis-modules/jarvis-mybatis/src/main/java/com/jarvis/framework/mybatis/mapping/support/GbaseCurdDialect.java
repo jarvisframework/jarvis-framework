@@ -5,7 +5,7 @@ import com.jarvis.framework.mybatis.mapping.CurdDialect;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年8月18日
  */
 public class GbaseCurdDialect extends AbstractCurdDialect {

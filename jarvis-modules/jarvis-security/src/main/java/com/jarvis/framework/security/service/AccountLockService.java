@@ -2,7 +2,7 @@ package com.jarvis.framework.security.service;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2023年1月17日
  */
 public interface AccountLockService {

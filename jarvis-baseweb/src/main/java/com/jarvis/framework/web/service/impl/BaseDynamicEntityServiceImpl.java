@@ -30,7 +30,7 @@ import java.util.function.BiFunction;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月27日
  */
 public abstract class BaseDynamicEntityServiceImpl<Id extends Serializable, Entity extends BaseDynamicEntity<Id>,

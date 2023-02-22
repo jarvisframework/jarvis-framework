@@ -2,7 +2,7 @@ package com.jarvis.framework.webmvc.util;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月16日
  */
 public abstract class DesensitizationUtil {

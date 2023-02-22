@@ -7,7 +7,7 @@ import com.jarvis.framework.util.ColumnFunctionUtil;
  * 单个条件，如：age=18
  * 泛型Column为String/String[]
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月13日
  */
 public class SingleCondition<Column, Value> implements ConditionExpression {

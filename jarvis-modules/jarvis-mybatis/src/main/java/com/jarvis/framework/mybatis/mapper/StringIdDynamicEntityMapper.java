@@ -4,7 +4,7 @@ import com.jarvis.framework.core.entity.StringIdDynamicEntity;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public interface StringIdDynamicEntityMapper<Entity extends StringIdDynamicEntity>

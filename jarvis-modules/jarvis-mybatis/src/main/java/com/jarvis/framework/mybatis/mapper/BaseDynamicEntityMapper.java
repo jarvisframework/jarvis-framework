@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月19日
  */
 public interface BaseDynamicEntityMapper<Id extends Serializable, Entity extends BaseDynamicEntity<Id>>

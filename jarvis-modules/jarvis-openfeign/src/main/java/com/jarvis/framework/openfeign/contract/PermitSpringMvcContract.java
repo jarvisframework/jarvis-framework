@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年5月25日
  */
 public class PermitSpringMvcContract extends SpringMvcContract {

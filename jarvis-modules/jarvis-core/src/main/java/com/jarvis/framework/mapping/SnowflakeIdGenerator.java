@@ -15,7 +15,7 @@ import java.time.ZoneOffset;
  * snowflake每秒能够产生26万ID左右，完全满足需要。
  *
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月14日
  */
 public class SnowflakeIdGenerator {

@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.jarvis.framework</groupId>
         <artifactId>jarvis-modules</artifactId>
-        <version>1.2-SNAPSHOT</version>
+        <version>2023.1.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>jarvis-mybatis</artifactId>

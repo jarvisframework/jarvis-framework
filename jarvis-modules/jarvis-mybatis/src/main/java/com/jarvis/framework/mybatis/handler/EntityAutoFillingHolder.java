@@ -4,7 +4,7 @@ import com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月25日
  */
 public class EntityAutoFillingHolder {

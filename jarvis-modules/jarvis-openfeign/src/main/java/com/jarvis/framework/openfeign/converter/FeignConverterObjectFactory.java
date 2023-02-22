@@ -6,7 +6,7 @@ import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年10月21日
  */
 public class FeignConverterObjectFactory implements ObjectFactory<HttpMessageConverters> {

@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月21日
  */
 public class SerializableFunctionUtil {

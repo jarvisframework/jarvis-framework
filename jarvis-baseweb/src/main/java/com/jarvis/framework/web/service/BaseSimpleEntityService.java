@@ -15,7 +15,7 @@ import java.util.function.BiFunction;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月26日
  */
 public interface BaseSimpleEntityService<Id extends Serializable, Entity extends BaseSimpleEntity<Id>,

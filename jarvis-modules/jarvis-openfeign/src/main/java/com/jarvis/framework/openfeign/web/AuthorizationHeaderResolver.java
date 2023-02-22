@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年6月4日
  */
 public abstract class AuthorizationHeaderResolver {

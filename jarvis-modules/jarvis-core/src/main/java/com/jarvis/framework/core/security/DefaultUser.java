@@ -2,7 +2,7 @@ package com.jarvis.framework.core.security;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public class DefaultUser implements LoginUser {

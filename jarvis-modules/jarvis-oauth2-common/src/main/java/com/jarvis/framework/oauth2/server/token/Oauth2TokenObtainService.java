@@ -4,7 +4,7 @@ import org.springframework.security.core.Authentication;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月23日
  */
 public interface Oauth2TokenObtainService {

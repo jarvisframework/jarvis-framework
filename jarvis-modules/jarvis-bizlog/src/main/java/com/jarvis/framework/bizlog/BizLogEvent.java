@@ -5,7 +5,7 @@ import org.springframework.context.ApplicationEvent;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月19日
  */
 public class BizLogEvent extends ApplicationEvent {

@@ -11,7 +11,7 @@ import java.util.Set;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年6月29日
  */
 public abstract class HardwareAddressUtil {

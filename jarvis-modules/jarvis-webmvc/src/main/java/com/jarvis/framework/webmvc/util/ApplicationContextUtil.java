@@ -25,7 +25,7 @@ import org.springframework.format.support.FormattingConversionService;
 /**
  * Spring上下文工具类
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月27日
  */
 public class ApplicationContextUtil implements ApplicationContextAware {

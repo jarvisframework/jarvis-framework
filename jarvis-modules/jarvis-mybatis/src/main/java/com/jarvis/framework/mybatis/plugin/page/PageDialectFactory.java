@@ -12,7 +12,7 @@ import java.util.Map;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年3月19日
  */
 public class PageDialectFactory {

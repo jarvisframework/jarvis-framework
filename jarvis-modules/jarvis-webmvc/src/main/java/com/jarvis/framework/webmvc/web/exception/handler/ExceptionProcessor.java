@@ -4,7 +4,7 @@ import com.jarvis.framework.web.rest.RestResponse;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年7月8日
  */
 public interface ExceptionProcessor {

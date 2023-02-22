@@ -36,7 +36,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * CriteriaQuery参数处理
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年2月4日
  */
 public class CriteriaQueryMethodArgumentResolver implements HandlerMethodArgumentResolver {

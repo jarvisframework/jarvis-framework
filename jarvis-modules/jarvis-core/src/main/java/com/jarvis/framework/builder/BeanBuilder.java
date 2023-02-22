@@ -15,7 +15,7 @@ import java.util.function.Supplier;
  * User user = BeanBuilder.of(User::new).set(User::setName, "zhang san").set(User::setMail, "aaa@qq.com").build();
  * </pre>
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年3月29日
  */
 public class BeanBuilder<T> {

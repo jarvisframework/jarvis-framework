@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年3月29日
  */
 @FunctionalInterface

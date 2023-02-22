@@ -6,7 +6,7 @@ import com.jarvis.framework.database.upgrade.model.Column;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年8月1日
  */
 public class DmUpgradeDialect extends OracleUpgradeDialect {

@@ -13,7 +13,7 @@ import java.util.Base64;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年3月21日
  */
 public class SM3PasswordEncoder implements PasswordEncoder {

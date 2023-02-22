@@ -9,7 +9,7 @@ import static com.jarvis.framework.constant.BaseFieldConstant.ID;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public class StringIdDynamicEntity extends HashMap<String, Object> implements BaseDynamicEntity<String> {

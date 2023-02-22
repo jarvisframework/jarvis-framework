@@ -14,7 +14,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月23日
  */
 public class RedisOauth2TokenObtainService extends AbstractRedisOauth2TokenService implements Oauth2TokenObtainService {

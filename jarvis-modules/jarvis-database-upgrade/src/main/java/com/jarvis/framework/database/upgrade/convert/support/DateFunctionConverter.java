@@ -7,7 +7,7 @@ import com.jarvis.framework.database.upgrade.convert.parser.TokenHandler;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月8日
  */
 public class DateFunctionConverter implements FunctionConverter {

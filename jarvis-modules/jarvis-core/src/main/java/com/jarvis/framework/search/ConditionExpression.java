@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * 条件表达式
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月13日
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, include = JsonTypeInfo.As.PROPERTY)

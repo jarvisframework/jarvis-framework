@@ -9,7 +9,7 @@ import com.jarvis.framework.search.Page;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月20日
  */
 public class SqlserverCurdDialect extends AbstractCurdDialect {

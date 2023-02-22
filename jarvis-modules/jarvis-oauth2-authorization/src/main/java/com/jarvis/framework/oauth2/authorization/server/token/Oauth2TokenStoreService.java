@@ -5,7 +5,7 @@ import org.springframework.security.oauth2.core.endpoint.OAuth2AccessTokenRespon
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月21日
  */
 public interface Oauth2TokenStoreService {

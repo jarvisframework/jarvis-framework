@@ -2,7 +2,7 @@ package com.jarvis.framework.util;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2022年9月27日
  */
 public class CamelCaseUtil {

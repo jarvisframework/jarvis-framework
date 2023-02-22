@@ -36,7 +36,7 @@ import java.util.stream.Stream;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月27日
  */
 public abstract class BaseDynamicEntityController<Id extends Serializable, Entity extends BaseDynamicEntity<Id>,

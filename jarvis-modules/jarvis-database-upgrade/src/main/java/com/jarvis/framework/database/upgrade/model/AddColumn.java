@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * 字段新增
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月1日
  */
 public class AddColumn implements DdlUpgrade {

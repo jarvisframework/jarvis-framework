@@ -8,7 +8,7 @@ import org.springframework.core.env.Environment;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月17日
  */
 public class SnowflakeWorkIdHolder implements EnvironmentAware, InitializingBean {

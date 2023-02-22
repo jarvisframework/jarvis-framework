@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月26日
  */
 public class RedisValidateCodeStoreService implements ValidateCodeStoreService {

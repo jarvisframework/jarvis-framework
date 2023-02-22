@@ -7,7 +7,7 @@ import org.apache.ibatis.builder.annotation.ProviderMethodResolver;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月21日
  */
 public class SimpleEntityExecuteProvider implements ProviderMethodResolver {

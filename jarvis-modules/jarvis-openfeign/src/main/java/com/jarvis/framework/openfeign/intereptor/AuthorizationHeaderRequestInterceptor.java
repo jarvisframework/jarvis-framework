@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年5月28日
  */
 public class AuthorizationHeaderRequestInterceptor implements RequestInterceptor {

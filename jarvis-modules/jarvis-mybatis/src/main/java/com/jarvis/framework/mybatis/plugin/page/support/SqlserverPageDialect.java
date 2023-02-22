@@ -13,7 +13,7 @@ import java.util.List;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年3月19日
  */
 public class SqlserverPageDialect extends AbstractPageDialect {

@@ -5,7 +5,7 @@ import com.jarvis.framework.mybatis.mapper.StringIdDynamicEntityMapper;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月28日
  */
 public interface StringIdDynamicEntityService<Entity extends StringIdDynamicEntity, Mapper extends StringIdDynamicEntityMapper<Entity>>

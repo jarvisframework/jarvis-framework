@@ -29,7 +29,7 @@ import java.util.stream.Stream;
  *     .equal("deleted", 0)
  * </pre>
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年1月13日
  */
 public class ComposedCondition<Column> implements ConditionExpression {
@@ -401,11 +401,11 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * 表示当前组合条件拼接完成，返回到上一个组合条件位置，如：
      *
      * <pre>
-     * status=1 and (name like 'qiucs' or code='350425') and deleted=0
+     * status=1 and (name like 'Doug Wang' or code='350425') and deleted=0
      *
      * ComposedCondition<String> condition = new ComposedCondition<String>();
      * condition.equal("status", 1)
-     *      .orCondition().like("name", "qiucs").equal("code", "350425").endSubCondition()
+     *      .orCondition().like("name", "Doug Wang").equal("code", "350425").endSubCondition()
      *      .equal("deleted", 0)
      * </pre>
      *

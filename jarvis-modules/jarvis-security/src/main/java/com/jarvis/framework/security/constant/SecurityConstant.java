@@ -2,7 +2,7 @@ package com.jarvis.framework.security.constant;
 
 /**
  *
- * @author qiucs
+ * @author Doug Wang
  * @version 1.0.0 2021年4月25日
  */
 public abstract class SecurityConstant {
