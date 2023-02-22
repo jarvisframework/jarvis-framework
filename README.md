@@ -35,7 +35,7 @@ jarvis-framework
     ├── jarvis-token -- token类库
     ├── jarvis-web -- web类库
     ├── jarvis-webmvc -- webmvc类库
-├── jarvis-parent -- ****
+├── jarvis-parent -- 框架依赖管理
 ├── jarvis-starters -- starters
     ├── jarvis-bizlog-spring-boot-starter -- 业务日志起步依赖
     ├── jarvis-databse-upgrade-spring-boot-starter -- ****
