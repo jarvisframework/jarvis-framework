@@ -22,7 +22,7 @@ jarvis-framework
     ├── jarvis-bizlog -- 业务日志类库
     ├── jarvis-core -- 核心类库
     ├── jarvis-cypto -- 密钥类库
-    ├── jarvis-databse-upgrade -- ****
+    ├── jarvis-databse-upgrade -- 数据库脚本升级类库
     ├── jarvis-javax-persistence -- ****
     ├── jarvis-mybatis -- mybatis类库
     ├── jarvis-oauth2-authorization -- ****
@@ -38,8 +38,8 @@ jarvis-framework
 ├── jarvis-parent -- 框架依赖管理
 ├── jarvis-starters -- starters
     ├── jarvis-bizlog-spring-boot-starter -- 业务日志起步依赖
-    ├── jarvis-databse-upgrade-spring-boot-starter -- ****
-    ├── jarvis-knife4j-spring-boot-starter -- knife4j起步依赖
+    ├── jarvis-databse-upgrade-spring-boot-starter -- 数据库脚本升级起步依赖
+    ├── jarvis-knife4j-spring-boot-starter -- 微服务knife4j起步依赖
     ├── jarvis-mybatis-security-spring-boot-starter -- mybatis安全起步依赖
     ├── jarvis-mybatis-spring-boot-starter -- mybatis起步依赖
     ├── jarvis-oauth2-authorization-spring-boot-starter -- ****
