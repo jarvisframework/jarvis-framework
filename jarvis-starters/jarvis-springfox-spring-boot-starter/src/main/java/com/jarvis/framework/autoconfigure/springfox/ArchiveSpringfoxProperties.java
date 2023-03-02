@@ -12,9 +12,9 @@ public class ArchiveSpringfoxProperties {
 
     private String version = "4.x";
 
-    private String title = "档案系统Api文档";
+    private String title = "Jarvis系统Api文档";
 
-    private String description = "档案一体化平台系统Api接口文档";
+    private String description = "Jarvis一体化平台系统Api接口文档";
 
     private String serviceUrl = "http://localhost:9999";
 
