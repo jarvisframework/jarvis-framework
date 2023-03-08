@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @author Doug Wang
  * @version 1.0.0 2021年7月21日
  */
-@ConfigurationProperties(prefix = "gdda.bizlog")
+@ConfigurationProperties(prefix = "jarvis.bizlog")
 public class ArchiveBizLoggerProperties {
 
     /** 日志级别 */
