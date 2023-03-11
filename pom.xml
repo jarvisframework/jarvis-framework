@@ -38,22 +38,22 @@
     <!-- Jarvis中心仓库 -->
     <distributionManagement>
         <repository>
-            <id>jarvis-releases</id>
-            <name>jarvis-releases</name>
-            <url>http://nexus.jarvis.com.cn/content/repositories/releases/</url>
+            <id>maven-releases</id>
+            <name>maven-releases</name>
+            <url>http://ganch.tk:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
-            <id>jarvis-snapshots</id>
-            <name>jarvis-snapshots</name>
-            <url>http://nexus.jarvis.com.cn/content/repositories/snapshots/</url>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://ganch.tk:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
     <!-- 仓库地址 -->
     <repositories>
         <repository>
-            <id>jarvisgroup</id>
-            <url>http://nexus.jarvis.com.cn/content/groups/public/</url>
+            <id>maven-public</id>
+            <url>http://ganch.tk:8081/repository/maven-public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -78,10 +78,11 @@
             </snapshots>
         </repository>
     </repositories>
+
     <pluginRepositories>
         <pluginRepository>
-            <id>jarvisgroup</id>
-            <url>http://nexus.jarvis.com.cn/content/groups/public/</url>
+            <id>maven-public</id>
+            <url>http://ganch.tk:8081/repository/maven-public/</url>
         </pluginRepository>
     </pluginRepositories>
 </project>
