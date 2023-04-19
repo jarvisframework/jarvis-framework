@@ -53,6 +53,25 @@ jarvis-framework
     
 ```
 
+Feature
+=========================
+- 类`gitlab`的`RESTful API`，类`gitlab`的权限模型。将来打通`gitlab`，良心的惊喜
+- 空间管理。意味着有独立的空间资源：环境管理、用户组、项目、服务器等
+- 灰度发布。呼声不断，终于来了
+- 项目管理。Deploy、Release的前置及后置hook，自定义全局变量；自带检测、复制功能，都贴心到这种程度了
+- `websocket` 实时展示部署中的 `shell console`，跟真的终端长得一样。
+- 完善的通知机制。邮件、钉钉
+
+Architecture
+=========================
+![](https://raw.github.com/meolu/docs/master/walle-web.io/docs/2/zh-cn/static/walle-flow-relation.jpg)
+
+
+Roadmap
+=========================
+- [x] **预览版**  2018-12-02
+    - ~~安装文档、前后端代码、Data Migration~~
+
 ## 更新日志
 
 ### v2023.1.1-SNAPSHOT 2023.1.1
