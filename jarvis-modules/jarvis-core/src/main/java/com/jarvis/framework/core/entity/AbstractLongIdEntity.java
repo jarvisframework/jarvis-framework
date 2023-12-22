@@ -18,7 +18,7 @@ public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRe
 
     protected Long id;
 
-    protected Integer revision;
+    protected int revision;
 
     @IgnoreUpdate
     protected Long createdBy;
@@ -50,7 +50,7 @@ public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRe
      * @return the revision
      */
     @Override
-    public Integer getRevision() {
+    public int getRevision() {
         return revision;
     }
 
@@ -58,7 +58,7 @@ public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRe
      * @param revision the revision to set
      */
     @Override
-    public void setRevision(Integer revision) {
+    public void setRevision(int revision) {
         this.revision = revision;
     }
 

@@ -22,7 +22,7 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getRevision()
      */
     @Override
-    public Integer getRevision() {
+    public int getRevision() {
         return (Integer) get(BaseFieldConstant.REVISION);
     }
 
@@ -31,7 +31,7 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setRevision(java.lang.Integer)
      */
     @Override
-    public void setRevision(Integer revision) {
+    public void setRevision(int revision) {
         put(BaseFieldConstant.REVISION, revision);
     }
 

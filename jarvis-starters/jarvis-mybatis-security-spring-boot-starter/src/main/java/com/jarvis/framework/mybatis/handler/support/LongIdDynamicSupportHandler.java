@@ -40,8 +40,7 @@ public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler,
     public void update(BaseIdPrimaryKeyEntity<?> entity) {
         final AbstractLongIdDynamicEntity fillingEntity = (AbstractLongIdDynamicEntity) entity;
         fillingEntity.setUpdatedTime(LocalDateTime.now());
-        Integer revision = fillingEntity.getRevision();
-        fillingEntity.setRevision(null == revision ? 1 : revision++);
+        fillingEntity.setRevision(fillingEntity.getRevision() + 1);
         final SecurityUser user = SecurityUtil.getUser();
         if (null != user) {
             fillingEntity.setUpdatedBy(Long.parseLong(String.valueOf(user.getId())));

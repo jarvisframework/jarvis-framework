@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
  */
 public interface BaseRevisionEntity<Id extends Serializable> extends BaseIdPrimaryKeyEntity<Id> {
 
-    Integer getRevision();
+    int getRevision();
 
     /**
      * @param revision the revision to set
      */
-    void setRevision(Integer revision);
+    void setRevision(int revision);
 
     /**
      * @return the createdBy

@@ -40,12 +40,12 @@
         <repository>
             <id>maven-releases</id>
             <name>maven-releases</name>
-            <url>http://ganch.tk:8081/repository/maven-releases/</url>
+            <url>http://app.deehero.com:60008/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
             <name>maven-snapshots</name>
-            <url>http://ganch.tk:8081/repository/maven-snapshots/</url>
+            <url>http://app.deehero.com:60008/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -53,7 +53,7 @@
     <repositories>
         <repository>
             <id>maven-public</id>
-            <url>http://ganch.tk:8081/repository/maven-public/</url>
+            <url>http://app.deehero.com:60008/repository/maven-public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -82,7 +82,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>maven-public</id>
-            <url>http://ganch.tk:8081/repository/maven-public/</url>
+            <url>http://app.deehero.com:60008/repository/maven-public/</url>
         </pluginRepository>
     </pluginRepositories>
 </project>

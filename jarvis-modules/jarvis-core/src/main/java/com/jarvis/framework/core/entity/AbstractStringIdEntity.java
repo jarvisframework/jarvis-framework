@@ -18,7 +18,7 @@ public abstract class AbstractStringIdEntity implements StringIdSimpleEntity, Ba
 
     protected String id;
 
-    protected Integer revision;
+    protected int revision;
 
     @IgnoreUpdate
     protected String createdBy;
@@ -50,7 +50,7 @@ public abstract class AbstractStringIdEntity implements StringIdSimpleEntity, Ba
      * @return the revision
      */
     @Override
-    public Integer getRevision() {
+    public int getRevision() {
         return revision;
     }
 
@@ -58,7 +58,7 @@ public abstract class AbstractStringIdEntity implements StringIdSimpleEntity, Ba
      * @param revision the revision to set
      */
     @Override
-    public void setRevision(Integer revision) {
+    public void setRevision(int revision) {
         this.revision = revision;
     }
 
