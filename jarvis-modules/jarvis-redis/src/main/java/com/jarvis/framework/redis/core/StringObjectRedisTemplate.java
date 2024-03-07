@@ -1,7 +1,7 @@
-package comjarvis.framework.redis.core;
+package com.jarvis.framework.redis.core;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import comjarvis.framework.redis.builder.StringObjectRedisTemplateBuilder;
+import com.jarvis.framework.redis.builder.StringObjectRedisTemplateBuilder;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;

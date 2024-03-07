@@ -1,7 +1,7 @@
 package com.jarvis.framework.autoconfigure.redis;
 
-import comjarvis.framework.redis.builder.StringObjectRedisTemplateBuilder;
-import comjarvis.framework.redis.core.StringObjectRedisTemplate;
+import com.jarvis.framework.redis.builder.StringObjectRedisTemplateBuilder;
+import com.jarvis.framework.redis.core.StringObjectRedisTemplate;
 import org.springframework.boot.autoconfigure.AutoConfigureAfter;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

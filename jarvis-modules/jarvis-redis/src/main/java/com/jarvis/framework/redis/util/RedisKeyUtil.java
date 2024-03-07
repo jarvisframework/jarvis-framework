@@ -1,4 +1,4 @@
-package comjarvis.framework.redis.util;
+package com.jarvis.framework.redis.util;
 
 import com.jarvis.framework.constant.SymbolConstant;
 

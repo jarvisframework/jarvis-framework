@@ -1,7 +1,7 @@
 package com.jarvis.framework.oauth2.server.token.support;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import comjarvis.framework.redis.builder.StringObjectRedisTemplateBuilder;
+import com.jarvis.framework.redis.builder.StringObjectRedisTemplateBuilder;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.RedisSerializer;
