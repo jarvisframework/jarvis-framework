@@ -9,6 +9,7 @@
 ## jarvis-framework
 
 * Jarvis framework 快速开发框架
+* 吸spring mvc、mybatis之精华，集日月之神奇。历时七七四十九天（远远不止于此）编码而成。基于Java语言对API进行了尽可能全面、优雅地封装，用以方便各位朋友使用与学习。
 
 ## 工程结构
 
