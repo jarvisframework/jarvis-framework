@@ -45,8 +45,8 @@ jarvis-framework
     ├── jarvis-mybatis-spring-boot-starter -- mybatis起步依赖
     ├── jarvis-oauth2-authorization-spring-boot-starter -- ****
     ├── jarvis-jarvis-oauth2-resource-spring-boot-starter -- ****
-    ├── jarvis-openfeign-spring-cloud-starter -- ****
-    ├── jarvis-security-spring-boot-starter -- ****
+    ├── jarvis-openfeign-spring-cloud-starter -- openfeign起步依赖
+    ├── jarvis-security-spring-boot-starter -- 份验证和授权框架起步依赖
     ├── jarvis-spring-boot-starter -- spring起步依赖
     ├── jarvis-springfox-spring-boot-starter -- swagger起步依赖
     ├── jarvis-webmvc-spring-boot-starter -- webmvc起步依赖
