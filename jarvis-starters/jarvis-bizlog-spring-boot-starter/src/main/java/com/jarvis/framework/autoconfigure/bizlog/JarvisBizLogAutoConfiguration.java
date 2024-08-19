@@ -22,8 +22,8 @@ import org.springframework.scheduling.annotation.EnableAsync;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnBean(value = BizLogService.class)
 @ConditionalOnWebApplication
-@EnableConfigurationProperties(ArchiveBizLoggerProperties.class)
-public class ArchiveBizLogAutoConfiguration {
+@EnableConfigurationProperties(JarvisBizLoggerProperties.class)
+public class JarvisBizLogAutoConfiguration {
 
     @Bean
     public BizLogEventListener bizLogEventListener(BizLogService bizLogService) {
@@ -32,7 +32,7 @@ public class ArchiveBizLogAutoConfiguration {
 
     @Bean
     public BizLoggerAspect bizLoggerAspect(ApplicationEventPublisher publisher,
-                                           ArchiveBizLoggerProperties properties, ObjectProvider<BizLogModel> modelServiceProvider) {
+                                           JarvisBizLoggerProperties properties, ObjectProvider<BizLogModel> modelServiceProvider) {
         return new BizLoggerAspect(properties.getLevel(), publisher, modelServiceProvider.getIfAvailable(),
                 properties.getDelimiter());
     }

@@ -154,7 +154,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> equal(Column column, Object value) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.EQ, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.EQ, value));
         return this;
     }
 
@@ -166,7 +166,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> notEqual(Column column, Object value) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.NEQ, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.NEQ, value));
         return this;
     }
 
@@ -178,7 +178,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> greaterThan(Column column, Object value) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.GT, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.GT, value));
         return this;
     }
 
@@ -190,7 +190,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> lessThan(Column column, Object value) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.LT, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.LT, value));
         return this;
     }
 
@@ -202,7 +202,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> greaterThanEqual(Column column, Object value) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.GTE, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.GTE, value));
         return this;
     }
 
@@ -214,7 +214,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> lessThanEqual(Column column, Object value) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.LTE, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.LTE, value));
         return this;
     }
 
@@ -226,7 +226,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> between(Column column, Object startValue, Object endValue) {
-        add(new SingleCondition<String, BetweenValue>(toColumn(column), ConditionOperatorEnum.BT,
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.BT,
                 new BetweenValue(startValue, endValue)));
         return this;
     }
@@ -239,7 +239,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> isNull(Column column) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.NULL, null));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.NULL, null));
         return this;
     }
 
@@ -251,7 +251,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> isNotNull(Column column) {
-        add(new SingleCondition<String, Object>(toColumn(column), ConditionOperatorEnum.NNULL, null));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.NNULL, null));
         return this;
     }
 
@@ -263,7 +263,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> like(Column column, String value) {
-        add(new SingleCondition<String, String>(toColumn(column), ConditionOperatorEnum.LIKE, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.LIKE, value));
         return this;
     }
 
@@ -276,7 +276,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      */
     public ComposedCondition<Column> like(Column[] columns, String value) {
 
-        add(new SingleCondition<String[], String>(Stream.of(columns).map(column -> {
+        add(new SingleCondition<>(Stream.of(columns).map(column -> {
             return toColumn(column);
         }).collect(Collectors.toList()).toArray(new String[columns.length]), ConditionOperatorEnum.LIKE, value));
         return this;
@@ -291,7 +291,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      */
     public ComposedCondition<Column> like(List<Column> columns, String value) {
 
-        add(new SingleCondition<String[], String>(columns.stream().map(column -> {
+        add(new SingleCondition<>(columns.stream().map(column -> {
             return toColumn(column);
         }).collect(Collectors.toList()).toArray(new String[columns.size()]), ConditionOperatorEnum.LIKE, value));
         return this;
@@ -305,7 +305,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> startWidth(Column column, String value) {
-        add(new SingleCondition<String, String>(toColumn(column), ConditionOperatorEnum.SW, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.SW, value));
         return this;
     }
 
@@ -317,7 +317,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> endWidth(Column column, String value) {
-        add(new SingleCondition<String, String>(toColumn(column), ConditionOperatorEnum.EW, value));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.EW, value));
         return this;
     }
 
@@ -329,7 +329,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public <T> ComposedCondition<Column> in(Column column, List<T> values) {
-        add(new SingleCondition<String, Object[]>(toColumn(column), ConditionOperatorEnum.IN, values.toArray()));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.IN, values.toArray()));
         return this;
     }
 
@@ -341,7 +341,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> in(Column column, Object... values) {
-        add(new SingleCondition<String, Object[]>(toColumn(column), ConditionOperatorEnum.IN, values));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.IN, values));
         return this;
     }
 
@@ -353,7 +353,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public <T> ComposedCondition<Column> notIn(Column column, List<T> values) {
-        add(new SingleCondition<String, Object[]>(toColumn(column), ConditionOperatorEnum.NIN, values.toArray()));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.NIN, values.toArray()));
         return this;
     }
 
@@ -365,7 +365,7 @@ public class ComposedCondition<Column> implements ConditionExpression {
      * @return
      */
     public ComposedCondition<Column> notIn(Column column, Object... values) {
-        add(new SingleCondition<String, Object[]>(toColumn(column), ConditionOperatorEnum.NIN, values));
+        add(new SingleCondition<>(toColumn(column), ConditionOperatorEnum.NIN, values));
         return this;
     }
 

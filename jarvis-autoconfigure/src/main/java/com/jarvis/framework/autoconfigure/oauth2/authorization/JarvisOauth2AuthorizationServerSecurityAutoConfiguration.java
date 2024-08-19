@@ -1,8 +1,8 @@
 package com.jarvis.framework.autoconfigure.oauth2.authorization;
 
-import com.jarvis.framework.autoconfigure.oauth2.resource.ArchiveOauth2ResourceServerConfiguration;
-import com.jarvis.framework.autoconfigure.security.ArchiveRedisBadCreadentialsConfiguration;
-import com.jarvis.framework.autoconfigure.security.ArchiveSecurityProperties;
+import com.jarvis.framework.autoconfigure.oauth2.resource.JarvisOauth2ResourceServerConfiguration;
+import com.jarvis.framework.autoconfigure.security.JarvisRedisBadCreadentialsConfiguration;
+import com.jarvis.framework.autoconfigure.security.JarvisSecurityProperties;
 import com.jarvis.framework.constant.WebMvcConstant;
 import com.jarvis.framework.oauth2.authorization.server.config.Oauth2AuthenticationServerSecurityConfig;
 import com.jarvis.framework.oauth2.authorization.server.config.Oauth2ServerProperties;
@@ -49,9 +49,9 @@ import java.util.Optional;
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass({Oauth2AuthenticationServerSecurityConfig.class})
-@Import({ArchiveOauth2AuthorizationServerConfiguration.class, ArchiveOauth2ResourceServerConfiguration.class, ArchiveRedisBadCreadentialsConfiguration.class})
-@EnableConfigurationProperties({ArchiveSecurityProperties.class, Oauth2ServerProperties.class})
-public class ArchiveOauth2AuthorizationServerSecurityAutoConfiguration {
+@Import({JarvisOauth2AuthorizationServerConfiguration.class, JarvisOauth2ResourceServerConfiguration.class, JarvisRedisBadCreadentialsConfiguration.class})
+@EnableConfigurationProperties({JarvisSecurityProperties.class, Oauth2ServerProperties.class})
+public class JarvisOauth2AuthorizationServerSecurityAutoConfiguration {
 
     @Configuration(proxyBeanMethods = false)
     @ConditionalOnClass({Oauth2AuthenticationServerSecurityConfig.class})
@@ -73,7 +73,7 @@ public class ArchiveOauth2AuthorizationServerSecurityAutoConfiguration {
         private List<SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>> securityConfigurers;
 
         @Autowired
-        private ArchiveSecurityProperties securityProperties;
+        private JarvisSecurityProperties securityProperties;
 
         @Autowired(required = false)
         private LogoutSuccessHandler logoutSuccessHandler;

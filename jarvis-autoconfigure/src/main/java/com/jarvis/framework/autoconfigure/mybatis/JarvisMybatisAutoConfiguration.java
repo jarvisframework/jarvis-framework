@@ -31,9 +31,9 @@ import javax.sql.DataSource;
 @ConditionalOnClass({ SqlSessionFactory.class, SqlSessionFactoryBean.class })
 @EnableConfigurationProperties({ SnowflakeIdProperties.class, DruidExtendProperties.class })
 @AutoConfigureAfter({ MybatisAutoConfiguration.class })
-public class ArchiveMybatisAutoConfiguration {
+public class JarvisMybatisAutoConfiguration {
 
-    public ArchiveMybatisAutoConfiguration(ObjectProvider<EntityAutoFillingHandler> entityAutoFillingProvider) {
+    public JarvisMybatisAutoConfiguration(ObjectProvider<EntityAutoFillingHandler> entityAutoFillingProvider) {
         EntityAutoFillingHolder.setHandler(entityAutoFillingProvider.getIfAvailable());
     }
 

@@ -37,7 +37,7 @@ import java.util.stream.Collectors;
 @AutoConfigureBefore({ErrorMvcAutoConfiguration.class})
 @ConditionalOnClass({WebMvcConfigurer.class})
 @ComponentScan(basePackages = {"com.jarvis.framework.autoconfigure.webmvc"})
-public class ArchiveWebMvcAutoConfiguration {
+public class JarvisWebMvcAutoConfiguration {
     @Bean
     Jackson2ObjectMapperBuilderCustomizer jackson2ObjectMapperBuilderCustomizer() {
         return new ObjectMapperBuilderCustomizer();
@@ -50,7 +50,7 @@ public class ArchiveWebMvcAutoConfiguration {
     }
 
     @Bean
-    LicenseInfo archiveLicenseInfo(ObjectMapper a) {
+    LicenseInfo jarvisLicenseInfo(ObjectMapper a) {
         return new LicenseInfo(a);
     }
 
@@ -59,16 +59,16 @@ public class ArchiveWebMvcAutoConfiguration {
         return new ApplicationContextUtil();
     }
 
-    public ArchiveWebMvcAutoConfiguration() {
+    public JarvisWebMvcAutoConfiguration() {
     }
 
     @Configuration
-    class ArchiveWebMvcConfigurer implements WebMvcConfigurer {
+    class JarvisWebMvcConfigurer implements WebMvcConfigurer {
 
         @Autowired
         private ObjectMapper objectMapper;
 
-        ArchiveWebMvcConfigurer() {
+        JarvisWebMvcConfigurer() {
         }
 
         public void addArgumentResolvers(List<HandlerMethodArgumentResolver> ax) {

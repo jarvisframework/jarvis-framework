@@ -48,7 +48,7 @@ import static feign.form.ContentType.MULTIPART;
  */
 @EnableFeignClients(basePackages = { "com.jarvis.platform.client" })
 @Configuration(proxyBeanMethods = false)
-public class ArchiveOpenfeignAutoConfiguration {
+public class JarvisOpenfeignAutoConfiguration {
 
     @Autowired(required = false)
     private final List<AnnotatedParameterProcessor> parameterProcessors = new ArrayList<>();

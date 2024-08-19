@@ -13,7 +13,7 @@ import java.util.List;
  * @version 1.0.0 2021年2月3日
  */
 @ConfigurationProperties(prefix = "spring.security")
-public class ArchiveSecurityProperties {
+public class JarvisSecurityProperties {
 
     /**
      * 放行的url

@@ -32,7 +32,7 @@ import java.time.Duration;
 @EnableConfigurationProperties(RedisProperties.class)
 @AutoConfigureAfter(RedisAutoConfiguration.class)
 @EnableCaching
-public class ArchiveRedisAutoConfiguration {
+public class JarvisRedisAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean

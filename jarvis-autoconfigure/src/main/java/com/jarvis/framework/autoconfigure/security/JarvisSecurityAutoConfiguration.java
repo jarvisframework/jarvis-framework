@@ -44,10 +44,10 @@ import java.util.Optional;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass({ WebSecurityConfigurerAdapter.class })
 @ConditionalOnMissingClass("com.jarvis.framework.oauth2.resource.server.config.Oauth2ResourceServerSecurityConfig")
-@EnableConfigurationProperties(ArchiveSecurityProperties.class)
-@Import({ ArchiveSecurityConfiguration.class, ArchiveRedisBadCreadentialsConfiguration.class,
-        ArchiveSsoTokenConfiguration.class })
-public class ArchiveSecurityAutoConfiguration extends WebSecurityConfigurerAdapter {
+@EnableConfigurationProperties(JarvisSecurityProperties.class)
+@Import({ JarvisSecurityConfiguration.class, JarvisRedisBadCreadentialsConfiguration.class,
+        JarvisSsoTokenConfiguration.class })
+public class JarvisSecurityAutoConfiguration extends WebSecurityConfigurerAdapter {
 
     @Autowired
     private AuthenticationSuccessHandler authenticationSuccessHandler;
@@ -74,7 +74,7 @@ public class ArchiveSecurityAutoConfiguration extends WebSecurityConfigurerAdapt
     private PersistentTokenRepository persistentTokenRepository;
 
     @Autowired
-    private ArchiveSecurityProperties securityProperties;
+    private JarvisSecurityProperties securityProperties;
 
     @Autowired(required = false)
     private List<LogoutHandler> logoutHandlers;
@@ -139,7 +139,7 @@ public class ArchiveSecurityAutoConfiguration extends WebSecurityConfigurerAdapt
                 .failureHandler(authenticationFailureHandler)
                 .and()
                 .rememberMe()
-                .key("archives")
+                .key("jarvis")
                 .tokenRepository(persistentTokenRepository)
                 .userDetailsService(userDetailsService)
                 .and()

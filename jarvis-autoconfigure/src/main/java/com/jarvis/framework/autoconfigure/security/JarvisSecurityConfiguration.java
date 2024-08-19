@@ -41,7 +41,7 @@ import java.util.Map;
  * @version 1.0.0 2021年4月26日
  */
 @SuppressWarnings("deprecation")
-public class ArchiveSecurityConfiguration {
+public class JarvisSecurityConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(AuthenticationSuccessHandler.class)
@@ -120,7 +120,7 @@ public class ArchiveSecurityConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(PasswordEncoder.class)
-    PasswordEncoder passwordEncoder(ArchiveSecurityProperties properties,
+    PasswordEncoder passwordEncoder(JarvisSecurityProperties properties,
                                     ObjectProvider<List<DelegatePasswordEncoder>> passwordEncoderProvider) {
         final String encodingId = null == properties.getPasswordEncoder() ? "MD5" : properties.getPasswordEncoder();
         final Map<String, PasswordEncoder> encoders = new HashMap<>();
@@ -159,6 +159,6 @@ public class ArchiveSecurityConfiguration {
 
     /*public static void main(String[] args) {
         System.out.println(
-            new ArchiveSecurityConfiguration().passwordEncoder(new ArchiveSecurityProperties()).encode("000000"));
+            new JarvisSecurityConfiguration().passwordEncoder(new JarvisSecurityProperties()).encode("000000"));
     }*/
 }

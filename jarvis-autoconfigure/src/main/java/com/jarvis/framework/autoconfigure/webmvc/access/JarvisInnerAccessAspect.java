@@ -16,9 +16,9 @@ import org.springframework.http.HttpStatus;
  * @version 1.0.0 2022年11月2日
  */
 @Aspect
-public class ArchiveInnerAccessAspect {
+public class JarvisInnerAccessAspect {
 
-    private static Logger log = LoggerFactory.getLogger(ArchiveInnerAccessAspect.class);
+    private static Logger log = LoggerFactory.getLogger(JarvisInnerAccessAspect.class);
 
     @Before("@within(com.jarvis.framework.annotation.InnerAccess) || @annotation(com.jarvis.framework.annotation.InnerAccess)")
     public void execute(JoinPoint point) throws Throwable {

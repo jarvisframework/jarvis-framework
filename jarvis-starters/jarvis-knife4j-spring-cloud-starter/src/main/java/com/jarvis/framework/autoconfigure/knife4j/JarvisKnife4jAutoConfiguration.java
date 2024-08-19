@@ -1,6 +1,6 @@
 package com.jarvis.framework.autoconfigure.knife4j;
 
-import com.jarvis.framework.autoconfigure.springfox.ArchiveSpringfoxProperties;
+import com.jarvis.framework.autoconfigure.springfox.JarvisSpringfoxProperties;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -17,12 +17,12 @@ import springfox.documentation.oas.mappers.ServiceModelToOpenApiMapper;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(value = "springfox.documentation.enabled", havingValue = "true", matchIfMissing = true)
 @ConditionalOnWebApplication
-@EnableConfigurationProperties(ArchiveSpringfoxProperties.class)
-public class ArchiveKnife4jAutoConfiguration {
+@EnableConfigurationProperties(JarvisSpringfoxProperties.class)
+public class JarvisKnife4jAutoConfiguration {
 
     @Bean
     @Primary
-    ServiceModelToOpenApiMapper archiveServiceModelToOpenApiMapperImpl() {
-        return new ArchiveServiceModelToOpenApiMapperImpl();
+    ServiceModelToOpenApiMapper jarvisServiceModelToOpenApiMapperImpl() {
+        return new JarvisServiceModelToOpenApiMapperImpl();
     }
 }

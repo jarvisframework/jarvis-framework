@@ -61,7 +61,7 @@ public class EntityProvideParser {
                 .asc("createdTime")
                 .desc("userId");
 
-        final ScriptBindQuery<String> parse = ScriptBindQuery.<String>create(critiaQuery).parse();
+        final ScriptBindQuery<String> parse = ScriptBindQuery.create(critiaQuery).parse();
         System.out.println(parse.getColumns());
         System.out.println(parse.getWhere());
         System.out.println(parse.getGroupBy());

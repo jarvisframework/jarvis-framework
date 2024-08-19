@@ -24,7 +24,7 @@ import org.springframework.security.web.authentication.AuthenticationSuccessHand
  * @author Doug Wang
  * @version 1.0.0 2021年4月25日
  */
-public class ArchiveOauth2ResourceServerConfiguration {
+public class JarvisOauth2ResourceServerConfiguration {
 
     @Bean
     @ConditionalOnMissingBean

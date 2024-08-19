@@ -38,7 +38,7 @@ import org.springframework.security.web.authentication.logout.LogoutSuccessHandl
  * @author Doug Wang
  * @version 1.0.0 2021年4月23日
  */
-public class ArchiveOauth2AuthorizationServerConfiguration {
+public class JarvisOauth2AuthorizationServerConfiguration {
 
     @Bean
     Oauth2TokenStoreService redisOauth2TokenStoreService(RedisConnectionFactory redisConnectionFactory,

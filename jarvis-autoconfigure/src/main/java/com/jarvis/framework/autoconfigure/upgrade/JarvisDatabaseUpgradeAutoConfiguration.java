@@ -25,7 +25,7 @@ import java.util.List;
 @Configuration
 @ConditionalOnClass({ UpgradeProcessorApplicationRunner.class })
 @EnableConfigurationProperties(UpgradeProperties.class)
-public class ArchiveDatabaseUpgradeAutoConfiguration implements InitializingBean {
+public class JarvisDatabaseUpgradeAutoConfiguration implements InitializingBean {
 
     @Autowired(required = false)
     private TableConverter tableConverter;

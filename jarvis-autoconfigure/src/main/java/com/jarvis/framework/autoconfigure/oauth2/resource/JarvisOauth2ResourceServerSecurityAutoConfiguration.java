@@ -1,6 +1,6 @@
 package com.jarvis.framework.autoconfigure.oauth2.resource;
 
-import com.jarvis.framework.autoconfigure.security.ArchiveSecurityProperties;
+import com.jarvis.framework.autoconfigure.security.JarvisSecurityProperties;
 import com.jarvis.framework.constant.WebMvcConstant;
 import com.jarvis.framework.oauth2.resource.server.config.Oauth2ResourceServerSecurityConfig;
 import com.jarvis.framework.security.access.PermitAssignedHeaderVoter;
@@ -37,10 +37,10 @@ import java.util.Optional;
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass({ Oauth2ResourceServerSecurityConfig.class })
-@EnableConfigurationProperties({ ArchiveSecurityProperties.class })
-@Import(ArchiveOauth2ResourceServerConfiguration.class)
+@EnableConfigurationProperties({ JarvisSecurityProperties.class })
+@Import(JarvisOauth2ResourceServerConfiguration.class)
 @ConditionalOnMissingClass("com.jarvis.framework.oauth2.authorization.server.config.Oauth2AuthenticationServerSecurityConfig")
-public class ArchiveOauth2ResourceServerSecurityAutoConfiguration {
+public class JarvisOauth2ResourceServerSecurityAutoConfiguration {
 
     @Configuration(proxyBeanMethods = false)
     @ConditionalOnClass({ Oauth2ResourceServerSecurityConfig.class })
@@ -63,7 +63,7 @@ public class ArchiveOauth2ResourceServerSecurityAutoConfiguration {
         private List<SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>> securityConfigurers;
 
         @Autowired
-        private ArchiveSecurityProperties securityProperties;
+        private JarvisSecurityProperties securityProperties;
 
         @Autowired(required = false)
         private HttpSecurityProcessor httpSecurityProcessor;

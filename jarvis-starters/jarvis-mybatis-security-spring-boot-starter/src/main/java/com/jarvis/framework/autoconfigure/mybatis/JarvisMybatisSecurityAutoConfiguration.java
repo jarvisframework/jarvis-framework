@@ -18,7 +18,7 @@ import java.util.List;
  * @version 1.0.0 2021年8月6日
  */
 @Configuration(proxyBeanMethods = false)
-public class ArchivesMybatisSecurityAutoConfiguration {
+public class JarvisMybatisSecurityAutoConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(EntityAutoFillingHandler.class)

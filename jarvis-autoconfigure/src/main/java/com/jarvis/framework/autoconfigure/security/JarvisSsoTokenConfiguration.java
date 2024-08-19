@@ -19,11 +19,11 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(prefix = "spring.security.sso-token", name = "enabled", havingValue = "true")
 @ConditionalOnClass({ ValidateCodeEndpoint.class })
-public class ArchiveSsoTokenConfiguration {
+public class JarvisSsoTokenConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(SsoDetailsService.class)
-    SsoDetailsService ssoDetailsService(ArchiveSecurityProperties properties) {
+    SsoDetailsService ssoDetailsService(JarvisSecurityProperties properties) {
         final SsoTokenProperties ssoToken = properties.getSsoToken();
         return new InMemorySsoDetailsService(ssoToken.getUsers());
     }

@@ -29,11 +29,11 @@ import static springfox.documentation.builders.RequestHandlerSelectors.withMetho
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnProperty(value = "springfox.documentation.enabled", havingValue = "true", matchIfMissing = true)
 @ConditionalOnWebApplication
-@EnableConfigurationProperties(ArchiveSpringfoxProperties.class)
-public class ArchiveSpringfoxAutoConfiguration {
+@EnableConfigurationProperties(JarvisSpringfoxProperties.class)
+public class JarvisSpringfoxAutoConfiguration {
 
     @Autowired
-    private ArchiveSpringfoxProperties properties;
+    private JarvisSpringfoxProperties properties;
 
     @Bean
     public Docket createRestApi() {

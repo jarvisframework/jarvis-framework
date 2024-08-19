@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @version 1.0.0 2021年7月21日
  */
 @ConfigurationProperties(prefix = "jarvis.bizlog")
-public class ArchiveBizLoggerProperties {
+public class JarvisBizLoggerProperties {
 
     /** 日志级别 */
     private BizLevel level = BizLevel.QUERY;

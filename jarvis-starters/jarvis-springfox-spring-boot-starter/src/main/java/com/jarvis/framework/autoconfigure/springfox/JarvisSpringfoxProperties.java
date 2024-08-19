@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
  * @version 1.0.0 2021年7月23日
  */
 @ConfigurationProperties("springfox.documentation")
-public class ArchiveSpringfoxProperties {
+public class JarvisSpringfoxProperties {
 
     private String version = "4.x";
 

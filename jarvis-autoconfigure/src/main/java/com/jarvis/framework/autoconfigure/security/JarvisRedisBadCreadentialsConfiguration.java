@@ -17,17 +17,17 @@ import org.springframework.data.redis.core.RedisTemplate;
 //@ConditionalOnBean(RedisTemplate.class)
 @ConditionalOnClass(RedisTemplate.class)
 //@ConditionalOnProperty(prefix = "spring.security.bad-creadentials", name = "enabled", havingValue = "true")
-public class ArchiveRedisBadCreadentialsConfiguration {
+public class JarvisRedisBadCreadentialsConfiguration {
 
     @Bean
     @ConditionalOnMissingBean(BadCreadentialsService.class)
     BadCreadentialsService redisBadCreadentialsService(RedisConnectionFactory connectionFactory,
-                                                       ArchiveSecurityProperties properties) {
+                                                       JarvisSecurityProperties properties) {
         return new RedisBadCreadentialsService(connectionFactory, properties.getBadCreadentials());
     }
 
     @Bean
-    BadCreadentialsConfigService badCreadentialsConfigService(ArchiveSecurityProperties properties) {
+    BadCreadentialsConfigService badCreadentialsConfigService(JarvisSecurityProperties properties) {
         return new BadCreadentialsConfigService(properties.getBadCreadentials());
     }
 
