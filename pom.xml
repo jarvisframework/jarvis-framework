@@ -7,7 +7,7 @@
     <version>2023.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Jarvis基础架构2023</description>
-    <url>http://www.jarvis.com.cn</url>
+    <url>https://www.jarvis.com.cn</url>
     <inceptionYear>2023</inceptionYear>
 
     <modules>
@@ -31,7 +31,7 @@
     <!-- 组织信息 -->
     <organization>
         <name>Jarvis科技有限公司</name>
-        <url>http://www.jarvis.com.cn/</url>
+        <url>https://www.jarvis.com.cn/</url>
     </organization>
 
     <!-- 发布仓库 -->
@@ -40,12 +40,12 @@
         <repository>
             <id>maven-releases</id>
             <name>maven-releases</name>
-            <url>http://app.deehero.com:60008/repository/maven-releases/</url>
+            <url>http://101.132.86.201:8081/repository/maven-releases/</url>
         </repository>
         <snapshotRepository>
             <id>maven-snapshots</id>
             <name>maven-snapshots</name>
-            <url>http://app.deehero.com:60008/repository/maven-snapshots/</url>
+            <url>http://101.132.86.201:8081/repository/maven-snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
@@ -53,7 +53,7 @@
     <repositories>
         <repository>
             <id>maven-public</id>
-            <url>http://app.deehero.com:60008/repository/maven-public/</url>
+            <url>http://101.132.86.201:8081/repository/maven-public/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
@@ -82,7 +82,7 @@
     <pluginRepositories>
         <pluginRepository>
             <id>maven-public</id>
-            <url>http://app.deehero.com:60008/repository/maven-public/</url>
+            <url>http://101.132.86.201:8081/repository/maven-public/</url>
         </pluginRepository>
     </pluginRepositories>
 </project>

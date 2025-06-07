@@ -1,5 +1,9 @@
 package com.jarvis.framework.core.select;
 
+import com.jarvis.framework.function.Getter;
+import com.jarvis.framework.util.ColumnFunctionUtil;
+
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
@@ -76,6 +80,15 @@ public class SelectOption extends HashMap<String, Object> {
         }
 
         return false;
+    }
+
+    public <T extends Serializable> SelectOption put(Getter<T> getter, Object value) {
+        super.put(ColumnFunctionUtil.toColumn(getter), value);
+        return this;
+    }
+
+    public <T extends Serializable> Object get(Getter<T> getter) {
+        return super.get(ColumnFunctionUtil.toColumn(getter));
     }
 
 }
