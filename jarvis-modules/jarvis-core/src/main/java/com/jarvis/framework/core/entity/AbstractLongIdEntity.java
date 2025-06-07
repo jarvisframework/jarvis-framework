@@ -24,9 +24,14 @@ public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRe
     protected Long createdBy;
 
     @IgnoreUpdate
+    protected String creator;
+
+    @IgnoreUpdate
     protected LocalDateTime createdTime;
 
     protected Long updatedBy;
+
+    protected String updater;
 
     protected LocalDateTime updatedTime;
 
@@ -79,6 +84,19 @@ public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRe
     }
 
     /**
+     * @return the creator
+     */
+    @Override
+    public String getCreator() {
+        return creator;
+    }
+
+    @Override
+    public void setCreator(String creator) {
+        this.creator = creator;
+    }
+
+    /**
      * @return the createdTime
      */
     @Override
@@ -108,6 +126,22 @@ public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRe
     @Override
     public void setUpdatedBy(Long updatedBy) {
         this.updatedBy = updatedBy;
+    }
+
+    /**
+     * @return the updater
+     */
+    @Override
+    public String getUpdater() {
+        return updater;
+    }
+
+    /**
+     * @param updater the updater to set
+     */
+    @Override
+    public void setUpdater(String updater) {
+        this.updater = updater;
     }
 
     /**
@@ -149,10 +183,7 @@ public abstract class AbstractLongIdEntity implements LongIdSimpleEntity, BaseRe
         if (other.id == null) {
             return false;
         }
-        if (other.id.equals(getId())) {
-            return true;
-        }
-        return false;
+        return other.id.equals(getId());
     }
 
 }

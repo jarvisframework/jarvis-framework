@@ -9,14 +9,12 @@ import org.springframework.core.Ordered;
 import java.time.LocalDateTime;
 
 /**
- *
  * @author Doug Wang
  * @version 1.0.0 2021年8月6日
  */
 public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler, Ordered {
 
     /**
-     *
      * @see com.jarvis.framework.mybatis.handler.EntityAutoFillingHandler#insert(com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity)
      */
     @Override
@@ -28,12 +26,13 @@ public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler,
         final SecurityUser user = SecurityUtil.getUser();
         if (null != user) {
             fillingEntity.setCreatedBy(Long.parseLong(String.valueOf(user.getId())));
+            fillingEntity.setCreator(user.getUsername());
             fillingEntity.setUpdatedBy(Long.parseLong(String.valueOf(user.getId())));
+            fillingEntity.setUpdater(user.getUsername());
         }
     }
 
     /**
-     *
      * @see com.jarvis.framework.mybatis.handler.EntityAutoFillingHandler#update(com.jarvis.framework.core.entity.BaseIdPrimaryKeyEntity)
      */
     @Override
@@ -44,11 +43,11 @@ public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler,
         final SecurityUser user = SecurityUtil.getUser();
         if (null != user) {
             fillingEntity.setUpdatedBy(Long.parseLong(String.valueOf(user.getId())));
+            fillingEntity.setUpdater(user.getUsername());
         }
     }
 
     /**
-     *
      * @see com.jarvis.framework.mybatis.handler.support.EntityFillingSupportHandler#support(com.jarvis.framework.core.entity.BaseEntity)
      */
     @Override
@@ -57,7 +56,6 @@ public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler,
     }
 
     /**
-     *
      * @see org.springframework.core.Ordered#getOrder()
      */
     @Override

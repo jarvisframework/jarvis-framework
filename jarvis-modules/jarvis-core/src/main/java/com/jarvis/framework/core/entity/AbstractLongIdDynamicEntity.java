@@ -6,7 +6,6 @@ import com.jarvis.framework.constant.BaseFieldConstant;
 import java.time.LocalDateTime;
 
 /**
- *
  * @author Doug Wang
  * @version 1.0.0 2021年8月6日
  */
@@ -18,7 +17,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     private static final long serialVersionUID = 8203852676621163224L;
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getRevision()
      */
     @Override
@@ -27,7 +25,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setRevision(java.lang.Integer)
      */
     @Override
@@ -36,7 +33,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getCreatedBy()
      */
     @Override
@@ -46,7 +42,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setCreatedBy(java.io.Serializable)
      */
     @Override
@@ -55,7 +50,23 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
+     * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getCreator()
+     */
+    @Override
+    @IgnoreUpdate
+    public String getCreator() {
+        return (String) get(BaseFieldConstant.CREATOR);
+    }
+
+    /**
+     * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setCreator(java.lang.String)
+     */
+    @Override
+    public void setCreator(String creator) {
+        put(BaseFieldConstant.CREATOR, creator);
+    }
+
+    /**
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getCreatedTime()
      */
     @Override
@@ -65,7 +76,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setCreatedTime(java.time.LocalDateTime)
      */
     @Override
@@ -74,7 +84,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getUpdatedBy()
      */
     @Override
@@ -83,7 +92,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setUpdatedBy(java.io.Serializable)
      */
     @Override
@@ -92,7 +100,22 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
+     * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getUpdater()
+     */
+    @Override
+    public String getUpdater() {
+        return (String) get(BaseFieldConstant.UPDATER);
+    }
+
+    /**
+     * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setUpdater(java.lang.String)
+     */
+    @Override
+    public void setUpdater(String updater) {
+        put(BaseFieldConstant.UPDATER, updater);
+    }
+
+    /**
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#getUpdatedTime()
      */
     @Override
@@ -101,7 +124,6 @@ public class AbstractLongIdDynamicEntity extends LongIdDynamicEntity implements 
     }
 
     /**
-     *
      * @see com.jarvis.framework.core.entity.BaseRevisionEntity#setUpdatedTime(java.time.LocalDateTime)
      */
     @Override
