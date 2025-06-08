@@ -31,11 +31,11 @@ public class LongIdSimpleSupportHandler implements EntityFillingSupportHandler, 
         if (null != user) {
             if (null == fillingEntity.getCreatedBy() || null == fillingEntity.getCreator()) {
                 fillingEntity.setCreatedBy(Long.parseLong(String.valueOf(user.getId())));
-                fillingEntity.setCreator(user.getUsername());
+                fillingEntity.setCreator(user.getShowName());
             }
             if (null == fillingEntity.getUpdatedBy() || null == fillingEntity.getUpdater()) {
                 fillingEntity.setUpdatedBy(Long.parseLong(String.valueOf(user.getId())));
-                fillingEntity.setUpdater(user.getUsername());
+                fillingEntity.setUpdater(user.getShowName());
             }
         }
     }
@@ -51,7 +51,7 @@ public class LongIdSimpleSupportHandler implements EntityFillingSupportHandler, 
         final SecurityUser user = SecurityUtil.getUser();
         if (null != user) {
             fillingEntity.setUpdatedBy(Long.parseLong(String.valueOf(user.getId())));
-            fillingEntity.setUpdater(user.getUsername());
+            fillingEntity.setUpdater(user.getShowName());
         }
     }
 

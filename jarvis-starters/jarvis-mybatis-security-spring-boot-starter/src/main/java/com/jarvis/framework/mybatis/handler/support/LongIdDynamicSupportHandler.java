@@ -26,9 +26,9 @@ public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler,
         final SecurityUser user = SecurityUtil.getUser();
         if (null != user) {
             fillingEntity.setCreatedBy(Long.parseLong(String.valueOf(user.getId())));
-            fillingEntity.setCreator(user.getUsername());
+            fillingEntity.setCreator(user.getShowName());
             fillingEntity.setUpdatedBy(Long.parseLong(String.valueOf(user.getId())));
-            fillingEntity.setUpdater(user.getUsername());
+            fillingEntity.setUpdater(user.getShowName());
         }
     }
 
@@ -43,7 +43,7 @@ public class LongIdDynamicSupportHandler implements EntityFillingSupportHandler,
         final SecurityUser user = SecurityUtil.getUser();
         if (null != user) {
             fillingEntity.setUpdatedBy(Long.parseLong(String.valueOf(user.getId())));
-            fillingEntity.setUpdater(user.getUsername());
+            fillingEntity.setUpdater(user.getShowName());
         }
     }
 
