@@ -150,8 +150,8 @@ public class BaseSimpleEntityController<Id extends Serializable, Entity extends 
             final String keywordAttributes = getParameter(keywordAttributesParameter);
             // 前台传过来查询指定一体化查询字段
             if (StringUtils.hasText(keywordAttributes)) {
-                criterion.getFilter().getConditionExpressions().add(new SingleCondition<String[], String>(
-                    keywordAttributes.split(SymbolConstant.COMMA), ConditionOperatorEnum.LIKE, keyword));
+                criterion.getFilter().getConditionExpressions().add(new SingleCondition<>(
+                        keywordAttributes.split(SymbolConstant.COMMA), ConditionOperatorEnum.LIKE, keyword));
             } else {
                 final List<Getter<Entity>> keywordFields = keywordFields();
                 if (null == keywordFields || keywordFields.isEmpty()) {
@@ -185,7 +185,7 @@ public class BaseSimpleEntityController<Id extends Serializable, Entity extends 
      * @param criterion
      */
     protected void processPageCriterion(CriteriaQuery<Getter<Entity>> criterion) {
-
+        criterion.desc(Entity::getId);
     }
 
     /**

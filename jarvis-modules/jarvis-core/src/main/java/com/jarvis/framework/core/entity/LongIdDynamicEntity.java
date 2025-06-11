@@ -118,10 +118,7 @@ public class LongIdDynamicEntity extends HashMap<String, Object> implements Base
         if (other.getId() == null) {
             return false;
         }
-        if (other.getId().equals(getId())) {
-            return true;
-        }
-        return false;
+        return other.getId().equals(getId());
     }
 
 }
