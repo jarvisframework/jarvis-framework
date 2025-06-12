@@ -81,7 +81,7 @@ public class LongIdDynamicEntity extends HashMap<String, Object> implements Base
     }
 
     protected Long processId(Object value) {
-        Long id = null;
+        long id;
         final Class<?> clazz = value.getClass();
         if (Number.class.isAssignableFrom(clazz)) {
             id = ((Number) value).longValue();
