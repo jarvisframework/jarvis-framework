@@ -130,9 +130,7 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     @Transactional(rollbackFor = Exception.class)
     @Override
     public int deleteAll(Collection<Entity> entities) {
-        return batch(entities, (e, m) -> {
-            return m.delete(e) ? 1 : 0;
-        });
+        return batch(entities, (e, m) -> m.delete(e) ? 1 : 0);
     }
 
     /**
@@ -235,7 +233,7 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
      * @param content
      */
     protected List<?> processPageContent(List<Entity> content) {
-        return null;
+        return content;
     }
 
 
