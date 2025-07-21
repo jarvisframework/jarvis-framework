@@ -4,16 +4,13 @@ import com.jarvis.framework.core.entity.BaseSimpleEntity;
 import com.jarvis.framework.core.exception.BusinessException;
 import com.jarvis.framework.function.Getter;
 import com.jarvis.framework.mybatis.mapper.BaseSimpleEntityMapper;
-import com.jarvis.framework.mybatis.update.CriteriaDelete;
-import com.jarvis.framework.mybatis.update.CriteriaDeleteBuilder;
-import com.jarvis.framework.mybatis.update.CriteriaUpdate;
-import com.jarvis.framework.mybatis.update.CriteriaUpdateBuilder;
-import com.jarvis.framework.mybatis.update.EntityDelete;
-import com.jarvis.framework.mybatis.update.EntityUpdate;
+import com.jarvis.framework.mybatis.update.*;
 import com.jarvis.framework.search.CriteriaQuery;
 import com.jarvis.framework.search.CriteriaQueryBuilder;
 import com.jarvis.framework.search.EntityQuery;
 import com.jarvis.framework.search.Page;
+import com.jarvis.framework.util.CamelCaseUtil;
+import com.jarvis.framework.util.ColumnFunctionUtil;
 import com.jarvis.framework.web.service.BaseSimpleEntityService;
 import org.apache.ibatis.session.ExecutorType;
 import org.apache.ibatis.session.SqlSession;
@@ -22,23 +19,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.GenericTypeResolver;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
+import org.springframework.util.CollectionUtils;
 
 import java.io.Serializable;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.function.BiFunction;
 
 /**
- *
  * @author Doug Wang
  * @version 1.0.0 2021年1月26日
  */
 public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends BaseSimpleEntity<Id>,
-                                         Mapper extends BaseSimpleEntityMapper<Id, Entity>>
-    implements BaseSimpleEntityService<Id, Entity, Mapper> {
+        Mapper extends BaseSimpleEntityMapper<Id, Entity>>
+        implements BaseSimpleEntityService<Id, Entity, Mapper> {
 
     private final Class<Mapper> mapperClass = mapperClass();
 
@@ -52,17 +50,16 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
         return this.baseMapper;
     }
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
+    @SuppressWarnings({"unchecked", "rawtypes"})
     private Class<Mapper> mapperClass() {
         final Map<TypeVariable, Type> typeVariableMap = GenericTypeResolver.getTypeVariableMap(getClass());
         final Type value = typeVariableMap.entrySet().stream().filter(e -> e.getKey().getName().equals("Mapper"))
-            .findFirst().get()
-            .getValue();
+                .findFirst().get()
+                .getValue();
         return (Class<Mapper>) value;
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#insert(com.jarvis.framework.core.entity.BaseSimpleEntity)
      */
     @Transactional(rollbackFor = Exception.class)
@@ -82,19 +79,15 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#insertAll(java.util.Collection)
      */
     @Transactional(rollbackFor = Exception.class)
     @Override
     public int insertAll(Collection<Entity> entities) {
-        return batch(entities, (e, m) -> {
-            return m.insert(e) ? 1 : 0;
-        });
+        return batch(entities, (e, m) -> m.insert(e) ? 1 : 0);
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#update(com.jarvis.framework.core.entity.LongIdSimpleEntity)
      */
     @Transactional(rollbackFor = Exception.class)
@@ -114,19 +107,15 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#updateAll(java.util.Collection)
      */
     @Transactional(rollbackFor = Exception.class)
     @Override
     public int updateAll(Collection<Entity> entities) {
-        return batch(entities, (e, m) -> {
-            return m.update(e) ? 1 : 0;
-        });
+        return batch(entities, (e, m) -> m.update(e) ? 1 : 0);
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#delete(com.jarvis.framework.core.entity.LongIdSimpleEntity)
      */
     @Transactional(rollbackFor = Exception.class)
@@ -136,7 +125,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#deleteAll(java.util.Collection)
      */
     @Transactional(rollbackFor = Exception.class)
@@ -148,7 +136,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#deleteById(java.lang.Long)
      */
     @Transactional(rollbackFor = Exception.class)
@@ -159,7 +146,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#deleteByIds(java.util.List)
      */
     @Override
@@ -179,7 +165,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#batch(java.util.Collection, java.util.function.BiFunction, int)
      */
     @Override
@@ -208,7 +193,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#batch(java.util.Collection, java.util.function.BiFunction)
      */
     @Override
@@ -217,7 +201,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#getById(java.lang.Long)
      */
     @Override
@@ -226,7 +209,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#count(com.jarvis.framework.search.CriteriaQuery)
      */
     @Override
@@ -235,14 +217,15 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#page(com.jarvis.framework.search.Page,
-     *      com.jarvis.framework.search.CriteriaQuery)
+     * com.jarvis.framework.search.CriteriaQuery)
      */
     @Override
     public List<?> page(Page page, CriteriaQuery<Getter<Entity>> criterion) {
         final List<Entity> content = getBaseMapper().page(page, criterion);
+
         page.setContent(processPageContent(content));
+        page.setSummary(processPageSummary(content));
         return page.getContent();
     }
 
@@ -252,11 +235,62 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
      * @param content
      */
     protected List<?> processPageContent(List<Entity> content) {
-        return content;
+        return null;
+    }
+
+
+    /**
+     * 汇总结果处理
+     *
+     * @param content
+     */
+    protected Map<String, Object> processPageSummary(List<Entity> content) {
+        List<Getter<Entity>> getters = this.addSummaryParameter();
+
+        if (!CollectionUtils.isEmpty(getters) && !CollectionUtils.isEmpty(content)) {
+            Map<String, Object> summary = new HashMap<>();
+            for (final Getter<Entity> getter : getters) {
+                String column = ColumnFunctionUtil.toColumn(getter);
+                String summaryKey = "total" + CamelCaseUtil.lowerToUpperCamelCase(column);
+
+                Object firstValue = getter.apply(content.get(0));
+                if (firstValue instanceof Number) {
+                    // 数值类型汇总
+                    double sum = content.stream()
+                            .mapToDouble(entity -> {
+                                Object value = getter.apply(entity);
+                                return value instanceof Number ? ((Number) value).doubleValue() : 0.0;
+                            })
+                            .sum();
+                    summary.put(summaryKey, sum);
+                } else if (firstValue instanceof Collection) {
+                    // 集合类型统计数量
+                    long count = content.stream()
+                            .mapToLong(entity -> {
+                                Collection<?> collection = (Collection<?>) getter.apply(entity);
+                                return collection != null ? collection.size() : 0L;
+                            })
+                            .sum();
+                    summary.put(summaryKey, count);
+                } else {
+                    // 其他类型统计非空数量
+                    long count = content.stream()
+                            .filter(entity -> getter.apply(entity) != null)
+                            .count();
+                    summary.put(summaryKey, count);
+                }
+            }
+            return summary;
+        }
+
+        return null;
+    }
+
+    protected List<Getter<Entity>> addSummaryParameter() {
+        return null;
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#updateBy(com.jarvis.framework.mybatis.update.CriteriaUpdate)
      */
     @Override
@@ -265,7 +299,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#deleteBy(com.jarvis.framework.mybatis.update.CriteriaDelete)
      */
     @Transactional(rollbackFor = Exception.class)
@@ -275,7 +308,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#getBy(com.jarvis.framework.search.CriteriaQuery)
      */
     @Override
@@ -284,7 +316,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#queryBy(com.jarvis.framework.search.CriteriaQuery)
      */
     @Override
@@ -320,7 +351,6 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     }
 
     /**
-     *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#exists(com.jarvis.framework.search.CriteriaQuery)
      */
     @Override

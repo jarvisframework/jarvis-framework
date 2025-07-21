@@ -98,4 +98,16 @@ public class CamelCaseUtil {
         sb.setCharAt(0, Character.toLowerCase(str.charAt(0)));
         return sb.toString();
     }
+
+    /**
+     * 小写驼峰转成大写驼峰：fondsCode => FondsCode
+     *
+     * @param str 小写驼峰字符
+     * @return String
+     */
+    public static String lowerToUpperCamelCase(String str) {
+        final StringBuilder sb = new StringBuilder(str);
+        sb.setCharAt(0, Character.toUpperCase(str.charAt(0)));
+        return sb.toString();
+    }
 }

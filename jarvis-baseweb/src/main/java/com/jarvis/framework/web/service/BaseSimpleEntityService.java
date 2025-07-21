@@ -127,7 +127,7 @@ public interface BaseSimpleEntityService<Id extends Serializable, Entity extends
      * @param criterion 条件
      * @return 集合
      */
-    List<?> page(Page page, CriteriaQuery<Getter<Entity>> criterion);
+     List<?> page(Page page, CriteriaQuery<Getter<Entity>> criterion);
 
     /**
      * 根据条件更新
