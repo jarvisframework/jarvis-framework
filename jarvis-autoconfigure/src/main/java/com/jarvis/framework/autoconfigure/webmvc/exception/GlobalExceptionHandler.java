@@ -9,7 +9,9 @@ import com.jarvis.framework.webmvc.web.exception.handler.ExceptionProcessor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpStatus;
+import org.springframework.util.unit.DataSize;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
@@ -30,10 +32,16 @@ import java.util.List;
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
-    private static Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @Autowired(required = false)
     private List<ExceptionProcessor> exceptionProcessors;
+
+    private final long defaultMaxUploadSize;
+
+    public GlobalExceptionHandler(@Value("${spring.servlet.multipart.max-file-size:10MB}") String maxFileSize) {
+        this.defaultMaxUploadSize = DataSize.parse(maxFileSize).toBytes();
+    }
 
     @ExceptionHandler({ Exception.class, RuntimeException.class })
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -50,7 +58,7 @@ public class GlobalExceptionHandler {
             }
         }
 
-        return RestResponse.error("程序出错啦！");
+        return RestResponse.error("系统错误，请联系管理员！");
     }
 
     @ExceptionHandler(HttpClientErrorException.class)
@@ -135,8 +143,9 @@ public class GlobalExceptionHandler {
         if (log.isErrorEnabled()) {
             log.error("上传文件过大，错误信息！", e);
         }
+        long maxSize = e.getMaxUploadSize() > 0 ? e.getMaxUploadSize() : defaultMaxUploadSize;
         return RestResponse.response(HttpStatus.BAD_REQUEST,
-                "上传文件过大：最大不超过" + FileUtil.readableSize(e.getMaxUploadSize()));
+                "上传文件过大：最大不超过" + FileUtil.readableSize(maxSize));
     }
 
 }
