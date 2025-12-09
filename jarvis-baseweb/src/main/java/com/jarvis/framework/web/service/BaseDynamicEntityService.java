@@ -45,6 +45,14 @@ public interface BaseDynamicEntityService<Id extends Serializable, Entity extend
     boolean update(Entity entity);
 
     /**
+     * 部分更新
+     *
+     * @param entity 实体数量
+     * @return boolean
+     */
+    boolean patch(Entity entity);
+
+    /**
      * 批量修改
      *
      * @param entities 实体集合

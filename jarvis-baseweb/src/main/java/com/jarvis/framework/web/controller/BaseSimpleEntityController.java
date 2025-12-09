@@ -25,6 +25,7 @@ import org.springframework.util.StringUtils;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -67,6 +68,14 @@ public class BaseSimpleEntityController<Id extends Serializable, Entity extends 
     @BizLogger(content = "修改内容：#{args[0]}", level = BizLevel.WRITE)
     public RestResponse<?> update(@Validated @RequestBody Entity entity) {
         getService().update(entity);
+        return RestResponse.success(entity);
+    }
+
+    @ApiOperation(value = "部分修改", httpMethod = SwaggerAipHttpMethod.PATCH)
+    @PatchMapping
+    @BizLogger(content = "部分修改内容：#{args[0]}", level = BizLevel.WRITE)
+    public RestResponse<?> patch(@Validated @RequestBody Entity entity) {
+        getService().patch(entity);
         return RestResponse.success(entity);
     }
 

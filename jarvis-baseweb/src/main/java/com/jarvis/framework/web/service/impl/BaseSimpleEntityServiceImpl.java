@@ -5,6 +5,7 @@ import com.jarvis.framework.core.exception.BusinessException;
 import com.jarvis.framework.function.Getter;
 import com.jarvis.framework.mybatis.mapper.BaseSimpleEntityMapper;
 import com.jarvis.framework.mybatis.update.*;
+import com.jarvis.framework.mybatis.util.PersistentUtil;
 import com.jarvis.framework.search.CriteriaQuery;
 import com.jarvis.framework.search.CriteriaQueryBuilder;
 import com.jarvis.framework.search.EntityQuery;
@@ -20,8 +21,10 @@ import org.springframework.core.GenericTypeResolver;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 import org.springframework.util.CollectionUtils;
+import org.springframework.util.ReflectionUtils;
 
 import java.io.Serializable;
+import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.Collection;
@@ -95,6 +98,40 @@ public class BaseSimpleEntityServiceImpl<Id extends Serializable, Entity extends
     public boolean update(Entity entity) {
         this.beforeUpdate(entity);
         return getBaseMapper().update(entity);
+    }
+
+    /**
+     * @see com.jarvis.framework.web.service.BaseSimpleEntityService#patch(com.jarvis.framework.core.entity.BaseSimpleEntity)
+     */
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public boolean patch(Entity entity) {
+        this.beforeUpdate(entity);
+        CriteriaUpdate<Getter<Entity>> criteriaUpdate = new CriteriaUpdate<>();
+        List<String> fields = PersistentUtil.getUpdatePersistentFields(entity.getClass());
+        boolean hasUpdate = false;
+        for (String field : fields) {
+            Method method = ReflectionUtils.findMethod(entity.getClass(), "get" + Character.toUpperCase(field.charAt(0)) + field.substring(1));
+            if (null == method) {
+                method = ReflectionUtils.findMethod(entity.getClass(), "is" + Character.toUpperCase(field.charAt(0)) + field.substring(1));
+            }
+            if (null != method) {
+                Object value = ReflectionUtils.invokeMethod(method, entity);
+                if (null != value) {
+                    criteriaUpdate.getData().put(PersistentUtil.fieldToColumn(field), value);
+                    hasUpdate = true;
+                }
+            }
+        }
+
+        if (!hasUpdate) {
+            return false;
+        }
+
+        criteriaUpdate.filter(c -> {
+            c.equal(BaseSimpleEntity::getId, entity.getId());
+        });
+        return getBaseMapper().updateBy(criteriaUpdate) > 0;
     }
 
     /**

@@ -46,6 +46,14 @@ public interface BaseSimpleEntityService<Id extends Serializable, Entity extends
     boolean update(Entity entity);
 
     /**
+     * 部分更新
+     *
+     * @param entity 对象
+     * @return boolean
+     */
+    boolean patch(Entity entity);
+
+    /**
      * 批量修改
      *
      * @param entities 对象集合
