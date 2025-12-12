@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.client.HttpClientErrorException;
+import org.springframework.web.context.request.async.AsyncRequestTimeoutException;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.multipart.MultipartException;
 
@@ -146,6 +147,15 @@ public class GlobalExceptionHandler {
         long maxSize = e.getMaxUploadSize() > 0 ? e.getMaxUploadSize() : defaultMaxUploadSize;
         return RestResponse.response(HttpStatus.BAD_REQUEST,
                 "上传文件过大：最大不超过" + FileUtil.readableSize(maxSize));
+    }
+
+    @ExceptionHandler(AsyncRequestTimeoutException.class)
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public RestResponse<?> handleAsyncTimeout(AsyncRequestTimeoutException e) {
+        if (log.isErrorEnabled()) {
+            log.error("SSE连接超时，错误信息！", e);
+        }
+        return RestResponse.response(HttpStatus.NO_CONTENT,"SSE连接超时：" + e.getMessage());
     }
 
 }
