@@ -1,5 +1,7 @@
 package com.jarvis.framework.core.exception;
 
+import java.io.Serial;
+
 /**
  * 业务处理异常统一使用类
  *
@@ -9,8 +11,9 @@ package com.jarvis.framework.core.exception;
 public class BusinessException extends RuntimeException {
 
     /**
-     *
+     * 序列化ID
      */
+    @Serial
     private static final long serialVersionUID = 5057887406611670380L;
 
     /**
