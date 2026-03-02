@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- *
  * @author Doug Wang
  * @version 1.0.0 2021年8月6日
  */
@@ -28,6 +27,16 @@ public interface BaseRevisionEntity<Id extends Serializable> extends BaseIdPrima
     void setCreatedBy(Id createdBy);
 
     /**
+     * @return the creator
+     */
+    String getCreator();
+
+    /**
+     * @param creator the creator to set
+     */
+    void setCreator(String creator);
+
+    /**
      * @return the createdTime
      */
     LocalDateTime getCreatedTime();
@@ -40,12 +49,22 @@ public interface BaseRevisionEntity<Id extends Serializable> extends BaseIdPrima
     /**
      * @return the updatedBy
      */
-    public Id getUpdatedBy();
+    Id getUpdatedBy();
 
     /**
      * @param updatedBy the updatedBy to set
      */
     void setUpdatedBy(Id updatedBy);
+
+    /**
+     * @return the updater
+     */
+    String getUpdater();
+
+    /**
+     * @param updater the updater to set
+     */
+    void setUpdater(String updater);
 
     /**
      * @return the updatedTime

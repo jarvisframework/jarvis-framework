@@ -3,6 +3,7 @@ package com.jarvis.framework.search;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 分页信息
@@ -23,6 +24,8 @@ public class Page implements Serializable {
 
     private List<?> content = new ArrayList<>();
 
+    private Map<String, Object> summary;
+
     private int total;
 
     private boolean counted = true;
@@ -37,8 +40,7 @@ public class Page implements Serializable {
     }
 
     /**
-     * @param pageSize
-     *            the pageSize to set
+     * @param pageSize the pageSize to set
      */
     public void setPageSize(int pageSize) {
         this.pageSize = pageSize;
@@ -56,6 +58,20 @@ public class Page implements Serializable {
      */
     public void setContent(List<?> content) {
         this.content = content;
+    }
+
+    /**
+     * @return the summary
+     */
+    public Map<String, Object> getSummary() {
+        return summary;
+    }
+
+    /**
+     * @param summary the summary to set
+     */
+    public void setSummary(Map<String, Object> summary) {
+        this.summary = summary;
     }
 
     /**
@@ -94,8 +110,7 @@ public class Page implements Serializable {
     }
 
     /**
-     * @param pageNumber
-     *            the pageNumber to set
+     * @param pageNumber the pageNumber to set
      */
     public void setPageNumber(int pageNumber) {
         this.pageNumber = pageNumber;

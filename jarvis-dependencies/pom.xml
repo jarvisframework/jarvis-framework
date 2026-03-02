@@ -554,7 +554,7 @@
                             <configuration>
                                 <rules>
                                     <requireJavaVersion>
-                                        <version>1.8</version>
+                                        <version>17</version>
                                     </requireJavaVersion>
                                     <bannedDependencies>
                                         <searchTransitive>true</searchTransitive>

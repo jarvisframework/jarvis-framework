@@ -180,8 +180,7 @@ public class PageInterceptor implements Interceptor {
                 parameter, boundSql, cacheKey);
         final String pageSql = dialect.getPageSql(ms, boundSql, parameter, rowBounds, cacheKey);
         boundSql = PageQueryUtil.pageBoundSql(ms, boundSql, pageSql, parameterMappings, parameter);
-        final Object result = executor.query(ms, parameter, RowBounds.DEFAULT, resultHandler, cacheKey, boundSql);
-        return result;
+        return executor.query(ms, parameter, RowBounds.DEFAULT, resultHandler, cacheKey, boundSql);
     }
 
     private int processCustomCount(PageDialect dialect, Invocation invocation, Executor executor,

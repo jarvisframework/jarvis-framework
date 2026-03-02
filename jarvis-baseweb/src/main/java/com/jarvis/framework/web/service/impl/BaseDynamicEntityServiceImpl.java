@@ -91,6 +91,15 @@ public abstract class BaseDynamicEntityServiceImpl<Id extends Serializable, Enti
     }
 
     /**
+     * @see com.jarvis.framework.web.service.BaseDynamicEntityService#patch(com.jarvis.framework.core.entity.BaseDynamicEntity)
+     */
+    @Transactional(rollbackFor = Exception.class)
+    @Override
+    public boolean patch(Entity entity) {
+        return update(entity);
+    }
+
+    /**
      *
      * @see com.jarvis.framework.web.service.BaseSimpleEntityService#updateAll(java.util.Collection)
      */

@@ -3,12 +3,10 @@ package com.jarvis.framework.autoconfigure.mybatis;
 import com.jarvis.framework.mybatis.handler.EntityAutoFillingHandler;
 import com.jarvis.framework.mybatis.handler.EntityAutoFillingHolder;
 import com.jarvis.framework.mybatis.mapping.DatabaseIdHolder;
-import com.jarvis.framework.mybatis.plugin.PageInterceptor;
 import com.jarvis.framework.mybatis.provider.JdbcDatabaseIdProvider;
 import com.jarvis.framework.mybatis.snowflake.SnowflakeIdProperties;
 import com.jarvis.framework.mybatis.snowflake.SnowflakeWorkIdHolder;
 import com.jarvis.framework.mybatis.wrapper.CamelCaseMapWrapperFactory;
-import org.apache.ibatis.plugin.Interceptor;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.SqlSessionFactoryBean;
 import org.mybatis.spring.boot.autoconfigure.ConfigurationCustomizer;
@@ -52,19 +50,13 @@ public class JarvisMybatisAutoConfiguration {
         return new SnowflakeWorkIdHolder();
     }
 
-    @Bean
+    /*@Bean
     public Interceptor pageInterceptor() {
         return new PageInterceptor();
-    }
+    }*/
 
     @Bean
     public ConfigurationCustomizer configurationCustomizer() {
-        return new ConfigurationCustomizer() {
-
-            @Override
-            public void customize(org.apache.ibatis.session.Configuration configuration) {
-                configuration.setObjectWrapperFactory(new CamelCaseMapWrapperFactory());
-            }
-        };
+        return configuration -> configuration.setObjectWrapperFactory(new CamelCaseMapWrapperFactory());
     }
 }

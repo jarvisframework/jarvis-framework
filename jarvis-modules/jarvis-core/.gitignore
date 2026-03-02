@@ -6,6 +6,3 @@
 /target/*
 /.classpath
 /.project
-/.idea
-logs
-/.vscode/*

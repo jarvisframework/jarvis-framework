@@ -15,7 +15,7 @@ import java.sql.SQLException;
  */
 public class DatabaseIdHolder {
 
-    private static Logger log = LoggerFactory.getLogger(DatabaseIdHolder.class);
+    private static final Logger log = LoggerFactory.getLogger(DatabaseIdHolder.class);
 
     private static String databaseId;
 

@@ -52,7 +52,7 @@ public class CustomErrorController extends BasicErrorController {
         final Map<String, Object> body = getErrorAttributes(request, getErrorAttributeOptions(request, MediaType.ALL));
         Object message = body.get("message");
         if (ObjectUtils.isEmpty(message)) {
-            message = "程序出错啦";
+            message = "系统错误，请联系管理员！";
         }
         final Map<String,
                 Object> response = objectMapper.convertValue(RestResponse.response(status, message), Map.class);

@@ -20,14 +20,20 @@ public class BaseFieldConstant {
     /** 修定版本号 */
     public static final String REVISION = "revision";
 
-    /** 创建人 */
+    /** 创建人ID */
     public static final String CREATED_BY = "createdBy";
+
+    /** 创建人 */
+    public static final String CREATOR = "creator";
 
     /** 创建时间 */
     public static final String CREATED_TIME = "createdTime";
 
-    /** 修改人 */
+    /** 修改人ID */
     public static final String UPDATED_BY = "updatedBy";
+
+    /** 修改人 */
+    public static final String UPDATER = "updater";
 
     /** 创建时间 */
     public static final String UPDATED_TIME = "updatedTime";
