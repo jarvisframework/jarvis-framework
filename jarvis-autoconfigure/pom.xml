@@ -31,6 +31,12 @@
 
         <!-- 档案模块 -->
 
+        <!-- redis -->
+        <dependency>
+            <groupId>com.jarvis.framework</groupId>
+            <artifactId>jarvis-redis</artifactId>
+            <optional>true</optional>
+        </dependency>
         <!-- mybatis -->
         <dependency>
             <groupId>com.jarvis.framework</groupId>
