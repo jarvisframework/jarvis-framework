@@ -6,9 +6,9 @@
     <artifactId>jarvis-framework</artifactId>
     <version>2026.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <description>Jarvis基础架构2023</description>
+    <description>Jarvis基础架构2026</description>
     <url>https://www.jarvis.com.cn</url>
-    <inceptionYear>2023</inceptionYear>
+    <inceptionYear>2026</inceptionYear>
 
     <modules>
         <module>jarvis-dependencies</module>
