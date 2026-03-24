@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.jarvis.framework</groupId>
     <artifactId>jarvis-framework</artifactId>
-    <version>2026</version>
+    <version>2026.1.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>Jarvis基础架构2023</description>
     <url>https://www.jarvis.com.cn</url>

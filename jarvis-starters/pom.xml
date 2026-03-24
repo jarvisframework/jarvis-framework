@@ -7,7 +7,7 @@
     <parent>
         <groupId>com.jarvis.framework</groupId>
         <artifactId>jarvis-parent</artifactId>
-        <version>2026</version>
+        <version>2026.1.1-SNAPSHOT</version>
         <relativePath>../jarvis-parent</relativePath>
     </parent>
 
